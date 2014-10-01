@@ -1,0 +1,12 @@
+#format du fichier de configuration :
+#1 => tube               1 | longueur | section
+#2 => résonateur		 2 | hauteur de la cavité | hauteur du col | section de la cavite | section du col
+1 1 0.003 0 0
+2 0.3 0.30 0.003 0.0015
+===============================================================
+Paramètres globaux
+------------------
+célérité: 340
+masse volumique: 1.2
+nombre d éléments du réseau : 2
+===============================================================

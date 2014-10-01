@@ -1,0 +1,2 @@
+- refaire affichage des données a la fin du programme pour que ça soit plus claire
+- mieux afficher les courbes pour qu'elles soient jolies une fois sauvegardées

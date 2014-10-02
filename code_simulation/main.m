@@ -17,7 +17,7 @@ rho = 1.2;
 
 %Base fréquentielle
 %------------------
-Fmax=1000;
+Fmax=2000;
 f = 0:0.1:Fmax;
 w = f .* (2*pi);
 k = w / c;
@@ -52,6 +52,7 @@ for x=1:1:N
 end
 
 
+
 %====================================================================
 % Affichage des paramètres globaux
 %----------------------------------
@@ -75,7 +76,7 @@ hold on
 plot(ones(1,N), '-r');
 hold on
 plot(-ones(1,N), '-r');
-axis([100 700 -10 10])
+axis([0 1000 -10 10])
 legend('cos( \Gamma d )','y=1','y=-1');
 xlabel('frequence en Hz');
 ylabel('cos( \Gamma d)');
@@ -86,9 +87,8 @@ title("Representation graphique de l'equation de dispersion")
 %Affichage de l'admittance du résonateur
 %--------------------------------------------------------------
 figure(2)
-subplot(4,1,1)
-plot(f,abs(admittance_resonateur));
-grid on
+subplot(3,1,1)
+plot(f,log(abs(admittance_resonateur)));
 %xlabel('frequence en Hz');
 ylabel('admittance');
 title('admittance du resonateur de Helmholtz');
@@ -97,35 +97,33 @@ title('admittance du resonateur de Helmholtz');
 %-----------------------------------------------------
 Zc = sqrt(reseau(1,2,:)./reseau(2,1,:));
 
-figure(2)
-subplot(4,1,2)
-plot(f,abs(Zc));
-grid on
+hold on
+plot(f,log(abs(Zc)), 'r');
 %xlabel('frequence en Hz');
-ylabel('module de l impedance caracteristique du reseau');
+ylabel('abs(Zcreseau)');
 title('Impedance caracteristique du reseau');
+grid minor on
 
 %Affichage du coefficient de reflexion
 %--------------------------------------------------------------
 R = (reseau(1,1,:) + reseau(1,2,:)./Zc - reseau(2,1,:).*Zc- reseau(2,2,:))./(reseau(1,1,:) + reseau(2,1,:).*Zc + reseau(1,2,:)./Zc + reseau(2,2,:));
 
 figure(2)
-subplot(4,1,3);
+subplot(3,1,2);
 plot(f,abs(R));
-grid on
 %xlabel('frequence en Hz');
-ylabel('module du coefficient de reflexion');
+ylabel('abs(R)');
 title('Coefficient de reflexion a l entree du reseau')
+grid minor on
 
 %Affichage du coefficient de transmission
 %--------------------------------------------------------------
 T = 2./(reseau(1,1,:)  + reseau(2,1,:).*Zc + reseau(1,2,:)./Zc + reseau(2,2,:));
 
 figure(2)
-subplot(4,1,4);
-grid on
+subplot(3,1,3);
 plot(f,abs(T));
 %xlabel('frequence en Hz');
-ylabel('module du coefficient de transmission');
+ylabel('abs(T)');
 title('Coefficient de transmission a l entree du reseau');
-
+grid minor on

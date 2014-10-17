@@ -11,7 +11,7 @@ function matrice_trans_res = resonateur(k,Lcav,Lcol,Dcav,dcol,rho,c)
 Scav = pi*(Dcav/2)^2;
 Scol = pi*(dcol/2)^2;
 
-freshelmholtz = c/(2*pi)*sqrt(Scol/(Scav*Lcav*Lcol))
+%freshelmholtz = c/(2*pi)*sqrt(Scol/(Scav*Lcav*Lcol))    affichage de la fréquence de résonnance
 
 matrice_resonateur = guide(k,Lcol,dcol,rho,c) * guide(k,Lcav,Dcav,rho,c);
 

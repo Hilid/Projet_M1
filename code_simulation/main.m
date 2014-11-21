@@ -63,6 +63,24 @@ disp('------------------');
 disp(['célérité: ',num2str(c)]);
 disp(['masse volumique: ',num2str(rho)]);
 disp(['nombre d éléments du réseau : ',num2str(nb_element)]);
+
+for x=1:1:nb_element
+	if ((donnees(x,1)==2))
+		Lcav = donnees(x,2);
+		Lcol = donnees(x,3);
+		Dcav = donnees(x,4);
+		dcol = donnees(x,5);
+
+		Scav = pi*(Dcav/2)^2;
+		Scol = pi*(dcol/2)^2;
+
+
+		freshelmholtz = c/(2*pi)*sqrt(Scol/(Scav*Lcav*Lcol));   % affichage de la fréquence de résonnance
+		disp(['Résonateur position ' num2str(x) ' = ' num2str(freshelmholtz) ' Hz']);
+	end
+end
+
+
 disp('===============================================================');
 
 
@@ -127,3 +145,5 @@ plot(f,abs(T));
 ylabel('abs(T)');
 title('Coefficient de transmission a l entree du reseau');
 grid minor on
+
+

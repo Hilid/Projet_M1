@@ -1,9 +1,9 @@
 clear all
 close all
 clc
-%graphics_toolkit('gnuplot')          %affichage gnuplot
+graphics_toolkit('gnuplot')          %affichage gnuplot
 
-%===================================================================
+%===============================================================================================================
 %Chargement du fichier de configuration
 %--------------------------------------
 donnees = load('config.txt');
@@ -13,17 +13,15 @@ nb_element = size(donnees)(1);
 %Constantes 
 %----------
 c = 340;
-rho = 1.2;
+rho = 1.177;       %a  300°K
 
 %Base fréquentielle
 %------------------
 Fmax=2000;
-f = 0:0.1:Fmax;
-w = f .* (2*pi);
-k = w / c;
+f = 0:1:Fmax;
 N = length(f);
 
-%====================================================================
+%=================================================================================================================
 
 %Calcul des coefficients de la matrice
 %--------------------------------------
@@ -32,18 +30,20 @@ reseau = ones(2,2,N);		%matrice de transfert du réseau composé des éléments 
 
 
 for x=1:1:N
-	reseau(:,:,x) = eye(2);	%initialisation de la matrice
+	reseau(:,:,x) = eye(2);	%initialisation de la matrice par une matrice diago de 1
 end
 
 
 for x=1:1:N
-	y = k(x);
+	w = 2*pi* x / N * Fmax ;
 	for d=1:1:nb_element
 		if ((donnees(d,1)==1))
-			reseau(:,:,x) = reseau(:,:,x) * guide(y,donnees(d,2), donnees(d,3),rho,c);
+			reseau(:,:,x) = reseau(:,:,x) * guide(w,donnees(d,2), donnees(d,3),rho,c);
+			d_tuyau = donnees(d,3);                                  %sauvegarde du dernier diametre donné pour avoir la section actuelle du guide
 		elseif ((donnees(d,1)==2))
-		     reseau(:,:,x) =reseau(:,:,x) * resonateur(y,donnees(d,2),donnees(d,3),donnees(d,4),donnees(d,5),rho,c); 
-		     admittance_resonateur(x) = resonateur(y,donnees(2,2),donnees(2,3),donnees(2,4),donnees(2,5),rho,c)(2,1);
+			 cellule_reso = resonateur(w,donnees(d,2),donnees(d,3),donnees(d,4),donnees(d,5),rho,c,d_tuyau);
+		     reseau(:,:,x) =reseau(:,:,x) * cellule_reso; 
+		     admittance_resonateur(x) = cellule_reso(2,1);
 		else
 			 disp('erreur: element non reconnu');
 			 return
@@ -65,7 +65,9 @@ disp(['masse volumique: ',num2str(rho)]);
 disp(['nombre d éléments du réseau : ',num2str(nb_element)]);
 
 for x=1:1:nb_element
-	if ((donnees(x,1)==2))
+	if ((donnees(x,1)==1))
+		d_tuyau = donnees(d,3);         %récupération du diametre du tuyau actuel 
+	elseif ((donnees(x,1)==2))
 		Lcav = donnees(x,2);
 		Lcol = donnees(x,3);
 		Dcav = donnees(x,4);
@@ -74,9 +76,18 @@ for x=1:1:nb_element
 		Scav = pi*(Dcav/2)^2;
 		Scol = pi*(dcol/2)^2;
 
+		RN = dcol / 2;
+		RC = Dcav / 2;
+		RT = d_tuyau / 2;
 
-		freshelmholtz = c/(2*pi)*sqrt(Scol/(Scav*Lcav*Lcol));   % affichage de la fréquence de résonnance
-		disp(['Résonateur position ' num2str(x) ' = ' num2str(freshelmholtz) ' Hz']);
+		%Correction de longueur du col (prise dans [A1] appendice B)
+		L1 = 0.82 * (1 - 1.35*RN/RC + 0.31*(RN/RC)^3) * RN; 
+		L2 = 0.82 * (1- 0.235 * RN / RT - 1.32*(RN/RT)^2 + 1.54 * (RN/RT)^3 - 0.86*(RN/RT)^4)*RN;
+		Lcol = Lcol + L1 + L2;
+
+ 
+		freshelmholtz = c/(2*pi)*sqrt(Scol/(Scav*Lcav*Lcol));   % affichage de la fréquence de résonnance sans correction de longueur
+		disp(['Résonateur position ' num2str(x) ' Fréq_rés = ' num2str(freshelmholtz) ' Hz']);
 	end
 end
 
@@ -101,21 +112,12 @@ ylabel('cos( \Gamma d)');
 title("Representation graphique de l'equation de dispersion")
 
 
-
-%Affichage de l'admittance du résonateur
-%--------------------------------------------------------------
-figure(2)
-subplot(3,1,1)
-plot(f,log(abs(admittance_resonateur)));
-%xlabel('frequence en Hz');
-ylabel('admittance');
-title('admittance du resonateur de Helmholtz');
-
 %Affichage de l'impédance caractéristique du réseau Zc
 %-----------------------------------------------------
 Zc = sqrt(reseau(1,2,:)./reseau(2,1,:));
 
-hold on
+figure(2)
+subplot(4,1,1);
 plot(f,log(abs(Zc)), 'r');
 %xlabel('frequence en Hz');
 ylabel('abs(Zcreseau)');
@@ -127,7 +129,7 @@ grid minor on
 R = (reseau(1,1,:) + reseau(1,2,:)./Zc - reseau(2,1,:).*Zc- reseau(2,2,:))./(reseau(1,1,:) + reseau(2,1,:).*Zc + reseau(1,2,:)./Zc + reseau(2,2,:));
 
 figure(2)
-subplot(3,1,2);
+subplot(4,1,2);
 plot(f,abs(R));
 %xlabel('frequence en Hz');
 ylabel('abs(R)');
@@ -139,11 +141,21 @@ grid minor on
 T = 2./(reseau(1,1,:)  + reseau(2,1,:).*Zc + reseau(1,2,:)./Zc + reseau(2,2,:));
 
 figure(2)
-subplot(3,1,3);
+subplot(4,1,3);
 plot(f,abs(T));
 %xlabel('frequence en Hz');
 ylabel('abs(T)');
 title('Coefficient de transmission a l entree du reseau');
 grid minor on
 
+
+
+%Affichage de l'admittance du dernier résonateur
+%--------------------------------------------------------------
+figure(2)
+subplot(4,1,4);
+plot(f,log(abs(admittance_resonateur)));
+ylabel('abs(Yreso)');
+xlabel('frequence en Hz');
+title('admittance du resonateur de Helmholtz');
 

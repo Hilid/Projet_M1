@@ -1,4 +1,7 @@
 - refaire affichage des données a la fin du programme pour que ça soit plus claire
+
 - mieux afficher les courbes pour qu'elles soient jolies une fois sauvegardées
 
--grandeur a la place du resonateur
+- traduire les commentaires dans "guides"
+
+- ajouter matrice avec juste une impédance

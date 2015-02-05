@@ -1,0 +1,3 @@
+- Corriger le bug sur les coeffs de transmission et reflexion superieur à 1.   => problème sur le Zc utilisé
+- Changer cos(gamma d) par cos(N gamma d) avec N le nb de cellules, diviser k par N
+

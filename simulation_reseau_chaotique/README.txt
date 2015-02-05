@@ -4,6 +4,9 @@ année universitaire 2014-2015
 Encadrant Olivier Richoux
 
 Projet: Caractérisation d'un réseau périodique dans lequel ce propage des ondes acoustiques. Le réseaux est composés de résonateurs de Helmholtz et de guides d'ondes. Dans un second temps, du désordre est ajouté.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Ce repertoire contient le code utile à l'analyse d'un reseau chaotique
+
 
 
 =============================================================================

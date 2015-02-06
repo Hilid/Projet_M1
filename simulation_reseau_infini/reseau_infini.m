@@ -1,7 +1,7 @@
 clear all
 close all
 clc
-graphics_toolkit('fltk')          %affichage gnuplot
+%~ graphics_toolkit('fltk')          %affichage gnuplot
 
 %===============================================================================================================
 %Constantes physiques
@@ -12,15 +12,15 @@ rho = 1.177;       %a  300°K
 
 % Constantes guide
 %-----------------
-L = 3*0.3; 				% longueur du guide
-d = 0.05; 				% diametre du guide
+L = 0.20; 				% longueur du guide
+d = 0.03; 				% diametre du guide
 
 
 % Constantes Résonateur
 %----------------------
 Lcav =0.165;			% longueur de la cavité
-Lcol =2*0.02;			% longueur du col
-Dcav =0.05;			% diametre de la cavité
+Lcol =0.02;			% longueur du col
+Dcav =0.0425;			% diametre de la cavité
 Dcol =0.02;			% diametre du col du col
 
 Scav = pi*(Dcav/2)^2;
@@ -60,7 +60,7 @@ end
 for x=1:1:N
 	w = 2*pi* x / N * Fmax ;
 	matrice_resonateur = resonateur(w,Lcav,Lcol,Dcav,Dcol,rho,c);
-	cellule_reso = guide(w,L,d,rho,c)* matrice_resonateur* guide(w,L,d,rho,c);
+	cellule_reso = guide(w,L,d,rho,c)* matrice_resonateur; %* guide(w,L,d,rho,c);
 	reseau(:,:,x) =reseau(:,:,x) * cellule_reso; 
 	admittance_resonateur(x) = matrice_resonateur(2,1);
 end
@@ -84,8 +84,8 @@ disp('');
 disp(['Paramètres guide']);
 disp('---------------------');
 disp(['Diametre du guide = ' num2str(d)]);
-disp(['Longueur entre chaques resonateurs 2L = ' num2str(2*L)]);
-disp(['Frequence de la bande de bragg pour c = ' num2str(c) 'm.s^1,   =>    f = c/(4L) = ' num2str(c/(4*L)) ' Hz']);
+disp(['Longueur entre chaques resonateurs L = ' num2str(2*L)]);
+disp(['Frequence de la bande de bragg pour c = ' num2str(c) 'm.s^1,   =>    f = c/(2L) = ' num2str(c/(2*L)) ' Hz']);
 disp('');
 disp('===============================================================');
 disp('');
@@ -127,14 +127,13 @@ grid minor on
 
 
 
-%Affichage de l'impédance caractéristique du réseau Z_reseau
+%Affichage de l'impédance caractéristique du réseau Zc
 %-----------------------------------------------------
-Z_reseau = sqrt(reseau(1,2,:)./reseau(2,1,:));
+Zc = sqrt(reseau(1,2,:)./reseau(2,1,:));
 
 figure(2)
 subplot(4,1,1);
-plot(f,log(abs(Z_reseau)), 'r');
-%xlabel('frequence en Hz');
+plot(f,log(abs(Zc)), 'r');
 ylabel('abs(Zreseau)');
 title('Impedance caracteristique du reseau');
 grid on
@@ -142,27 +141,13 @@ grid on
 
 %Affichage du coefficient de reflexion
 %--------------------------------------------------------------
-S = pi*(d/2)^2;     %section du guide
-Zc = rho*c/S;       % Sans perte
-
-
-% Zc avec pertes
-%---------------
-%~ Pr = 0.708;                                        % nombre de Prandtl a la pression atmosphérique           a 300°K
-%~ mu = 1.85 * 10^-5;                                 % viscosité de l'air		                                a 300°K
-%~ gamma = 1.4;                               	      % heat capacity ratio of air
-%~ 
-%~ ksi = sqrt(Pr);
-%~ delta = sqrt(2 * mu / (rho * w));            	  % viscous boundary layer thickness
-%~ s = d / 2 / delta;
-%~ beta = (1-i)/sqrt(2);
-%~ Zc = rho * c / S * (1 + beta /s * (1 - (gamma - 1)/ksi));
-
 R = (reseau(1,1,:) + reseau(1,2,:)./Zc - reseau(2,1,:).*Zc- reseau(2,2,:))./(reseau(1,1,:) + reseau(2,1,:).*Zc + reseau(1,2,:)./Zc + reseau(2,2,:));
 
 figure(2)
 subplot(4,1,2);
 plot(f,abs(R));
+axis([0 2000 0 1.5]);
+
 ylabel('abs(R)');
 title('Coefficient de reflexion a l entree du reseau')
 grid on
@@ -175,6 +160,7 @@ T = 2./(reseau(1,1,:)  + reseau(2,1,:).*Zc + reseau(1,2,:)./Zc + reseau(2,2,:));
 figure(2)
 subplot(4,1,3);
 plot(f,abs(T));
+axis([0 2000 0 1.5]);
 ylabel('abs(T)');
 title('Coefficient de transmission a l entree du reseau');
 grid on

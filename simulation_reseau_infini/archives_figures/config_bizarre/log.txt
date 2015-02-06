@@ -1,0 +1,21 @@
+===============================================================
+Paramètres globaux
+------------------
+célérité: 340
+masse volumique: 1.177
+
+Paramètres résonateur
+---------------------
+Lcav = 0.165
+Lcol = 0.027709
+Dcav = 0.0425
+Dcol = 0.02
+
+Paramètres guide
+---------------------
+Diametre du guide = 0.03
+Longueur entre chaques resonateurs L = 0.6
+Frequence de la bande de bragg pour c = 340m.s^1,   =>    f = c/(2L) = 566.667 Hz
+
+===============================================================
+

@@ -1,4 +1,4 @@
-function matrice_trans_res = resonateur(w,Lcav,Lcol,Dcav,Dcol,rho,c) 
+function matrice_trans_res = resonateur(w,Lcav,Lcol,Dcav,Dcol,rho,c,d_tuyau) 
 
 
 matrice_resonateur = guide(w,Lcol,Dcol,rho,c) * guide(w,Lcav,Dcav,rho,c);    %modélisation du résonateur par 2 matrices de guides

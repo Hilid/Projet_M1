@@ -1,6 +1,6 @@
 function matrice_trans_guide = guide(w,L,d,rho,c)
-R = d/2; %rayon du guide
-S = pi*(R)^2;     %section du guide
+S = pi*(d/2)^2;     %section du guide
+R = d/2;            %diametre du guide
 
 %Cas sans perte
 %--------------

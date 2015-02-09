@@ -20,7 +20,7 @@ then
 	fi
 		touch log.txt   													   			
 		touch $PPID.m                                                                             #creation d'un script .m temporaire
-		cat main.m > $PPID.m                                                                      #reprise du code complet
+		cat reseau_infini.m > $PPID.m                                                                      #reprise du code complet
 		echo "for (i=1:$2) saveas(i,['figure'  num2str(i) '.png'],'png'); end" >> $PPID.m         #ajout des lignes de print en png
 
 #=======================================================================================================================

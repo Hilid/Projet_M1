@@ -12,7 +12,7 @@ rho = 1.177;       %a  300°K
 
 % Constantes guide
 %-----------------
-L = 0.20; 				% longueur du guide
+L = 0.2; 				% longueur du guide
 d = 0.03; 				% diametre du guide
 
 
@@ -21,7 +21,7 @@ d = 0.03; 				% diametre du guide
 Lcav =0.165;			% longueur de la cavité
 Lcol =0.02;			% longueur du col
 Dcav =0.0425;			% diametre de la cavité
-Dcol =0.02;			% diametre du col du col
+Dcol =0.02;			% diametre du col
 
 Scav = pi*(Dcav/2)^2;
 Scol = pi*(Dcol/2)^2;
@@ -48,19 +48,18 @@ w = 2*pi*f;
 
 %Calcul des coefficients de la matrice
 %--------------------------------------
-res = ones(1,N);			%matrice de transfert du résonateur
 reseau = ones(2,2,N);		%matrice de transfert du réseau composé des éléments de 'config.txt'
 admittance_resonateur = ones(1,N);
 
 for x=1:1:N
-	reseau(:,:,x) = eye(2);	%initialisation de la matrice par une matrice diago de 1
+	reseau(:,:,x) = eye(2);	%initialisation de la matrice par une matrice identité
 end
 
 
 for x=1:1:N
 	w = 2*pi* x / N * Fmax ;
 	matrice_resonateur = resonateur(w,Lcav,Lcol,Dcav,Dcol,rho,c);
-	cellule_reso = guide(w,L,d,rho,c)* matrice_resonateur; %* guide(w,L,d,rho,c);
+	cellule_reso = guide(w,L,d,rho,c) * matrice_resonateur;
 	reseau(:,:,x) =reseau(:,:,x) * cellule_reso; 
 	admittance_resonateur(x) = matrice_resonateur(2,1);
 end
@@ -134,7 +133,7 @@ Zc = sqrt(reseau(1,2,:)./reseau(2,1,:));
 figure(2)
 subplot(4,1,1);
 plot(f,log(abs(Zc)), 'r');
-ylabel('abs(Zreseau)');
+ylabel('log(abs(Zreseau))');
 title('Impedance caracteristique du reseau');
 grid on
 
@@ -159,7 +158,7 @@ T = 2./(reseau(1,1,:)  + reseau(2,1,:).*Zc + reseau(1,2,:)./Zc + reseau(2,2,:));
 
 figure(2)
 subplot(4,1,3);
-plot(f,abs(T));
+plot(f,abs(T(1,1,:)));
 axis([0 2000 0 1.5]);
 ylabel('abs(T)');
 title('Coefficient de transmission a l entree du reseau');
@@ -171,9 +170,9 @@ grid on
 %-----------------------------------------------
 figure(2)
 subplot(4,1,4);
-plot(f,abs(admittance_resonateur));
+semilogy(f,abs(admittance_resonateur(1,:)));
 ylabel('abs(Yreso)');
 xlabel('frequence en Hz');
 title('admittance du resonateur de Helmholtz');
-grid on
+grid off
 

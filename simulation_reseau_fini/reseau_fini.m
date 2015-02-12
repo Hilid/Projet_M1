@@ -1,5 +1,5 @@
 clear all
-close all
+%close all
 clc
 graphics_toolkit('gnuplot')          %affichage gnuplot
 
@@ -12,16 +12,16 @@ rho = 1.177;       %a  300°K
 
 % Constantes guide
 %-----------------
-L = 0.2; 				% longueur du guide
-d = 0.03; 				% diametre du guide
+L = 0.60; 				% longueur du guide
+d = 0.05; 				% diametre du guide
 
 
 % Constantes Résonateur
 %----------------------
-Lcav =0.165;			% longueur de la cavité
+Lcav =0.05;			% longueur de la cavité
 Lcol =0.02;			% longueur du col
-Dcav =0.0425;			% diametre de la cavité
-Dcol =0.02;			% diametre du col
+Dcav =0.043;			% diametre de la cavité
+Dcol =0.02;				% diametre du col
 
 Scav = pi*(Dcav/2)^2;
 Scol = pi*(Dcol/2)^2;
@@ -56,18 +56,17 @@ for x=1:1:N
 end
 
 
-nb_cellule =10;
+nb_cellule =20;
 for x=1:1:N
 	w = 2*pi* x / N * Fmax ;
 	matrice_resonateur = resonateur(w,Lcav,Lcol,Dcav,Dcol,rho,c);
-	cellule_reso = guide(w,L,d,rho,c) * matrice_resonateur;
+	cellule = guide(w,L,d,rho,c) * matrice_resonateur;
 
-	cellule = eye(2);
+	reseau(:,:,x) = eye(2);
 	for y=1:1:nb_cellule
-		cellule = cellule*cellule_reso;
+		reseau(:,:,x) = reseau(:,:,x)*cellule;
 	end
 	
-	reseau(:,:,x) =reseau(:,:,x) * cellule; 
 	admittance_resonateur(x) = matrice_resonateur(2,1);
 end
 
@@ -95,7 +94,7 @@ disp('');
 disp(['Paramètres guide']);
 disp('---------------------');
 disp(['Diametre du guide = ' num2str(d) ' m']);
-disp(['Longueur entre chaques resonateurs L = ' num2str(2*L) ' m']);
+disp(['Longueur entre chaques resonateurs L = ' num2str(L) ' m']);
 disp(['Frequence de la bande de bragg pour c = ' num2str(c) ' m.s^1,   =>    f = c/(2L) = ' num2str(c/(2*L)) ' Hz']);
 disp('');
 disp('===============================================================');
@@ -107,35 +106,33 @@ disp('');
 
 %Affichage de l'équation de dispersion 2cos(Gamma d) = T11 + T12
 %--------------------------------------------------------------
-cosNGammad = (A + D) /2;
-Gd = acos(cosNGammad)/nb_cellule;
+cosnGammad = (A + D) /2;
+Gd = acos(cosnGammad)/nb_cellule;
 
 
 figure(1)
-subplot(3,1,1)
-plot(f,cosNGammad,'-b');
+subplot(1,3,1)
+plot(cosnGammad,f,'-b');
 hold on
-plot(ones(1,N), '-r');
+plot(ones(1,N),f, '-r');
 hold on
-plot(-ones(1,N), '-r');
-axis([0 2000 -10 10])
-legend('cos( Gamma d )','y=1','y=-1');
-ylabel('cos( Gamma d)');
+plot(-ones(1,N),f, '-r');
+axis([ -10 10 0 2000])
+legend('cos( nGamma d )','y=1','y=-1');
+xlabel('cos( Gamma d)');
 title("Representation graphique de l'equation de dispersion")
 grid minor on
 
-subplot(3,1,2)
-plot(f, real(Gd));
-ylabel('Re(Gamma d)');
+subplot(1,3,2)
+plot(real(Gd),f);
+xlabel('Re(Gamma d)');
 grid minor on
 
-subplot(3,1,3)
-plot(f,imag(Gd));
-ylabel('Im(Gamma d)');
-xlabel('frequence en Hz');
+subplot(1,3,3)
+plot(imag(Gd),f);
+xlabel('Im(Gamma d)');
+ylabel('frequence en Hz');
 grid minor on
-
-
 
 
 %Affichage de l'impédance caractéristique du réseau Zc
@@ -200,3 +197,16 @@ xlabel('frequence en Hz');
 title('admittance du resonateur de Helmholtz');
 grid on
 
+%Absorption A=1-abs(T)^2 -abs(R)^2
+A=1-abs(T).^2 -abs(R).^2;
+
+figure(3)
+plot(f,abs(T),'b');
+hold on
+plot(f,abs(R),'r');
+hold on
+plot(f,A,'k');
+xlim([0 1500]);
+legend('Transmission','Reflexion','Absorption');
+hold off
+title('periodique')

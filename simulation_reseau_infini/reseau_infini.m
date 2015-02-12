@@ -59,8 +59,7 @@ end
 for x=1:1:N
 	w = 2*pi* x / N * Fmax ;
 	matrice_resonateur = resonateur(w,Lcav,Lcol,Dcav,Dcol,rho,c);
-	cellule_reso = guide(w,L,d,rho,c) * matrice_resonateur;
-	reseau(:,:,x) =reseau(:,:,x) * cellule_reso; 
+	reseau(:,:,x) = guide(w,L,d,rho,c) * matrice_resonateur;
 	admittance_resonateur(x) = matrice_resonateur(2,1);
 end
 

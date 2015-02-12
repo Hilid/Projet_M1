@@ -4,12 +4,12 @@ S = pi*(R)^2;     %section du guide
 
 %Cas sans perte
 %--------------
-Zc = rho*c/S;  %impedance caracteristique du guide
-k = w/ c;
+%Zc = rho*c/S;  %impedance caracteristique du guide
+%k = w/ c;
 
 %Cas avec pertes (page 4 [A1])
 %-----------------------------
-%~ [Zc k] = pertes(d,w,rho,c);
+[Zc k] = pertes(d,w,rho,c);
 
 
 

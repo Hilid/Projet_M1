@@ -9,7 +9,7 @@ k = w/ c;
 
 %Cas avec pertes (page 4 [A1])
 %-----------------------------
-%~ [Zc k] = pertes(d,w,rho,c);
+[Zc k] = pertes(d,w,rho,c);
 
 
 

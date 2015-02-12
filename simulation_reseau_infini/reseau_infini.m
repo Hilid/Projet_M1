@@ -64,27 +64,32 @@ for x=1:1:N
 	admittance_resonateur(x) = matrice_resonateur(2,1);
 end
 
+A = reseau(1,1,:);
+B = reseau(1,2,:);
+C = reseau(2,1,:);
+D = reseau(2,2,:);
+
 %====================================================================
 % Affichage dans le terminal
 %====================================================================
 disp('===============================================================');
 disp(['Paramètres globaux']);
 disp('------------------');
-disp(['célérité: ',num2str(c)]);
-disp(['masse volumique: ',num2str(rho)]);
+disp(['célérité: ',num2str(c) ' m.s^-1']);
+disp(['masse volumique: ',num2str(rho) ' kg.m^-3']);
 disp('');
 disp(['Paramètres résonateur']);
 disp('---------------------');
-disp(['Lcav = ' num2str(Lcav)]);
-disp(['Lcol = ' num2str(Lcol)]);
-disp(['Dcav = ' num2str(Dcav)]);
-disp(['Dcol = ' num2str(Dcol)]);
+disp(['Lcav = ' num2str(Lcav) ' m']);
+disp(['Lcol = ' num2str(Lcol) ' m']);
+disp(['Dcav = ' num2str(Dcav) ' m']);
+disp(['Dcol = ' num2str(Dcol) ' m']);
 disp('');
 disp(['Paramètres guide']);
 disp('---------------------');
-disp(['Diametre du guide = ' num2str(d)]);
-disp(['Longueur entre chaques resonateurs L = ' num2str(2*L)]);
-disp(['Frequence de la bande de bragg pour c = ' num2str(c) 'm.s^1,   =>    f = c/(2L) = ' num2str(c/(2*L)) ' Hz']);
+disp(['Diametre du guide = ' num2str(d) ' m']);
+disp(['Longueur entre chaques resonateurs L = ' num2str(2*L) ' m']);
+disp(['Frequence de la bande de bragg pour c = ' num2str(c) ' m.s^1,   =>    f = c/(2L) = ' num2str(c/(2*L)) ' Hz']);
 disp('');
 disp('===============================================================');
 disp('');
@@ -95,7 +100,7 @@ disp('');
 
 %Affichage de l'équation de dispersion 2cos(Gamma d) = T11 + T12
 %--------------------------------------------------------------
-cosGammad = ((reseau(1,1,:) + reseau(2,2,:)) /2);
+cosGammad = (A + D) /2;
 Gd = acos(cosGammad);
 
 
@@ -128,7 +133,7 @@ grid minor on
 
 %Affichage de l'impédance caractéristique du réseau Zc
 %-----------------------------------------------------
-Zc = sqrt(reseau(1,2,:)./reseau(2,1,:));
+Zc = sqrt(B./C);
 
 figure(2)
 subplot(4,1,1);
@@ -140,7 +145,7 @@ grid on
 
 %Affichage du coefficient de reflexion
 %--------------------------------------------------------------
-R = (reseau(1,1,:) + reseau(1,2,:)./Zc - reseau(2,1,:).*Zc- reseau(2,2,:))./(reseau(1,1,:) + reseau(2,1,:).*Zc + reseau(1,2,:)./Zc + reseau(2,2,:));
+R = (A + B./Zc - C.*Zc - D)./(A + C.*Zc + B./Zc + D);
 
 figure(2)
 subplot(4,1,2);
@@ -154,7 +159,7 @@ grid on
 
 %Affichage du coefficient de transmission
 %--------------------------------------------------------------
-T = 2./(reseau(1,1,:)  + reseau(2,1,:).*Zc + reseau(1,2,:)./Zc + reseau(2,2,:));
+T = 2./(A + C.*Zc + B./Zc + D);
 
 figure(2)
 subplot(4,1,3);

@@ -1,7 +1,7 @@
 clear all
 close all
 clc
-graphics_toolkit('gnuplot')          %affichage gnuplot
+%~ graphics_toolkit('fltk')          %affichage gnuplot
 
 %===============================================================================================================
 %Constantes physiques
@@ -129,21 +129,52 @@ xlabel('frequence en Hz');
 grid minor on
 
 
+
+
 %Affichage de l'impédance caractéristique du réseau Zc
 %-----------------------------------------------------
 Zc = sqrt(B./C);
 
 figure(2)
-subplot(2,1,1)
+subplot(4,1,1);
 plot(f,log(abs(Zc)), 'r');
 ylabel('log(abs(Zreseau))');
 title('Impedance caracteristique du reseau');
 grid on
 
 
+%Affichage du coefficient de reflexion
+%--------------------------------------------------------------
+R = (A + B./Zc - C.*Zc - D)./(A + C.*Zc + B./Zc + D);
+
+figure(2)
+subplot(4,1,2);
+plot(f,abs(R));
+axis([0 2000 0 1.5]);
+
+ylabel('abs(R)');
+title('Coefficient de reflexion a l entree du reseau')
+grid on
+
+
+%Affichage du coefficient de transmission
+%--------------------------------------------------------------
+T = 2./(A + C.*Zc + B./Zc + D);
+
+figure(2)
+subplot(4,1,3);
+plot(f,abs(T(1,1,:)));
+axis([0 2000 0 1.5]);
+ylabel('abs(T)');
+title('Coefficient de transmission a l entree du reseau');
+grid on
+
+
+
 %Affichage de l'admittance du résonateur
 %-----------------------------------------------
-subplot(2,1,2)
+figure(2)
+subplot(4,1,4);
 semilogy(f,abs(admittance_resonateur(1,:)));
 ylabel('abs(Yreso)');
 xlabel('frequence en Hz');

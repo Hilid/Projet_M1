@@ -1,7 +1,7 @@
 clear all
 close all
 clc
-%~ graphics_toolkit('fltk')          %affichage gnuplot
+graphics_toolkit('gnuplot')          %affichage gnuplot
 
 %===============================================================================================================
 %Constantes physiques
@@ -56,11 +56,18 @@ for x=1:1:N
 end
 
 
+nb_cellule =10;
 for x=1:1:N
 	w = 2*pi* x / N * Fmax ;
 	matrice_resonateur = resonateur(w,Lcav,Lcol,Dcav,Dcol,rho,c);
 	cellule_reso = guide(w,L,d,rho,c) * matrice_resonateur;
-	reseau(:,:,x) =reseau(:,:,x) * cellule_reso; 
+
+	cellule = eye(2);
+	for y=1:1:nb_cellule
+		cellule = cellule*cellule_reso;
+	end
+	
+	reseau(:,:,x) =reseau(:,:,x) * cellule; 
 	admittance_resonateur(x) = matrice_resonateur(2,1);
 end
 
@@ -100,13 +107,13 @@ disp('');
 
 %Affichage de l'équation de dispersion 2cos(Gamma d) = T11 + T12
 %--------------------------------------------------------------
-cosGammad = (A + D) /2;
-Gd = acos(cosGammad);
+cosNGammad = (A + D) /2;
+Gd = acos(cosNGammad)/nb_cellule;
 
 
 figure(1)
 subplot(3,1,1)
-plot(f,cosGammad,'-b');
+plot(f,cosNGammad,'-b');
 hold on
 plot(ones(1,N), '-r');
 hold on
@@ -145,12 +152,14 @@ grid on
 
 %Affichage du coefficient de reflexion
 %--------------------------------------------------------------
+S = d^2/4*pi;
 Zc = rho*c/S;
 
-Zc_perte = ones(1,N);
+Zc_perte = ones(1,1,N);
+
 for x=1:1:N
 		w = 2*pi* x / N * Fmax ;
-		[Zc_perte(x) b] = pertes(d,w,rho,c);
+		[Zc_perte(1,1,x) b] = pertes(d,w,rho,c);
 end
 Zc = Zc_perte;
 

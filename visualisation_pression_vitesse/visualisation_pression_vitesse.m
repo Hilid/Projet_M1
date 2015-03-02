@@ -53,11 +53,11 @@ Lcols =0.02;
 Dcavs =0.043;				
 Dcols =0.02;					
 
-Scavs = pi*(Dcav/2)^2;
-Scols = pi*(Dcol/2)^2;
+Scavs = pi*(Dcavs/2)^2;
+Scols = pi*(Dcols/2)^2;
 
-RNs = Dcol / 2;
-RCs = Dcav / 2;
+RNs = Dcols / 2;
+RCs = Dcavs / 2;
 RTs = d / 2;
 
 %Correction de longueur du col (prise dans [A1] appendice B)

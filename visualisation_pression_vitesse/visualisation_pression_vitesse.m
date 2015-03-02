@@ -82,7 +82,7 @@ PV(:,loc+1) = PV_out; 			%matrice pression-vitesse en UN SEUL point du réseau, 
 
 for y=1:1:nb_cellule
 
-	if (NumSing==nb_cellule)
+	if (NumSing==y)
 		PV(:,loc)=resonateur(w,Lcavs,Lcols,Dcavs,Dcols,rho,c)*PV(:,loc+1);
 	else
 		PV(:,loc)=resonateur(w,Lcav,Lcol,Dcav,Dcol,rho,c)*PV(:,loc+1);

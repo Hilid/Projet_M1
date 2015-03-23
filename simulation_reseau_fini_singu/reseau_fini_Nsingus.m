@@ -14,10 +14,17 @@ rho = 1.177;       %a  300°K
 L = 0.60; 				% longueur du guide
 d = 0.05; 				% diametre du guide
 
-% Constantes Singularité
-NumSing = 10;
+%Nombre de singularité choisie et lieu de la première
+NbSingu=input("Nombre de singularites : \n");
+NumeroSingu=input("Lieu de la 1ere singularite : \n")
 
-Lcavs =0.25;			% seul truc qui change
+for i=1:NbSingu %Le seule grandeur amovible
+	Lcavs(i)=0.3+0.08*(i-1);
+end
+if NbSingu==0
+	Lcavs(1)=0;
+end
+
 Lcols =0.02;			
 Dcavs =0.043;			
 Dcols =0.02;				
@@ -47,7 +54,7 @@ L2 = 0.82 * (1- 0.235 * RN / RT - 1.32*(RN/RT)^2 + 1.54 * (RN/RT)^3 - 0.86*(RN/R
 Lcol = Lcol + L1 + L2;
 
 %Base fréquentielle
-Fmax=2000;
+Fmax=1000;
 f = 0:1.5:Fmax;
 N = length(f);
 w = 2*pi*f;
@@ -65,18 +72,23 @@ for x=1:1:N
 	reseau(:,:,x) = eye(2);
 	clc
 	fprintf(1,['\b%d  /' num2str(N)],x)	
-	for y=1:1:nb_cellule
-		if NumSing == y
-			matrice_resonateur = resonateur(w,Lcavs,Lcols,Dcavs,Dcols,rho,c);		
-		else
-			matrice_resonateur = resonateur(w,Lcav,Lcol,Dcav,Dcol,rho,c);
+	y=1;
+	while y<=nb_cellule
+		if y!=NumeroSingu
+			matrice_resonateur = resonateur(w,Lcav,Lcol,Dcav,Dcol,rho,c);	
+			cellule = guide(w,L,d,rho,c) * matrice_resonateur;
+			reseau(:,:,x) = reseau(:,:,x)*cellule;
+			admittance_resonateur(x) = matrice_resonateur(2,1);
+			y=y+1;	
+		elseif (NumeroSingu == y)
+			for u=1:NbSingu
+				matrice_resonateur = resonateur(w,Lcavs(u),Lcols,Dcavs,Dcols,rho,c);
+				cellule = guide(w,L,d,rho,c) * matrice_resonateur;
+				reseau(:,:,x) = reseau(:,:,x)*cellule;
+				y=y+1;
+			end
 		end
-		
-		cellule = guide(w,L,d,rho,c) * matrice_resonateur;
-		reseau(:,:,x) = reseau(:,:,x)*cellule;
 	end
-	
-	admittance_resonateur(x) = matrice_resonateur(2,1);
 end
 clc
 
@@ -90,8 +102,8 @@ D = reseau(2,2,:);
 %====================================================================
 more off
 disp('===============================================================');
-if (NumSing>nb_cellule)
-	disp("La singularité ne sera pas prise en compte car NumSing>nb_cellule");
+if (NumeroSingu<0 || NumeroSingu>nb_cellule || NumeroSingu+NbSingu>nb_cellule )
+	disp("Une des singularité ne sera pas prise en compte");
 end
 disp('');
 disp(['Paramètres globaux']);
@@ -114,7 +126,7 @@ disp(['Frequence de la bande de bragg pour c = ' num2str(c) ' m.s^1,   =>    f =
 disp('');
 disp(['Paramètres Singu']);
 disp('---------------------');
-disp(['Lcavs = ' num2str(Lcavs) ' m']);
+disp(['Lcavs1 = ' num2str(Lcavs(1)) ' m']);
 disp(['Lcols = ' num2str(Lcols) ' m']);
 disp(['Dcavs = ' num2str(Dcavs) ' m']);
 disp(['Dcols = ' num2str(Dcols) ' m']);
@@ -236,18 +248,18 @@ hold on
 plot(f,A,'k');
 legend('Transmission','Reflexion');
 
-
-admittance_singu = ones(1,N);
-for x=1:1:N
-	w = 2*pi* x / N * Fmax ;
-	matrice_resonateur = resonateur(w,Lcavs,Lcols,Dcavs,Dcols,rho,c);		
-	admittance_singu(x) = matrice_resonateur(2,1);
-
+subplot(2,1,2);
+grid on
+for n=1:NbSingu
+	admittance_singu = ones(1,N);
+	for x=1:1:N
+		w = 2*pi* x / N * Fmax ;
+		matrice_resonateur = resonateur(w,Lcavs(n),Lcols,Dcavs,Dcols,rho,c);		
+		admittance_singu(x) = matrice_resonateur(2,1);
+	end
+	hold on
+	semilogy(f,abs(admittance_singu(1,:)), 'Linewidth',3);
 end
 
-subplot(2,1,2);
-semilogy(f,abs(admittance_singu(1,:)));
-grid on
 hold on
-semilogy(f,abs(admittance_resonateur(1,:)),'-r');
-legend('admi singu','admi reso');
+semilogy(f,abs(admittance_resonateur(1,:)),'-r', 'Linewidth',3);

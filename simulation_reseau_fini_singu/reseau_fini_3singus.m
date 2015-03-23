@@ -15,9 +15,13 @@ L = 0.60; 				% longueur du guide
 d = 0.05; 				% diametre du guide
 
 % Constantes Singularité
-NumSing = 10;
+NumSing1 = 10; %numéro du résonateur avec singularité
+NumSing2 = 9;
+NumSing3 = 8;
 
-Lcavs =0.25;			% seul truc qui change
+Lcavs1 =0.32;			% seul truc qui change
+Lcavs2 =0.43;
+Lcavs3 =0.52;
 Lcols =0.02;			
 Dcavs =0.043;			
 Dcols =0.02;				
@@ -66,8 +70,12 @@ for x=1:1:N
 	clc
 	fprintf(1,['\b%d  /' num2str(N)],x)	
 	for y=1:1:nb_cellule
-		if NumSing == y
-			matrice_resonateur = resonateur(w,Lcavs,Lcols,Dcavs,Dcols,rho,c);		
+		if NumSing1 == y
+			matrice_resonateur = resonateur(w,Lcavs1,Lcols,Dcavs,Dcols,rho,c);		
+		elseif NumSing2 == y
+			matrice_resonateur = resonateur(w,Lcavs2,Lcols,Dcavs,Dcols,rho,c);
+		elseif NumSing3 == y
+			matrice_resonateur = resonateur(w,Lcavs3,Lcols,Dcavs,Dcols,rho,c);
 		else
 			matrice_resonateur = resonateur(w,Lcav,Lcol,Dcav,Dcol,rho,c);
 		end
@@ -90,8 +98,8 @@ D = reseau(2,2,:);
 %====================================================================
 more off
 disp('===============================================================');
-if (NumSing>nb_cellule)
-	disp("La singularité ne sera pas prise en compte car NumSing>nb_cellule");
+if (NumSing1>nb_cellule || NumSing1<0 || NumSing2>nb_cellule || NumSing2<0 || NumSing3>nb_cellule || NumSing3<0 )
+	disp("La singularité ne sera pas prise en compte car NumSing>nb_cellule ou NumSing<0 ");
 end
 disp('');
 disp(['Paramètres globaux']);
@@ -114,7 +122,9 @@ disp(['Frequence de la bande de bragg pour c = ' num2str(c) ' m.s^1,   =>    f =
 disp('');
 disp(['Paramètres Singu']);
 disp('---------------------');
-disp(['Lcavs = ' num2str(Lcavs) ' m']);
+disp(['Lcavs1 = ' num2str(Lcavs1) ' m']);
+disp(['Lcavs2 = ' num2str(Lcavs2) ' m']);
+disp(['Lcavs2 = ' num2str(Lcavs3) ' m']);
 disp(['Lcols = ' num2str(Lcols) ' m']);
 disp(['Dcavs = ' num2str(Dcavs) ' m']);
 disp(['Dcols = ' num2str(Dcols) ' m']);
@@ -237,17 +247,33 @@ plot(f,A,'k');
 legend('Transmission','Reflexion');
 
 
-admittance_singu = ones(1,N);
+admittance_singu1 = ones(1,N);
 for x=1:1:N
 	w = 2*pi* x / N * Fmax ;
-	matrice_resonateur = resonateur(w,Lcavs,Lcols,Dcavs,Dcols,rho,c);		
-	admittance_singu(x) = matrice_resonateur(2,1);
+	matrice_resonateur = resonateur(w,Lcavs1,Lcols,Dcavs,Dcols,rho,c);		
+	admittance_singu1(x) = matrice_resonateur(2,1);
+end
 
+admittance_singu2 = ones(1,N);
+for x=1:1:N
+	w = 2*pi* x / N * Fmax ;
+	matrice_resonateur = resonateur(w,Lcavs2,Lcols,Dcavs,Dcols,rho,c);		
+	admittance_singu2(x) = matrice_resonateur(2,1);
+end
+admittance_singu3 = ones(1,N);
+for x=1:1:N
+	w = 2*pi* x / N * Fmax ;
+	matrice_resonateur = resonateur(w,Lcavs3,Lcols,Dcavs,Dcols,rho,c);		
+	admittance_singu3(x) = matrice_resonateur(2,1);
 end
 
 subplot(2,1,2);
-semilogy(f,abs(admittance_singu(1,:)));
+semilogy(f,abs(admittance_singu1(1,:)), 'Linewidth',3);
 grid on
 hold on
-semilogy(f,abs(admittance_resonateur(1,:)),'-r');
-legend('admi singu','admi reso');
+semilogy(f,abs(admittance_resonateur(1,:)),'-r', 'Linewidth',3);
+hold on
+semilogy(f,abs(admittance_singu2(1,:)),'m-', 'Linewidth',3);
+hold on
+semilogy(f,abs(admittance_singu3(1,:)),'g-', 'Linewidth',3);
+legend('admi singu 1','admi reso','admi singu 2','admi singu 3');

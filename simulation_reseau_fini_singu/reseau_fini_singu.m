@@ -11,13 +11,13 @@ c = 340;
 rho = 1.177;       %a  300°K
 
 % Constantes guide
-L = 0.60; 				% longueur du guide
+L = 0.10; 				% longueur du guide
 d = 0.05; 				% diametre du guide
 
 % Constantes Singularité
-NumSing = 10;
+NumSing = -5;
 
-Lcavs =0.25;			% seul truc qui change
+Lcavs =0.12;			% seul truc qui change
 Lcols =0.02;			
 Dcavs =0.043;			
 Dcols =0.02;				
@@ -33,7 +33,7 @@ Lcols = Lcols + L1s + L2s;
 
 
 % Constantes Résonateur
-Lcav =0.15;			% longueur de la cavité
+Lcav =0.16;			% longueur de la cavité
 Lcol =0.02;			% longueur du col
 Dcav =0.043;			% diametre de la cavité
 Dcol =0.02;				% diametre du col
@@ -42,13 +42,13 @@ Scol = pi*(Dcol/2)^2;
 RN = Dcol / 2;
 RC = Dcav / 2;
 RT = d / 2;
-L1 = 0.82 * (1 - 1.35*RN/RC + 0.31*(RN/RC)^3) * RN; 
-L2 = 0.82 * (1- 0.235 * RN / RT - 1.32*(RN/RT)^2 + 1.54 * (RN/RT)^3 - 0.86*(RN/RT)^4)*RN;
-Lcol = Lcol + L1 + L2;
+%~ L1 = 0.82 * (1 - 1.35*RN/RC + 0.31*(RN/RC)^3) * RN; 
+%~ L2 = 0.82 * (1- 0.235 * RN / RT - 1.32*(RN/RT)^2 + 1.54 * (RN/RT)^3 - 0.86*(RN/RT)^4)*RN;
+%~ Lcol = Lcol + L1 + L2;
 
 %Base fréquentielle
-Fmax=2000;
-f = 0:1.5:Fmax;
+Fmax=750;
+f = 250:1:Fmax;
 N = length(f);
 w = 2*pi*f;
 %=================================================================================================================

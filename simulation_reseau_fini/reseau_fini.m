@@ -12,13 +12,13 @@ rho = 1.177;       %a  300°K
 
 % Constantes guide
 %-----------------
-L = 0.60; 				% longueur du guide
+L = 0.10; 				% longueur du guide
 d = 0.05; 				% diametre du guide
 
 
 % Constantes Résonateur
 %----------------------
-Lcav =0.05;			% longueur de la cavité
+Lcav =0.10;			% longueur de la cavité
 Lcol =0.02;			% longueur du col
 Dcav =0.043;			% diametre de la cavité
 Dcol =0.02;				% diametre du col

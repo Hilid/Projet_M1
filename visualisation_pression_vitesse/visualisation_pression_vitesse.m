@@ -1,5 +1,5 @@
 clear all
-%close all
+close all
 clc
 graphics_toolkit('gnuplot')          %affichage gnuplot
 
@@ -11,11 +11,11 @@ c = 340;
 rho = 1.177;    		   %a  300°K
 
 % Constantes guide
-L = 0.60; 					% longueur du guide
+L = 0.1; 					% longueur du guide
 d = 0.05; 					% diametre du guide
 
 %Constantes Résonateur
-Lcav =0.04;					% longueur de la cavité
+Lcav =0.16;					% longueur de la cavité
 Lcol =0.02;					% longueur du col
 Dcav =0.043;				% diametre de la cavité
 Dcol =0.02;					% diametre du col
@@ -35,20 +35,20 @@ Lcol = Lcol + L1 + L2;
 % Constantes du réseau
 %---------------------
 %Fréquence imposée
-f= 866; 								%866 : Bragg  1000 : R=1
+f= 406; 								%866 : Bragg  1000 : R=1
 w=2*pi*f;
 
 %Périodisation
-nb_cellule =10;
+nb_cellule =60;
 
 %Nombre de points de visualisation pour chaque guide
-Ndiv = 50;   							%les portions de guide sont divisées en 5 sous-guides
+Ndiv = 20;   							%les portions de guide sont divisées en 5 sous-guides
 L_div = L/Ndiv; 						%longueur d'un sous-guide
 
 %Singularité sur la longueur de cavité du résonateur numéro NumSing
-NumSing= 3;
+NumSing= 55;
 
-Lcavs =0.08;  % on change juste ça					
+Lcavs =0.10;  % on change juste ça					
 Lcols =0.02;					
 Dcavs =0.043;				
 Dcols =0.02;					
@@ -67,7 +67,7 @@ Lcols = Lcols + L1s + L2s;
 
 
 %Matrice pression-vitesse imposée à la sortie
-PV_out = [0 ; 1]; 						 %sortie anéchoïque : P_out = 0 et V_out = 1 (arbitraire)
+PV_out = [1 ; (d/2)^2*pi/(rho*c)]; 						 %sortie anéchoïque 
 
 
 %Nombre de matrice de transfert et donc de point de visualisation total
@@ -131,7 +131,7 @@ disp('');
 %Affichage de la pression
 %-------------------------
 figure(89)
-plot(real(PV(1,:)),'o-')
+plot(abs(real(PV(1,:))),'o-')
 ylabel('Pression')
 title(['Pression dans le guide pour f=',num2str(f)]);
 hold on

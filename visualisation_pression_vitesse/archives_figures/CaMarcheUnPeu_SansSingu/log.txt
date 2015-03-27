@@ -1,0 +1,27 @@
+===============================================================
+La singularité ne sera pas prise en compte car NumSing>nb_cellule
+Paramètres globaux
+------------------
+frequence imposée = 332 hz
+célérité: 364 m.s^-1
+masse volumique: 1.177 kg.m^-3
+
+Paramètres résonateur
+---------------------
+Lcav = 0.16 m
+Lcavs = 0.14 m
+Lcol = 0.029632 m
+Dcav = 0.043 m
+Dcol = 0.02 m
+
+Paramètres guide
+---------------------
+Diametre du guide = 0.05 m
+Longueur entre chaques resonateurs L = 0.2 m
+Frequence de la bande de bragg pour c = 364 m.s^1,   =>    f = c/(2L) = 1820 Hz
+
+Paramètres réseau
+nb_cellule = 10
+nombre de division par guide = 50
+===============================================================
+

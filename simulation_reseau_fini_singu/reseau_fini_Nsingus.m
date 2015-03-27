@@ -64,26 +64,22 @@ reseau = ones(2,2,N);		%matrice de transfert du réseau composé des éléments 
 admittance_resonateur = ones(1,N);
 
 
-
-nb_cellule =20;
 for x=1:1:N
-	w = 2*pi* x / N * Fmax ;
-
 	reseau(:,:,x) = eye(2);
 	clc
 	fprintf(1,['\b%d  /' num2str(N)],x)	
 	y=1;
 	while y<=nb_cellule
 		if y!=NumeroSingu
-			matrice_resonateur = resonateur(w,Lcav,Lcol,Dcav,Dcol,rho,c);	
-			cellule = guide(w,L,d,rho,c) * matrice_resonateur;
+			matrice_resonateur = resonateur(w(x),Lcav,Lcol,Dcav,Dcol,rho,c);	
+			cellule = guide(w(x),L,d,rho,c) * matrice_resonateur;
 			reseau(:,:,x) = reseau(:,:,x)*cellule;
 			admittance_resonateur(x) = matrice_resonateur(2,1);
 			y=y+1;	
 		elseif (NumeroSingu == y)
 			for u=1:NbSingu
-				matrice_resonateur = resonateur(w,Lcavs(u),Lcols,Dcavs,Dcols,rho,c);
-				cellule = guide(w,L,d,rho,c) * matrice_resonateur;
+				matrice_resonateur = resonateur(w(x),Lcavs(u),Lcols,Dcavs,Dcols,rho,c);
+				cellule = guide(w(x),L,d,rho,c) * matrice_resonateur;
 				reseau(:,:,x) = reseau(:,:,x)*cellule;
 				y=y+1;
 			end
@@ -190,8 +186,7 @@ Zc = rho*c/S;
 Zc_perte = ones(1,1,N);
 
 for x=1:1:N
-		w = 2*pi* x / N * Fmax ;
-		[Zc_perte(1,1,x) b] = pertes(d,w,rho,c);
+		[Zc_perte(1,1,x) b] = pertes(d,w(x),rho,c);
 end
 Zc = Zc_perte;
 
@@ -232,10 +227,6 @@ title('admittance du resonateur de Helmholtz');
 grid on
 
 
-
-
-
-
 %Affichage de l'absorption
 %-----------------------------------------------
 A=1-abs(T).^2 -abs(R).^2;
@@ -253,8 +244,7 @@ grid on
 for n=1:NbSingu
 	admittance_singu = ones(1,N);
 	for x=1:1:N
-		w = 2*pi* x / N * Fmax ;
-		matrice_resonateur = resonateur(w,Lcavs(n),Lcols,Dcavs,Dcols,rho,c);		
+		matrice_resonateur = resonateur(w(x),Lcavs(n),Lcols,Dcavs,Dcols,rho,c);		
 		admittance_singu(x) = matrice_resonateur(2,1);
 	end
 	hold on

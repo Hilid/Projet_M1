@@ -4,18 +4,18 @@ clc
 graphics_toolkit('gnuplot')          %affichage gnuplot
 
 %===============================================================================================================
-nb_cellule =20;
+nb_cellule =60;
 
 %Constantes physiques
 c = 340;
 rho = 1.177;       %a  300°K
 
 % Constantes guide
-L = 0.10; 				% longueur du guide
+L = 0.30; 				% longueur du guide
 d = 0.05; 				% diametre du guide
 
 % Constantes Singularité
-NumSing = -5;
+NumSing = 2;
 
 Lcavs =0.12;			% seul truc qui change
 Lcols =0.02;			
@@ -47,7 +47,7 @@ L2 = 0.82 * (1- 0.235 * RN / RT - 1.32*(RN/RT)^2 + 1.54 * (RN/RT)^3 - 0.86*(RN/R
 Lcol = Lcol + L1 + L2;
 
 %Base fréquentielle
-Fmax=750;
+Fmax=500;
 f = 0:0.5:Fmax;
 N = length(f);
 w = 2*pi*f;

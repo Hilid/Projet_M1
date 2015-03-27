@@ -3,17 +3,32 @@ close all
 clc
 graphics_toolkit('gnuplot')          %affichage gnuplot
 more off
+%hold on
 
 %===============================================================================================================
 %Constantes physiques
 %--------------------
+%Fréquence imposée
+f= 364; 								%866 : Bragg  1000 : R=1
+w=2*pi*f;
+
+%Périodisation
+nb_cellule =60;
+
+%Nombre de points de visualisation pour chaque guide
+Ndiv = 50;   							%les portions de guide sont divisées en 5 sous-guides
+
+%Singularité sur la longueur de cavité du résonateur numéro NumSing
+NumSing= 40;
+
 %Constantes milieu
-c = 340;
+c = 364;
 rho = 1.177;    		   %a  300°K
 
 % Constantes guide
 L = 0.1; 					% longueur du guide
 d = 0.05; 					% diametre du guide
+L_div = L/Ndiv; 						%longueur d'un sous-guide
 
 %Constantes Résonateur
 Lcav =0.16;					% longueur de la cavité
@@ -33,23 +48,8 @@ L1 = 0.82 * (1 - 1.35*RN/RC + 0.31*(RN/RC)^3) * RN;
 L2 = 0.82 * (1- 0.235 * RN / RT - 1.32*(RN/RT)^2 + 1.54 * (RN/RT)^3 - 0.86*(RN/RT)^4)*RN;
 Lcol = Lcol + L1 + L2;
 
-% Constantes du réseau
-%---------------------
-%Fréquence imposée
-f= 300; 								%866 : Bragg  1000 : R=1
-w=2*pi*f;
 
-%Périodisation
-nb_cellule =5;
-
-%Nombre de points de visualisation pour chaque guide
-Ndiv = 20;   							%les portions de guide sont divisées en 5 sous-guides
-L_div = L/Ndiv; 						%longueur d'un sous-guide
-
-%Singularité sur la longueur de cavité du résonateur numéro NumSing
-NumSing= 2;
-
-Lcavs =0.14;  % on change juste ça					
+Lcavs =0.12;  					
 Lcols =0.02;					
 Dcavs =0.043;				
 Dcols =0.02;					
@@ -101,17 +101,19 @@ end
 % Affichage dans le terminal
 %----------------------------
 disp('===============================================================');
-if (NumSing>nb_cellule)
+if (NumSing>nb_cellule|| NumSing<0)
 	disp("La singularité ne sera pas prise en compte car NumSing>nb_cellule");
 end
 disp(['Paramètres globaux']);
 disp('------------------');
+disp(['frequence imposée = ' num2str(f) ' hz']);
 disp(['célérité: ',num2str(c) ' m.s^-1']);
 disp(['masse volumique: ',num2str(rho) ' kg.m^-3']);
 disp('');
 disp(['Paramètres résonateur']);
 disp('---------------------');
 disp(['Lcav = ' num2str(Lcav) ' m']);
+disp(['Lcavs = ' num2str(Lcavs) ' m']);
 disp(['Lcol = ' num2str(Lcol) ' m']);
 disp(['Dcav = ' num2str(Dcav) ' m']);
 disp(['Dcol = ' num2str(Dcol) ' m']);
@@ -131,9 +133,10 @@ disp('');
 %================================================================================
 %Affichage de la pression
 %-------------------------
-figure(89)
-plot((real(PV(1,:))),'o-')
+figure(1)
+plot(abs(real(PV(1,:))),'o-')
 ylabel('Pression')
+%ylim([0 10^10]);
 title(['Pression dans le guide pour f=',num2str(f)]);
 hold on
 Pmin=min(abs(real(PV(1,:))));

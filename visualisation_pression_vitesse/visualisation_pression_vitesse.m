@@ -2,6 +2,7 @@ clear all
 close all
 clc
 graphics_toolkit('gnuplot')          %affichage gnuplot
+more off
 
 %===============================================================================================================
 %Constantes physiques
@@ -35,20 +36,20 @@ Lcol = Lcol + L1 + L2;
 % Constantes du réseau
 %---------------------
 %Fréquence imposée
-f= 406; 								%866 : Bragg  1000 : R=1
+f= 300; 								%866 : Bragg  1000 : R=1
 w=2*pi*f;
 
 %Périodisation
-nb_cellule =60;
+nb_cellule =5;
 
 %Nombre de points de visualisation pour chaque guide
 Ndiv = 20;   							%les portions de guide sont divisées en 5 sous-guides
 L_div = L/Ndiv; 						%longueur d'un sous-guide
 
 %Singularité sur la longueur de cavité du résonateur numéro NumSing
-NumSing= 55;
+NumSing= 2;
 
-Lcavs =0.10;  % on change juste ça					
+Lcavs =0.14;  % on change juste ça					
 Lcols =0.02;					
 Dcavs =0.043;				
 Dcols =0.02;					
@@ -82,7 +83,7 @@ PV(:,loc+1) = PV_out; 			%matrice pression-vitesse en UN SEUL point du réseau, 
 
 for y=1:1:nb_cellule
 
-	if (NumSing==y)
+	if (NumSing==(nb_cellule+1)-y)
 		PV(:,loc)=resonateur(w,Lcavs,Lcols,Dcavs,Dcols,rho,c)*PV(:,loc+1);
 	else
 		PV(:,loc)=resonateur(w,Lcav,Lcol,Dcav,Dcol,rho,c)*PV(:,loc+1);
@@ -131,13 +132,12 @@ disp('');
 %Affichage de la pression
 %-------------------------
 figure(89)
-plot(abs(real(PV(1,:))),'o-')
+plot((real(PV(1,:))),'o-')
 ylabel('Pression')
 title(['Pression dans le guide pour f=',num2str(f)]);
 hold on
-Pmin=min(real(PV(1,:)));
-Pmax=max(real(PV(1,:)));
-ligne=Pmin:1000:Pmax;
+Pmin=min(abs(real(PV(1,:))));
+Pmax=max(abs(real(PV(1,:))));
 hold on
 for n=1:nb_cellule
 	line((Ndiv+1)*n+1,[Pmin Pmax]); %ligne avant résonateur

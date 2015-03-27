@@ -1,9 +1,11 @@
 clear all
-%close all
+close all
 clc
 graphics_toolkit('gnuplot')          %affichage gnuplot
 
 %===============================================================================================================
+nb_cellule =20;
+
 %Constantes physiques
 %--------------------
 c = 340;
@@ -18,7 +20,7 @@ d = 0.05; 				% diametre du guide
 
 % Constantes Résonateur
 %----------------------
-Lcav =0.10;			% longueur de la cavité
+Lcav =0.16;			% longueur de la cavité
 Lcol =0.02;			% longueur du col
 Dcav =0.043;			% diametre de la cavité
 Dcol =0.02;				% diametre du col
@@ -39,8 +41,8 @@ Lcol = Lcol + L1 + L2;
 
 %Base fréquentielle
 %------------------
-Fmax=2000;
-f = 0:1:Fmax;
+Fmax=750;
+f = 0:0.5:Fmax;
 N = length(f);
 w = 2*pi*f;
 
@@ -51,16 +53,10 @@ w = 2*pi*f;
 reseau = ones(2,2,N);		%matrice de transfert du réseau composé des éléments de 'config.txt'
 admittance_resonateur = ones(1,N);
 
-for x=1:1:N
-	reseau(:,:,x) = eye(2);	%initialisation de la matrice par une matrice identité
-end
 
-
-nb_cellule =20;
 for x=1:1:N
-	w = 2*pi* x / N * Fmax ;
-	matrice_resonateur = resonateur(w,Lcav,Lcol,Dcav,Dcol,rho,c);
-	cellule = guide(w,L,d,rho,c) * matrice_resonateur;
+	matrice_resonateur = resonateur(w(x),Lcav,Lcol,Dcav,Dcol,rho,c);
+	cellule = guide(w(x),L,d,rho,c) * matrice_resonateur;
 
 	reseau(:,:,x) = eye(2);
 	for y=1:1:nb_cellule
@@ -155,8 +151,7 @@ Zc = rho*c/S;
 Zc_perte = ones(1,1,N);
 
 for x=1:1:N
-		w = 2*pi* x / N * Fmax ;
-		[Zc_perte(1,1,x) b] = pertes(d,w,rho,c);
+		[Zc_perte(1,1,x) b] = pertes(d,w(x),rho,c);
 end
 Zc = Zc_perte;
 
@@ -166,7 +161,7 @@ R = (A + B./Zc - C.*Zc - D)./(A + C.*Zc + B./Zc + D);
 figure(2)
 subplot(4,1,2);
 plot(f,abs(R));
-axis([0 2000 0 1.5]);
+axis([0 Fmax 0 1.5]);
 
 ylabel('abs(R)');
 title('Coefficient de reflexion a l entree du reseau')
@@ -206,7 +201,7 @@ hold on
 plot(f,abs(R),'r');
 hold on
 plot(f,A,'k');
-xlim([0 1500]);
+xlim([0 Fmax]);
 legend('Transmission','Reflexion','Absorption');
 hold off
 title('periodique')

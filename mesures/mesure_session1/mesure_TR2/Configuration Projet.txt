@@ -1,0 +1,6 @@
+[Général]
+Version="2.2"
+Nom du projet="mesure_TR2"
+Date="31/03/2015"
+Auteur=""
+Commentaire="increasing number of HR"

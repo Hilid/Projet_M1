@@ -1,0 +1,27 @@
+[INFOS GENERALES]
+Version="2.2"
+Nom du Projet="mesure_TR2"
+Nom Mesure="10HR_12cm_2th"
+Date="31/03/2015"
+Opérateur=""
+Nb voies="3"
+Commentaires="Defect on 2 HR, 12cm"
+Diamètre de l'instrument (mm)=50,000000
+Distance (impédance ramenée) (mm)=0,000000
+Longueur de la pièce d'adaptation (mm)=0,000000
+Température=20,000000
+
+[SIGNAL]
+Type de signal d'excitation="Chirp"
+
+[CHIRP]
+Freq min (Hz)=200,000000
+Freq max (Hz)=900,000000
+Freq Ech (Hz)=25600
+Durée (s)=5,000000
+Type de Chirp="Log"
+Niveau signal  (Vpk)=0,200000
+Nombre de moyennes=10
+
+[EXTERNE]
+Chemin du signal externe=""

@@ -1,0 +1,6 @@
+[Général]
+Version="2.5"
+Nom du projet="essai"
+Date="31/03/2015"
+Auteur=""
+Commentaire=""

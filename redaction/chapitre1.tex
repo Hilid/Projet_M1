@@ -13,7 +13,7 @@ On s’intéresse ici a la mise sous forme matricielle du problème de la propag
 \begin{pmatrix} P_{out} \\ U_{out} \end{pmatrix} =\begin{pmatrix} a & b \\ c & d \end{pmatrix}^N \begin{pmatrix} P_{in} \\ U_{in} \end{pmatrix} = \begin{pmatrix} A & B \\ C & D \end{pmatrix} \begin{pmatrix} P_{in} \\ U_{in} \end{pmatrix} 
 \end{equation}
 
-Cette matrice dispose en effet de propriétés intéressantes et l'étude du système sera grandement facilité par ce formalise.
+Cette matrice dispose en effet de propriétés intéressantes et l'étude du système sera grandement facilité par ce formalise. De plus, les simulations sont faciles à mettre en œuvre dès lors que celle ci est connue.
 
 Pour cela, les 2 éléments du réseau (guide et résonateur) doivent être mis sous forme matricielle puis multipliés.
 
@@ -43,13 +43,13 @@ La première fréquence de coupure du guide est donc d'environ $4kHz$ pour les d
 
 \subsubsection{Ajout des pertes}
 
-Pour prendre en compte les pertes, on modifie l'expression de la constante de propagation et de l'impédance caractéristique. Les expressions utilisées se trouvent en [A1]. on a donc:
+Pour prendre en compte les pertes, on modifie l'expression de la constante de propagation et de l'impédance caractéristique. Les expressions sont donc:
 \begin{eqnarray*}
  k =  \frac{\omega}{c_0} \left( 1 + \frac{\beta}{s}(1+(\gamma-1)/ \chi \right) \\
  Z_c =  \frac{\rho c_0}{S} \left( 1 + \frac{\beta}{s}(1-(\gamma-1)/ \chi \right) 
 \end{eqnarray*}
 
-Et où on a:
+Dans ces expressions, on a:
 \begin{itemize}
  \item  $s=R/ \delta$ avec $\delta = \sqrt{\frac{2 \mu}{\rho \omega}}$
  \item  $\chi = \sqrt{P_r}$ ou $P_r$ est le nombre de Prandtl
@@ -82,7 +82,7 @@ M_{resonateur} = \begin{pmatrix} 1 &  0 \\ 1 /Z_{resonateur} & 1  \end{pmatrix}\
 
 \section{Étude du réseau fini}
 
-Une fois les matrices de guide et de résonateur connues, il suffit alors de les multiplier afin d'obtenir la matrice d'une cellule du réseau. C'est sur l'étude de cette matrice que ce base les analyses de cette section. En effet, l'étude d'une seul cellule permet d'analyser le cas d'un réseau infini de cellules.
+Une fois les matrices de guide et de résonateur connues, il suffit alors de les multiplier afin d'obtenir la matrice d'une cellule du réseau. C'est sur l'étude de cette matrice que ce base les analyses de cette section. 
 
 Dans la suite les paramètres de la simulation sont ceux du de l'expérience dont nous disposons. Ces paramètres sont disponible en annexe 2.
 
@@ -97,7 +97,7 @@ Ainsi, on peux remonter à une expression de $kL$ en fonction de la fréquence. 
 \todo{une figure de l’équation de dispersion avec bande de bragg}
 
 \subsection{Bande de Bragg}
-Ces bandes de Bragg apparaissant dès qu'un élément est présent dans un réseau et ce de manière periodique. L'énergie de l'onde reste "enfermée" entre chaque éléments du fait que la longueur d'onde correspond à la moitier de l'espacement entre 2 éléments.  \todo{vérifier ça}.
+Ces bandes de Bragg apparaissant dès qu'un élément est présent dans un réseau et ce de manière periodique. L'énergie de l'onde reste "enfermée" entre chaque éléments du fait que la longueur d'onde correspond à la moitié de l'espacement entre 2 éléments.  \todo{vérifier ça}.
  
 
 \subsection{Bande interdites liés aux résonateurs}

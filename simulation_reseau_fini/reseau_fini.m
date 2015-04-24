@@ -1,10 +1,10 @@
 clear all
 close all
 clc
-graphics_toolkit('gnuplot')          %affichage gnuplot
+graphics_toolkit('fltk')          %affichage gnuplot
 
 %===============================================================================================================
-nb_cellule =20;
+nb_cellule =60;
 
 %Constantes physiques
 %--------------------
@@ -20,7 +20,7 @@ d = 0.05; 				% diametre du guide
 
 % Constantes Résonateur
 %----------------------
-Lcav =0.16;			% longueur de la cavité
+Lcav =0.14;			% longueur de la cavité
 Lcol =0.02;			% longueur du col
 Dcav =0.043;			% diametre de la cavité
 Dcol =0.02;				% diametre du col
@@ -41,7 +41,7 @@ Lcol = Lcol + L1 + L2;
 
 %Base fréquentielle
 %------------------
-Fmax=750;
+Fmax=4000;
 f = 0:0.5:Fmax;
 N = length(f);
 w = 2*pi*f;
@@ -50,7 +50,7 @@ w = 2*pi*f;
 
 %Calcul des coefficients de la matrice
 %--------------------------------------
-reseau = ones(2,2,N);		%matrice de transfert du réseau composé des éléments de 'config.txt'
+reseau = ones(2,2,N);		
 admittance_resonateur = ones(1,N);
 
 
@@ -113,7 +113,8 @@ hold on
 plot(ones(1,N),f, '-r');
 hold on
 plot(-ones(1,N),f, '-r');
-axis([ -10 10 0 2000])
+ylim([0 Fmax]);
+xlim([-5 5]);
 legend('cos( nGamma d )','y=1','y=-1');
 xlabel('cos( Gamma d)');
 title("Representation graphique de l'equation de dispersion")
@@ -140,6 +141,7 @@ subplot(4,1,1);
 plot(f,log(abs(Zr)), 'r');
 ylabel('log(abs(Zreseau))');
 title('Impedance caracteristique du reseau');
+xlim([0 Fmax]);
 grid on
 
 
@@ -175,7 +177,7 @@ T = 2./(A + C.*Zc + B./Zc + D);
 figure(2)
 subplot(4,1,3);
 plot(f,abs(T(1,1,:)));
-axis([0 2000 0 1.5]);
+xlim([0 Fmax]);
 ylabel('abs(T)');
 title('Coefficient de transmission a l entree du reseau');
 grid on
@@ -190,7 +192,11 @@ semilogy(f,abs(admittance_resonateur(1,:)));
 ylabel('abs(Yreso)');
 xlabel('frequence en Hz');
 title('admittance du resonateur de Helmholtz');
+xlim([0 Fmax]);
 grid on
+
+print -dpng ex_coef_rapport.png
+
 
 %Absorption A=1-abs(T)^2 -abs(R)^2
 A=1-abs(T).^2 -abs(R).^2;

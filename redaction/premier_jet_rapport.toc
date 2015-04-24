@@ -7,15 +7,15 @@
 \contentsline {subsection}{\numberline {2.1.2}Le r\IeC {\'e}sonateur}{6}
 \contentsline {section}{\numberline {2.2}\IeC {\'E}tude du r\IeC {\'e}seau fini}{7}
 \contentsline {subsection}{\numberline {2.2.1}\IeC {\'E}quation de dispersion}{7}
-\contentsline {subsection}{\numberline {2.2.2}Bande de Bragg}{7}
-\contentsline {subsection}{\numberline {2.2.3}Bande interdites li\IeC {\'e}s aux r\IeC {\'e}sonateurs}{7}
-\contentsline {subsection}{\numberline {2.2.4}R\IeC {\'e}flexion et transmission du r\IeC {\'e}seau}{7}
-\contentsline {chapter}{\numberline {3}Ajout d'une singularit\IeC {\'e} dans le r\IeC {\'e}seau}{8}
-\contentsline {section}{\numberline {3.1}Cas d'une singularit\IeC {\'e} hors bande de Bragg}{8}
-\contentsline {section}{\numberline {3.2}Cas d'une singularit\IeC {\'e} dans la bande de Bragg}{8}
-\contentsline {section}{\numberline {3.3}Calcul num\IeC {\'e}rique de la pression dans le r\IeC {\'e}seau}{8}
-\contentsline {section}{\numberline {3.4}Etude de l'influence de la position du d\IeC {\'e}faut}{8}
-\contentsline {chapter}{\numberline {4}Visualisation exp\IeC {\'e}rimental d'un mode localis\IeC {\'e}}{9}
-\contentsline {section}{\numberline {4.1}Protocole exp\IeC {\'e}rimental}{9}
-\contentsline {section}{\numberline {4.2}R\IeC {\'e}sultat et comparaison avec la simulation}{9}
-\contentsline {chapter}{\numberline {5}Conclusion}{10}
+\contentsline {subsection}{\numberline {2.2.2}R\IeC {\'e}flexion et transmission du r\IeC {\'e}seau}{7}
+\contentsline {subsection}{\numberline {2.2.3}Bande de Bragg}{7}
+\contentsline {subsection}{\numberline {2.2.4}Bande interdites li\IeC {\'e}s aux r\IeC {\'e}sonateurs}{7}
+\contentsline {chapter}{\numberline {3}Ajout d'une singularit\IeC {\'e} dans le r\IeC {\'e}seau}{9}
+\contentsline {section}{\numberline {3.1}Cas d'une singularit\IeC {\'e} hors bande de Bragg}{9}
+\contentsline {section}{\numberline {3.2}Cas d'une singularit\IeC {\'e} dans la bande de Bragg}{9}
+\contentsline {section}{\numberline {3.3}Calcul num\IeC {\'e}rique de la pression dans le r\IeC {\'e}seau}{9}
+\contentsline {section}{\numberline {3.4}Etude de l'influence de la position du d\IeC {\'e}faut}{9}
+\contentsline {chapter}{\numberline {4}Visualisation exp\IeC {\'e}rimental d'un mode localis\IeC {\'e}}{10}
+\contentsline {section}{\numberline {4.1}Protocole exp\IeC {\'e}rimental}{10}
+\contentsline {section}{\numberline {4.2}R\IeC {\'e}sultat et comparaison avec la simulation}{10}
+\contentsline {chapter}{\numberline {5}Conclusion}{11}

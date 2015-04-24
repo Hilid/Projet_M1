@@ -1,0 +1,30 @@
+===============================================================
+Paramètres globaux
+------------------
+célérité: 340 m.s^-1
+masse volumique: 1.177 kg.m^-3
+
+Paramètres résonateur
+---------------------
+Lcav = 0.14 m
+Lcol = 0.029632 m
+Dcav = 0.043 m
+Dcol = 0.02 m
+
+Paramètres guide
+---------------------
+Diametre du guide = 0.05 m
+Longueur entre chaques resonateurs L = 0.1 m
+Frequence de la bande de bragg pour c = 340 m.s^1,   =>    f = c/(2L) = 1700 Hz
+
+===============================================================
+
+Error: /undefined in -nan
+Operand stack:
+   --nostringval--
+Execution stack:
+   %interp_exit   .runexec2   --nostringval--   --nostringval--   --nostringval--   2   %stopped_push   --nostringval--   --nostringval--   --nostringval--   false   1   %stopped_push   1916   1   3   %oparray_pop   1915   1   3   %oparray_pop   --nostringval--   1899   1   3   %oparray_pop   1787   1   3   %oparray_pop   --nostringval--   %errorexec_pop   .runexec2   --nostringval--   --nostringval--   --nostringval--   2   %stopped_push   --nostringval--
+Dictionary stack:
+   --dict:1178/1684(ro)(G)--   --dict:0/20(G)--   --dict:82/200(L)--   --dict:40/64(L)--
+Current allocation mode is local
+

@@ -1,7 +1,7 @@
 clear all
 close all
 clc
-graphics_toolkit('gnuplot')          %affichage gnuplot
+graphics_toolkit('fltk')          %affichage gnuplot
 
 %===============================================================================================================
 %Constantes physiques

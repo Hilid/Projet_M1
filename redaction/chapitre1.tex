@@ -96,25 +96,32 @@ Ainsi, on peux remonter à une expression de $kL$ en fonction de la fréquence. 
 
 \todo{une figure de l’équation de dispersion avec bande de bragg}
 
-\subsection{Bande de Bragg}
-Ces bandes de Bragg apparaissant dès qu'un élément est présent dans un réseau et ce de manière periodique. L'énergie de l'onde reste "enfermée" entre chaque éléments du fait que la longueur d'onde correspond à la moitié de l'espacement entre 2 éléments.  \todo{vérifier ça}.
- 
-
-\subsection{Bande interdites liés aux résonateurs}
-L'équation de dispersion est cependant plus difficile analyser qu'il n'y parait du faite que ce sont des résonateurs qui servent d’éléments au réseau. Hors ce ci ont une impédance négligeable dès lors que la fréquence d'analyse ce trouve suffisamment éloignées des fréquences de résonances. 
-
-De plus le résonateur étant par nature un système résonant, il peux lui aussi induire une absorption de l'énergie de l'onde sur certaines fréquences.
-
-Il y a donc 2 phénomènes qui peuvent induire des bandes interdites, d'une part les bandes de Bragg liés a la géométrie du réseau et d'autre part l'énergie absorbée par les résonateurs.
-\todo{Double figure explicative avec les 2 types de bande}.
-
-
 \subsection{Réflexion et transmission du réseau}
-On peux enfin tracer le coefficient de réflexion et de transmission du réseau complet. En effet, on a:
+On peux tracer le coefficient de réflexion et de transmission du réseau complet. En effet, on a:
 \begin{eqnarray}
 T & = & \frac{2}{A + B/Z_c + C Z_c + D} \\
 R & = & \frac{A + B / Zc_ - C Z_c -D}{A + B/Z_c + C Z_c + D} 
 \end{eqnarray}
 
-On obtient des résultats de ce type:
-\todo{figure de Réflexion et transmission type}
+On trace ces coefficients figure ~\ref{ex_coef_RT} ainsi que l'admittance des résonateurs utilisés et l'impédance caractéristique du réseau. On constate que des zones ce démarquent pour lesquelles  la transmission chute.
+
+\subsection{Bande de Bragg}
+Ces bandes apparaissant dès qu'un élément est présent dans un réseau et ce de manière periodique. L'énergie de l'onde reste "enfermée" entre chaque éléments du fait que la longueur d'onde correspond à la moitié de l'espacement entre 2 éléments. 
+
+Pour un espacement entre éléments de longueur $L=0.1~m$, on a $f_{bragg} = \frac{c}{2L} = 1700 Hz$. On constate sur la figure ~\ref{ex_coef_RT} que ces bandes de Bragg sont bien présentent à la fréquence indiquée ainsi qu'a ces multiples car à ces endroits on constate une chute de la transmission.
+ 
+
+\subsection{Bande interdites liés aux résonateurs}
+L'équation de dispersion est cependant plus difficile analyser qu'il n'y parait à cause des résonateurs qui servent d’éléments au réseau. Hors ce ci ont une impédance négligeable dès lors que la fréquence d'analyse ce trouve suffisamment éloignées des fréquences de résonances. 
+
+De plus le résonateur étant par nature un système résonant, il peux lui aussi induire une absorption de l'énergie de l'onde sur certaines fréquences. Sur la figure ~\ref{ex_coef_RT}, ces bandes interdites sont aussi présentes: elles se trouvent la ou l'admittance du résonateur est maximale. A ces fréquences, on a bien une chute de la transmission.
+ \bigskip
+Il y a donc 2 phénomènes qui peuvent induire des bandes interdites, d'une part les bandes de Braggs liés a la géométrie du réseau et d'autre part l'énergie absorbée par les résonateurs.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{./images_chp1/ex_coef_rapport.png}
+\caption{\label{ex_coef_RT} Coefficient de réflexion et de transmission pour un réseau de 60 résonateurs avec $L_c=14~cm$ la longueur des cavités des résonateurs.}
+\end{figure}
+
+

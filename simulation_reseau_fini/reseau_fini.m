@@ -41,7 +41,7 @@ Lcol = Lcol + L1 + L2;
 
 %Base fréquentielle
 %------------------
-Fmax=4000;
+Fmax=2000;
 f = 0:0.5:Fmax;
 N = length(f);
 w = 2*pi*f;
@@ -137,12 +137,12 @@ grid minor on
 Zr = sqrt(B./C);
 
 figure(2)
-subplot(4,1,1);
-plot(f,log(abs(Zr)), 'r');
-ylabel('log(abs(Zreseau))');
-title('Impedance caracteristique du reseau');
-xlim([0 Fmax]);
-grid on
+%~ subplot(4,1,1);
+%~ plot(f,log(abs(Zr)), 'r');
+%~ ylabel('log(abs(Zreseau))');
+%~ title('Impedance caracteristique du reseau');
+%~ xlim([0 Fmax]);
+%~ grid on
 
 
 %Affichage du coefficient de reflexion
@@ -161,12 +161,12 @@ Zc = Zc_perte;
 R = (A + B./Zc - C.*Zc - D)./(A + C.*Zc + B./Zc + D);
 
 figure(2)
-subplot(4,1,2);
-plot(f,abs(R));
-axis([0 Fmax 0 1.5]);
+subplot(3,1,1);
+plot(f,20*log10(abs(R)));
+%axis([0 Fmax 0 1.5]);
 
-ylabel('abs(R)');
-title('Coefficient de reflexion a l entree du reseau')
+ylabel('20log(|R|)');
+title("Coefficient de réflexion à l'entrée du réseau")
 grid on
 
 
@@ -175,11 +175,11 @@ grid on
 T = 2./(A + C.*Zc + B./Zc + D);
 
 figure(2)
-subplot(4,1,3);
-plot(f,abs(T(1,1,:)));
-xlim([0 Fmax]);
-ylabel('abs(T)');
-title('Coefficient de transmission a l entree du reseau');
+subplot(3,1,2);
+plot(f,20*log10(abs(T(1,1,:))));
+axis([0 Fmax -100 0]);
+ylabel('20log(|T|)');
+title("Coefficient de transmission à l'éntree du réseau");
 grid on
 
 
@@ -187,15 +187,15 @@ grid on
 %Affichage de l'admittance du résonateur
 %-----------------------------------------------
 figure(2)
-subplot(4,1,4);
-semilogy(f,abs(admittance_resonateur(1,:)));
-ylabel('abs(Yreso)');
-xlabel('frequence en Hz');
-title('admittance du resonateur de Helmholtz');
-xlim([0 Fmax]);
-grid on
+subplot(3,1,3);
+semilogy(f,20*log10(abs(admittance_resonateur(1,:))));
+ylabel('20log(|Yr|)');
+xlabel('Fréquence en Hz');
+title("Admittance du résonateur de Helmholtz");
+axis([0 Fmax min(20*log10(abs(admittance_resonateur(1,:)))) max(20*log10(abs(admittance_resonateur(1,:))))]);
+%~ grid on
 
-print -dpng ex_coef_rapport.png
+print -dsvg ex_coef_rapport.svg
 
 
 %Absorption A=1-abs(T)^2 -abs(R)^2

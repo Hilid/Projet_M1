@@ -1,16 +1,18 @@
-\chapter{Théorie d'un réseau acoustique de résonateur de Helmholtz fini}
-Le but du projet est de caractériser un réseau de résonateur de Helmholtz placés sur un guide d'onde. On dispose pour cela d'un banc de mesure représenté figure ~\ref{schema_infini}. Une simulation de la propagation dans le réseau pourra donc être confronté à une expérience.
+\chapter{Théorie d'un réseau acoustique fini constitué de résonateurs de Helmholtz}
+Ce chapitre a pour but de caractériser le champ de pression dans un guide sur lequel des résonateurs de Helmholtz sont placés en dérivation, espécés régulièrement d'une longueur $L$. On dispose pour cela d'un banc de mesure représenté en figure ~\ref{schema_infini}. Une simulation de la propagation dans le réseau pourra donc être confronté à une expérience.
 
 \begin{figure}[!ht] \centering
 \includegraphics[scale=0.5]{./images_chp1/schema_reseau_infini.png}
 \caption{\label{schema_infini} Schéma du réseau de résonateurs de Helmholtz.}
 \end{figure}
 
+\paragraph{Notations}
+Le guide principal a pour section $S$ ; le col des résonateurs a pour longueur $L_{n}$ et pour section $S_{n}$ ; la cavité des résonateurs a pour longueur $L_{c}$ et pour section $S_{c}$. Par la suite, on note $\rho$ la masse volumique de l'air et $c$
 
 \section{Mise sous forme matricielle}
-On s’intéresse ici a la mise sous forme matricielle du problème de la propagation acoustique dans le réseau periodique vu ci-dessus. Le but étant de mettre le système sous la forme suivante:
+On s’intéresse ici a la mise sous forme matricielle du problème de la propagation acoustique dans le réseau periodique vu ci-dessus. Le but est de mettre en relation les pressions et débits en entrée du système ($P_{in}$ et $U_{in}$) avec ceux en sortie ($P_{out}$ et $U_{out}$) sous la forme suivante:
 \begin{equation}
-\begin{pmatrix} P_{out} \\ U_{out} \end{pmatrix} =\begin{pmatrix} a & b \\ c & d \end{pmatrix}^N \begin{pmatrix} P_{in} \\ U_{in} \end{pmatrix} = \begin{pmatrix} A & B \\ C & D \end{pmatrix} \begin{pmatrix} P_{in} \\ U_{in} \end{pmatrix} 
+\begin{pmatrix} P_{out} \\ U_{out} \end{pmatrix} =\begin{pmatrix} a & b \\ c & d \end{pmatrix}^N \begin{pmatrix} P_{in} \\ U_{in} \end{pmatrix} = \begin{pmatrix} A & B \\ C & D \end{pmatrix} \begin{pmatrix} P_{in} \\ U_{in} \end{pmatrix} .
 \end{equation}
 
 Cette matrice dispose en effet de propriétés intéressantes et l'étude du système sera grandement facilité par ce formalise. De plus, les simulations sont faciles à mettre en œuvre dès lors que celle ci est connue.
@@ -18,10 +20,10 @@ Cette matrice dispose en effet de propriétés intéressantes et l'étude du sys
 Pour cela, les 2 éléments du réseau (guide et résonateur) doivent être mis sous forme matricielle puis multipliés.
 
 \subsection{Le guide d'onde}
-La solution de la propagation dans un guide d'onde peux être facilement déduite de l'équation d'onde suivante:
+La solution de la propagation dans un guide d'onde peux être facilement déduite de l'équation d'onde suivante :
 \begin{equation}
 \frac{\partial ^2 p}{\partial x^2} -\frac{1}{c^{2}} \frac{\partial ^2 p}{\partial t^2}= 0
-\end{equation}
+\end{equation}\todo[inline]{Dire qu'on est en 1D (d'où dx) car guide long et BF}
 
 On se place en régime harmonique et on note $\Gamma = jk$ la constante de propagation du système. D’où les solutions (vitesses calculées avec l'équation d'Euler:
 
@@ -42,6 +44,7 @@ On pose $x_1 - x_2 = L$. Tous calculs faits, on trouve finalement:
 La première fréquence de coupure du guide est donc d'environ $4kHz$ pour les dimensions du réseau que nous considérons. Dans la suite, on supposera donc que seul le mode plan est propagatif. Les simulations et mesures ne seront donc faite que sur une bande de fréquences allant de $0$ à $1~kHz$.
 
 \subsubsection{Ajout des pertes}
+\todo[inline]{source biblio à citer}
 
 Pour prendre en compte les pertes, on modifie l'expression de la constante de propagation et de l'impédance caractéristique. Les expressions sont donc:
 \begin{eqnarray*}
@@ -59,32 +62,38 @@ Dans ces expressions, on a:
 
 Du fait de la géométrie assez complexe du système, ces pertes ne peuvent pas être négligées comme cela peux être souvent le cas en acoustique.
 
-\subsection{Le résonateur}
-Le résonateur de Helmholtz est considéré dans le réseau comme un changement ponctuel d'impédance. Cette impédance peux etre calculée via la formule de l'impédance ramenée ~\ref{imp_ramenee}. De plus, les dimensions utilisées dans la suite sont corrigées afin de prendre en compte les corrections de longueurs liés à la géométrie du problèmes. Ces formules de corrections sont disponibles en annexe 2.
-\begin{eqnarray}
-Z{x_1}=\frac{jZ_c tan(kL)+Z_{x_2}}{1+j\frac{Z_{x_2}}{Z_c}tan(kL)}.
+\subsection{Impédance d'entrée d'un résonateur}
+Le résonateur de Helmholtz est considéré dans le réseau comme un changement ponctuel d'impédance. Cette impédance, notée $Z_{r}$ peut être calculée en utilisant le même formalisme matriciel que précédemment.
+
+
+
+ %Cette impédance peux être calculée via la formule de l'impédance ramenée ~\ref{imp_ramenee}. De plus, les dimensions utilisées dans la suite sont corrigées afin de prendre en compte les corrections de longueurs liés à la géométrie du problèmes. Ces formules de corrections sont disponibles en annexe 2.
+%\begin{eqnarray}
+%Z{x_1}=\frac{jZ_c tan(kL)+Z_{x_2}}{1+j\frac{Z_{x_2}}{Z_c}tan(kL)}.
 %\label{imp_ramenee}
-\end{eqnarray}
+%\end{eqnarray}
 
-Si on suppose que le résonateur est constitué d'une parois rigide et de 2 tubes, on peux calculer sont impédance comme suit:
-
+On suppose que le résonateur est constitué de 2 guides à parois rigides d'impédance caractéristique $Z_{n}=\rho c/S_{n}$ pour le col et $Z_{c}=\rho c /S_{c}$ pour la cavité. La matrice de transfert mettant en relation les pression et débit à l'entrée du résonateur $P_e$ et $U_e$ et les pression et débit au niveau de la paroi extrême $P_s$ et $U_s=0$ est de la forme :
 \begin{eqnarray*}
-\begin{pmatrix} P_2 \\U_2 \end{pmatrix} & = & \begin{pmatrix} \cos(k l) & j Z_{c_1} \sin(k l) \\ \frac{1}{Z_{c_1}} \sin(k l) & \cos(k l) \end{pmatrix} \begin{pmatrix} \cos(k L) & j Z_{c_2} \sin(k L) \\ \frac{1}{Z_{c_2}} \sin(k L) & \cos(k L) \end{pmatrix} \begin{pmatrix} P_1 \\ 0  \end{pmatrix} \\
-\begin{pmatrix} P_2 \\U_2 \end{pmatrix} & = & \begin{pmatrix} r_1 & r_2 \\ r_3 & r_4 \end{pmatrix} \begin{pmatrix} P_1 \\ 0  \end{pmatrix} \\
-~ & \Leftrightarrow & Z_{resonateur} = \frac{A}{C}
+\begin{pmatrix} P_e \\U_e \end{pmatrix} & = & \begin{pmatrix} \cos(k L_n) & j Z_{n} \sin(k l) \\ \frac{1}{Z_{n}} \sin(k L_n) & \cos(k L_n) \end{pmatrix} \begin{pmatrix} \cos(k L_c) & j Z_{c} \sin(k L_c) \\ \frac{1}{Z_{c}} \sin(k L_c) & \cos(k L_c) \end{pmatrix} \begin{pmatrix} P_s \\ 0  \end{pmatrix} \\
+\begin{pmatrix} P_e \\U_e \end{pmatrix} & = & \begin{pmatrix} r_1 & r_2 \\ r_3 & r_4 \end{pmatrix} \begin{pmatrix} P_1 \\ 0  \end{pmatrix} \\
+~ & \Leftrightarrow & Z_{r}	 = \frac{P_e}{U_e}= \frac{r_1}{r_3}
 \end{eqnarray*}
 
-Si on ajoute un résonateur en parallèle au guide, on a toujours continuité des pressions mais plus des vitesses. On a donc la matrice de transfert pression-vitesse suivante pour un résonateur dans le réseau:
+\paragraph{Correction de longueur}
+La longueur effective du col est sujet à une correction présentée en annexe \todo[inline]{correction liée à quoi, détaille-t-on ce passage ?}
+
+Si on ajoute un résonateur en parallèle au guide, il y a toujours continuité des pressions mais plus des vitesses. La matrice de transfert pression-débit pour un résonateur dans le réseau est alors la suivante :
 
 \begin{eqnarray*}
-M_{resonateur} = \begin{pmatrix} 1 &  0 \\ 1 /Z_{resonateur} & 1  \end{pmatrix}\\
+M_{r} = \begin{pmatrix} 1 &  0 \\ 1 /Z_{r} & 1  \end{pmatrix}\\
 \end{eqnarray*}
 
 \section{Étude du réseau fini}
 
-Une fois les matrices de guide et de résonateur connues, il suffit alors de les multiplier afin d'obtenir la matrice d'une cellule du réseau. C'est sur l'étude de cette matrice que ce base les analyses de cette section. 
+Une fois les matrices de guide et de résonateur connues, il suffit alors de les multiplier afin d'obtenir la matrice d'une cellule du réseau. C'est sur l'étude de cette matrice que se basent les analyses de cette section. 
 
-Dans la suite les paramètres de la simulation sont ceux du de l'expérience dont nous disposons. Ces paramètres sont disponible en annexe 2.
+Dans la suite les paramètres de la simulation sont ceux de l'expérience dont nous disposons. Ces paramètres sont disponible en annexe 2.
 
 \subsection{Équation de dispersion}
 On peux déduire de la matrice de transfert l'équation de dispersion pour le réseau à N cellules, on a en effet:
@@ -112,16 +121,34 @@ Pour un espacement entre éléments de longueur $L=0.1~m$, on a $f_{bragg} = \fr
  
 
 \subsection{Bande interdites liés aux résonateurs}
-L'équation de dispersion est cependant plus difficile analyser qu'il n'y parait à cause des résonateurs qui servent d’éléments au réseau. Hors ce ci ont une impédance négligeable dès lors que la fréquence d'analyse ce trouve suffisamment éloignées des fréquences de résonances. 
+L'équation de dispersion est cependant plus difficile à analyser qu'il n'y parait à cause des résonateurs qui servent d’éléments au réseau. Ceux-ci ont une impédance négligeable dès lors que la fréquence d'analyse se trouve suffisamment éloignées des fréquences de résonances. 
 
-De plus le résonateur étant par nature un système résonant, il peux lui aussi induire une absorption de l'énergie de l'onde sur certaines fréquences. Sur la figure ~\ref{ex_coef_RT}, ces bandes interdites sont aussi présentes: elles se trouvent la ou l'admittance du résonateur est maximale. A ces fréquences, on a bien une chute de la transmission.
+De plus le résonateur étant par nature un système résonant, il peut lui aussi induire une absorption de l'énergie de l'onde sur certaines fréquences. Sur la figure ~\ref{ex_coef_RT}, ces bandes interdites sont aussi présentes: elles se trouvent là ou l'admittance du résonateur est maximale. A ces fréquences, on a bien une chute de la transmission.
  \bigskip
-Il y a donc 2 phénomènes qui peuvent induire des bandes interdites, d'une part les bandes de Braggs liés a la géométrie du réseau et d'autre part l'énergie absorbée par les résonateurs.
+Il y a donc 2 phénomènes qui peuvent induire des bandes interdites, d'une part les bandes de Bragg liés a la géométrie du réseau et d'autre part l'énergie absorbée par les résonateurs.
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.5]{./images_chp1/ex_coef_rapport.png}
-\caption{\label{ex_coef_RT} Coefficient de réflexion et de transmission pour un réseau de 60 résonateurs avec $L_c=14~cm$ la longueur des cavités des résonateurs.}
+\includegraphics[scale=1]{./images_chp1/ex_coef_rapport.png}
+\caption{\label{ex_coef_RT} Coefficient de réflexion et de transmission pour un réseau de 60 résonateurs avec $L_c=14~cm$. En bas : Impédance d'entrée du résonateur.}
 \end{figure}
+
+\subsection{Cas désordonné}
+Afin d'étudier succinctement l'effet d'un désordre sur le volume des cavités du résonateur, une simulation numérique est réalisée pour différents écart types. Les figures~\ref{chaos10} et \ref{chaos2} présentent les coefficients de transmission pour.......
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{./images_chp1/chaos_10mm.png}
+	\caption{\label{chaos10} Coefficient de réflexion et de transmission pour un réseau de 60 résonateurs avec $L_c=14~cm$.}
+\end{figure}
+
+Dans le cas d'un écart type élevé, le désordre a pour principal effet d'élargir la bande liée à la seconde résonance des résonateurs. La bande de Bragg n'est pas impactée puisque le désordre touche le volume des cavités et non l'espacement des résonateurs. 
+\todo[inline]{Ecart-type ???}
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{./images_chp1/chaos_2mm.png}
+	\caption{\label{chaos2} Coefficient de réflexion et de transmission pour un réseau de 60 résonateurs avec $L_c=14~cm$.}
+\end{figure}
+
 
 

@@ -4,20 +4,20 @@ clc
 graphics_toolkit('gnuplot')          %affichage gnuplot
 
 %===============================================================================================================
-nb_cellule =60;
+nb_cellule =9;
 
 %Constantes physiques
 c = 340;
 rho = 1.177;       %a  300°K
 
 % Constantes guide
-L = 0.30; 				% longueur du guide
+L = 0.10; 				% longueur du guide
 d = 0.05; 				% diametre du guide
 
 % Constantes Singularité
-NumSing = 2;
+NumSing = 6;
 
-Lcavs =0.12;			% seul truc qui change
+Lcavs =0.08;			% seul truc qui change
 Lcols =0.02;			
 Dcavs =0.043;			
 Dcols =0.02;				
@@ -47,7 +47,7 @@ L2 = 0.82 * (1- 0.235 * RN / RT - 1.32*(RN/RT)^2 + 1.54 * (RN/RT)^3 - 0.86*(RN/R
 Lcol = Lcol + L1 + L2;
 
 %Base fréquentielle
-Fmax=500;
+Fmax=900;
 f = 0:0.5:Fmax;
 N = length(f);
 w = 2*pi*f;
@@ -229,7 +229,7 @@ hold on
 plot(f,abs(R),'r', 'Linewidth',3);
 hold on
 plot(f,A,'k');
-legend('Transmission','Reflexion');
+legend('Transmission','Reflexion','Admittance');
 xlim([0 Fmax]);
 
 

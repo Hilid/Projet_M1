@@ -1,9 +1,11 @@
 clear all
 %close all
 clc
-graphics_toolkit('gnuplot')          %affichage gnuplot
+graphics_toolkit('fltk')          %affichage gnuplot
 
 %===============================================================================================================
+nb_cellule =60;
+
 %Constantes physiques
 %--------------------
 c = 340;
@@ -12,16 +14,16 @@ rho = 1.177;       %a  300°K
 
 % Constantes guide
 %-----------------
-L = 0.150; 				% longueur du guide
+L = 0.10; 				% longueur du guide
 d = 0.05; 				% diametre du guide
 
 
 % Constantes Résonateur
 %----------------------
-Lcav =0.04;			% longueur de la cavité
+Lcav =0.14;			% longueur de la cavité
 Lcol =0.02;			% longueur du col
 Dcav =0.043;			% diametre de la cavité
-Dcol =0.02;					% diametre du col
+Dcol =0.02;				% diametre du col
 
 Scav = pi*(Dcav/2)^2;
 Scol = pi*(Dcol/2)^2;
@@ -40,17 +42,14 @@ Lcol = Lcol + L1 + L2;
 %Base fréquentielle
 %------------------
 Fmax=2000;
-f = 0:1:Fmax;
+f = 0:0.5:Fmax;
 N = length(f);
 w = 2*pi*f;
 
-%Périodisation
-%--------------
-nb_cellule =20;
 
 %Prise en compte du chaos (changement aléatoire de Lcav avec un écart-type de sigma)
 %-----------------------------------------------------------------------------------
-sigma =0.015;  %ecart type en mm
+sigma =0.010;  %ecart type en mm
 vec_Lcav = Lcav +sigma*randn(1,nb_cellule);
 
 %=================================================================================================================
@@ -140,12 +139,12 @@ grid minor on
 %-----------------------------------------------------
 Zr = sqrt(B./C);
 
-figure(2)
-subplot(3,1,1);
-plot(f,log(abs(Zr)), 'r');
-ylabel('log(abs(Zreseau))');
-title('Impedance caracteristique du reseau');
-grid on
+%~ figure(2)
+%~ subplot(3,1,1);
+%~ plot(f,log(abs(Zr)), 'r');
+%~ ylabel('log(abs(Zreseau))');
+%~ title('Impedance caracteristique du reseau');
+%~ grid on
 
 
 %Affichage du coefficient de reflexion
@@ -165,12 +164,12 @@ Zc = Zc_perte;
 R = (A + B./Zc - C.*Zc - D)./(A + C.*Zc + B./Zc + D);
 
 figure(2)
-subplot(3,1,2);
-plot(f,abs(R));
-axis([0 2000 0 1.5]);
+subplot(2,1,1);
+plot(f,20*log10(abs(R)));
+%~ axis([0 Fmax 0 1.5]);
 
-ylabel('abs(R)');
-title('Coefficient de reflexion a l entree du reseau')
+ylabel('20log(|R|)');
+title("Coefficient de réflexion à l'entrée du réseau")
 grid on
 
 
@@ -179,11 +178,11 @@ grid on
 T = 2./(A + C.*Zc + B./Zc + D);
 
 figure(2)
-subplot(3,1,3);
-plot(f,abs(T(1,1,:)));
-axis([0 2000 0 1.5]);
-ylabel('abs(T)');
-title('Coefficient de transmission a l entree du reseau');
+subplot(2,1,2);
+plot(f,20*log10(abs(T(1,1,:))));
+axis([0 Fmax -100 0]);
+ylabel('20log(|T|)');
+title("Coefficient de transmission à l'entrée du réseau");
 grid on
 
 
@@ -191,12 +190,14 @@ grid on
 %Affichage de l'admittance du résonateur
 %-----------------------------------------------
 %~ figure(2)
-%~ subplot(4,1,4);
+%~ subplot(3,1,3);
 %~ semilogy(f,abs(admittance_resonateur(1,:)));
-%~ ylabel('abs(Yreso)');
-%~ xlabel('frequence en Hz');
-%~ title('admittance du resonateur de Helmholtz');
+%~ ylabel('|Yr|');
+%~ xlabel('Fréquence en Hz');
+%~ title('Admittance du résonateur de Helmholtz');
 %~ grid on
+
+print -dsvg chaos_grand.svg
 
 %Absorption A=1-abs(T)^2 -abs(R)^2
 A=1-abs(T).^2 -abs(R).^2;

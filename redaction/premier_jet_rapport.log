@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.3)  26 APR 2015 19:35
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.3)  28 APR 2015 17:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -923,52 +923,66 @@ Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(./premier_jet_rapport.aux (./introduction.aux) (./chapitre1.aux
+(/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip64
+\subfigcapskip=\skip65
+\subfigcaptopadj=\dimen178
+\subfigbottomskip=\skip66
+\subfigcapmargin=\dimen179
+\subfiglabelskip=\skip67
+\c@subfigure=\count136
+\c@lofdepth=\count137
+\c@subtable=\count138
+\c@lotdepth=\count139
 
-LaTeX Warning: Label `ex_coef_RT' multiply defined.
-
-
-LaTeX Warning: Label `ex_coef_RT' multiply defined.
-
-) (./chapitre2.aux) (./chapitre3.aux) (./conclusion.aux) (./annexe.aux)
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip68
+\subfig@bottom=\skip69
+)
+(./premier_jet_rapport.aux (./introduction.aux) (./chapitre1.aux)
+(./chapitre2.aux) (./chapitre3.aux) (./conclusion.aux) (./annexe.aux)
 (./notations.aux))
 \openout1 = `premier_jet_rapport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 40.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 43.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 40.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 43.
 
 (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count136
-\scratchdimen=\dimen178
+\scratchcounter=\count140
+\scratchdimen=\dimen180
 \scratchbox=\box38
-\nofMPsegments=\count137
-\nofMParguments=\count138
+\nofMPsegments=\count141
+\nofMParguments=\count142
 \everyMPshowfont=\toks33
-\MPscratchCnt=\count139
-\MPscratchDim=\dimen179
-\MPnumerator=\count140
-\makeMPintoPDFobject=\count141
+\MPscratchCnt=\count143
+\MPscratchDim=\dimen181
+\MPnumerator=\count144
+\makeMPintoPDFobject=\count145
 \everyMPtoPDFconversion=\toks34
 ) ABD: EveryShipout initializing macros
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
@@ -1015,9 +1029,9 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \degres on input line 40.
-LaTeX Info: Redefining \dots on input line 40.
-LaTeX Info: Redefining \up on input line 40.
+LaTeX Info: Redefining \degres on input line 43.
+LaTeX Info: Redefining \dots on input line 43.
+LaTeX Info: Redefining \up on input line 43.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1059,42 +1073,43 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             or
 (lastpage)             http://www.ctan.org/tex-archive/ 
 (lastpage)             install/macros/latex/contrib/pageslts.tds.zip
-(lastpage)             ! on input line 40.
+(lastpage)             ! on input line 43.
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 41.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 44.
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 41.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 44.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 41.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 44.
 
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 41.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 44.
 
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 41.
+(Font)              <12> on input line 44.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 41.
+(Font)              <8> on input line 44.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 41.
-LaTeX Font Info:    Try loading font information for U+msa on input line 41.
+(Font)              <6> on input line 44.
+LaTeX Font Info:    Try loading font information for U+msa on input line 44.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 41.
+LaTeX Font Info:    Try loading font information for U+msb on input line 44.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1151,37 +1166,54 @@ File: ./images_chp1/ex_coef_rapport.png Graphic file (type png)
 
 <use ./images_chp1/ex_coef_rapport.png>
 Package pdftex.def Info: ./images_chp1/ex_coef_rapport.png used on input line 1
-32.
+30.
 (pdftex.def)             Requested size: 399.09001pt x 306.74525pt.
 
 <./images_chp1/chaos_10mm.png, id=50, 462.528pt x 346.896pt>
 File: ./images_chp1/chaos_10mm.png Graphic file (type png)
 
 <use ./images_chp1/chaos_10mm.png>
-Package pdftex.def Info: ./images_chp1/chaos_10mm.png used on input line 139.
-(pdftex.def)             Requested size: 462.52686pt x 346.89514pt.
-
-Overfull \hbox (35.7355pt too wide) in paragraph at lines 139--140
- [][] 
- []
+Package pdftex.def Info: ./images_chp1/chaos_10mm.png used on input line 141.
+(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
 
 <./images_chp1/chaos_2mm.png, id=51, 462.528pt x 346.896pt>
 File: ./images_chp1/chaos_2mm.png Graphic file (type png)
 
 <use ./images_chp1/chaos_2mm.png>
-Package pdftex.def Info: ./images_chp1/chaos_2mm.png used on input line 147.
-(pdftex.def)             Requested size: 462.52686pt x 346.89514pt.
+Package pdftex.def Info: ./images_chp1/chaos_2mm.png used on input line 152.
+(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
 
-Overfull \hbox (35.7355pt too wide) in paragraph at lines 147--148
- [][] 
- []
 
-) [8 <./images_chp1/ex_coef_rapport.png>] [9 <./images_chp1/chaos_10mm.png>]
-[10 <./images_chp1/chaos_2mm.png>]
+LaTeX Warning: Reference `chaospos2' on page 8 undefined on input line 158.
+
+[8 <./images_chp1/ex_coef_rapport.png>] [9 <./images_chp1/chaos_10mm.png> <./im
+ages_chp1/chaos_2mm.png>]
+<./images_chp1/chaos_position_grand.png, id=61, 397.485pt x 293.898pt>
+File: ./images_chp1/chaos_position_grand.png Graphic file (type png)
+
+<use ./images_chp1/chaos_position_grand.png>
+Package pdftex.def Info: ./images_chp1/chaos_position_grand.png used on input l
+ine 164.
+(pdftex.def)             Requested size: 198.742pt x 146.94862pt.
+
+<./images_chp1/chaos_position_petit.png, id=62, 397.485pt x 293.898pt>
+File: ./images_chp1/chaos_position_petit.png Graphic file (type png)
+
+<use ./images_chp1/chaos_position_petit.png>
+Package pdftex.def Info: ./images_chp1/chaos_position_petit.png used on input l
+ine 168.
+(pdftex.def)             Requested size: 198.742pt x 146.94862pt.
+) [10 <./images_chp1/chaos_position_grand.png> <./images_chp1/chaos_position_pe
+tit.png>]
 \openout2 = `chapitre2.aux'.
 
  (./chapitre2.tex
 Chapitre 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--4
+
+ []
+
 ) [11
 
 
@@ -1214,11 +1246,30 @@ Chapitre 5.
 ]
 \openout2 = `notations.aux'.
 
- (./notations.tex) [15
+ (./notations.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--11
+
+ []
 
 
-]
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+
+ []
+
+) [15
+
+
+] 
 AED: lastpage setting LastPage
 (./premier_jet_rapport.aux (./introduction.aux) (./chapitre1.aux)
 (./chapitre2.aux) (./chapitre3.aux) (./conclusion.aux) (./annexe.aux)
@@ -1226,35 +1277,33 @@ AED: lastpage setting LastPage
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 15506 strings out of 494958
- 271328 string characters out of 6179214
- 332623 words of memory out of 5000000
- 18306 multiletter control sequences out of 15000+600000
- 64509 words of font info for 58 fonts, out of 8000000 for 9000
+ 15675 strings out of 494958
+ 273922 string characters out of 6179214
+ 334900 words of memory out of 5000000
+ 18466 multiletter control sequences out of 15000+600000
+ 67501 words of font info for 59 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 63i,13n,92p,444b,686s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/s
-hare/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/l
-m/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texm
+ 63i,13n,92p,543b,686s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share
+/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
+-mathex.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texm
 f/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcs
 c10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fo
 nts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi5.pf
 b></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/typ
-e1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/
-share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/publi
-c/lm/lmr5.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy
-7.pfb>
-Output written on premier_jet_rapport.pdf (16 pages, 375517 bytes).
+e1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/
+share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/publi
+c/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share/tex
+mf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.
+pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/
+type1/public/lm/lmsy7.pfb>
+Output written on premier_jet_rapport.pdf (16 pages, 476688 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
+ 145 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

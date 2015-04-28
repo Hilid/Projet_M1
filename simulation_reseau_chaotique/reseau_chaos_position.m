@@ -20,7 +20,7 @@ d = 0.05; 				% diametre du guide
 
 % Constantes Résonateur
 %----------------------
-Lcav =0.14;			% longueur de la cavité
+Lcav =0.145;			% longueur de la cavité
 Lcol =0.02;			% longueur du col
 Dcav =0.043;			% diametre de la cavité
 Dcol =0.02;				% diametre du col
@@ -49,8 +49,8 @@ w = 2*pi*f;
 
 %Prise en compte du chaos (changement aléatoire de Lcav avec un écart-type de sigma)
 %-----------------------------------------------------------------------------------
-sigma =0.010;  %ecart type en mm
-vec_Lcav = Lcav +sigma*randn(1,nb_cellule);
+sigma =0.002;  %ecart type en mm
+vec_L= L+sigma*randn(1,nb_cellule);
 
 %=================================================================================================================
 
@@ -66,7 +66,7 @@ end
 for x=1:1:N
 	w = 2*pi* x / N * Fmax ;
 	for y=1:1:nb_cellule
-		reseau(:,:,x) = reseau(:,:,x)* (guide(w,L,d,rho,c)*resonateur(w,vec_Lcav(y),Lcol,Dcav,Dcol,rho,c));
+		reseau(:,:,x) = reseau(:,:,x)* (guide(w,vec_L(y),d,rho,c)*resonateur(w,Lcav,Lcol,Dcav,Dcol,rho,c));
 	end
 end
 
@@ -94,7 +94,7 @@ disp('');
 disp(['Paramètres guide']);
 disp('---------------------');
 disp(['Diametre du guide = ' num2str(d) ' m']);
-disp(['Longueur entre chaques resonateurs L = ' num2str(2*L) ' m']);
+disp(['Longueur entre chaques resonateurs L = ' num2str(L) ' m']);
 disp(['Frequence de la bande de bragg pour c = ' num2str(c) ' m.s^1,   =>    f = c/(2L) = ' num2str(c/(2*L)) ' Hz']);
 disp('');
 disp('===============================================================');
@@ -197,7 +197,7 @@ grid on
 %~ title('Admittance du résonateur de Helmholtz');
 %~ grid on
 
-print -dsvg chaos_grand.svg
+print -dsvg chaos_position_petit.svg
 
 %Absorption A=1-abs(T)^2 -abs(R)^2
 A=1-abs(T).^2 -abs(R).^2;

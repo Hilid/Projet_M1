@@ -7,7 +7,7 @@ Ce chapitre a pour but de caractériser le champ de pression dans un guide sur l
 \end{figure}
 
 \paragraph{Notations}
-Le guide principal a pour section $S$ ; le col des résonateurs a pour longueur $L_{n}$ et pour section $S_{n}$ ; la cavité des résonateurs a pour longueur $L_{c}$ et pour section $S_{c}$. Par la suite, on note $\rho$ la masse volumique de l'air et $c$
+Le guide principal a pour section $S$ ; le col des résonateurs a pour longueur $L_{n}$ et pour section $S_{n}$ ; la cavité des résonateurs a pour longueur $L_{c}$ et pour section $S_{c}$. Par la suite, on note $\rho$ la masse volumique de l'air et $c$ la célérité du son dans l'air.
 
 \section{Mise sous forme matricielle}
 On s’intéresse ici a la mise sous forme matricielle du problème de la propagation acoustique dans le réseau periodique vu ci-dessus. Le but est de mettre en relation les pressions et débits en entrée du système ($P_{in}$ et $U_{in}$) avec ceux en sortie ($P_{out}$ et $U_{out}$) sous la forme suivante:
@@ -83,7 +83,7 @@ On suppose que le résonateur est constitué de 2 guides à parois rigides d'imp
 \paragraph{Correction de longueur}
 La longueur effective du col est sujet à une correction présentée en annexe \todo[inline]{correction liée à quoi, détaille-t-on ce passage ?}
 
-Si on ajoute un résonateur en parallèle au guide, il y a toujours continuité des pressions mais plus des vitesses. La matrice de transfert pression-débit pour un résonateur dans le réseau est alors la suivante :
+En ajoutant un résonateur en parallèle au guide, il y a toujours continuité des pressions mais plus des vitesses. La matrice de transfert pression-débit pour un résonateur dans le réseau est alors la suivante :
 
 \begin{eqnarray*}
 M_{r} = \begin{pmatrix} 1 &  0 \\ 1 /Z_{r} & 1  \end{pmatrix}\\
@@ -96,59 +96,77 @@ Une fois les matrices de guide et de résonateur connues, il suffit alors de les
 Dans la suite les paramètres de la simulation sont ceux de l'expérience dont nous disposons. Ces paramètres sont disponible en annexe 2.
 
 \subsection{Équation de dispersion}
-On peux déduire de la matrice de transfert l'équation de dispersion pour le réseau à N cellules, on a en effet:
+La matrice de transfert l'équation de dispersion pour le réseau à N cellules s'écrit alors : 
 \begin{equation}
 \cos(NkL) = \frac{A+D}{2} 
 \end{equation}
 
-Ainsi, on peux remonter à une expression de $kL$ en fonction de la fréquence. En particulier, les zones ou $kL$ devient imaginaire nous intéresse particulièrement car cela induit une décroissance exponentielle de l'onde de propageant dans le guilde. Ces bandes sont visible sur la figure ~\ref{bande_bragg} et sont appelées les bandes de Bragg.
+Ainsi, on peut remonter à une expression de $kL$ en fonction de la fréquence. En particulier, les zones où $kL$ devient imaginaire nous intéressent particulièrement car cela induit une décroissance exponentielle de l'onde de propageant dans le guilde (onde évanescente). Ces bandes sont visibles sur la figure~\ref{bande_bragg} et sont appelées les bandes de Bragg.
 
 \todo{une figure de l’équation de dispersion avec bande de bragg}
 
 \subsection{Réflexion et transmission du réseau}
-On peux tracer le coefficient de réflexion et de transmission du réseau complet. En effet, on a:
+Le coefficient de réflexion et de transmission du réseau complet peut être calculé de la manière suivante [\todo[inline]{Source biblio}] : 
 \begin{eqnarray}
 T & = & \frac{2}{A + B/Z_c + C Z_c + D} \\
 R & = & \frac{A + B / Zc_ - C Z_c -D}{A + B/Z_c + C Z_c + D} 
 \end{eqnarray}
 
-On trace ces coefficients figure ~\ref{ex_coef_RT} ainsi que l'admittance des résonateurs utilisés et l'impédance caractéristique du réseau. On constate que des zones ce démarquent pour lesquelles  la transmission chute.
+On trace ces coefficients en fonction de la fréquence (figure~\ref{ex_coef_RT}) ainsi que l'admittance des résonateurs utilisés. Il apparaît que la transmission chute pour trois bandes de fréquence : à la résonance du résonateur de Helmholtz, à celle de sa cavité et à la première bande de Bragg.
 
 \subsection{Bande de Bragg}
-Ces bandes apparaissant dès qu'un élément est présent dans un réseau et ce de manière periodique. L'énergie de l'onde reste "enfermée" entre chaque éléments du fait que la longueur d'onde correspond à la moitié de l'espacement entre 2 éléments. 
+Ces bandes sont visibles dès que des singularités apparaissent de manière periodique. L'énergie de l'onde est reste contenue entre chaque élément du fait que la longueur d'onde correspond à la moitié de l'espacement entre 2 éléments. 
 
-Pour un espacement entre éléments de longueur $L=0.1~m$, on a $f_{bragg} = \frac{c}{2L} = 1700 Hz$. On constate sur la figure ~\ref{ex_coef_RT} que ces bandes de Bragg sont bien présentent à la fréquence indiquée ainsi qu'a ces multiples car à ces endroits on constate une chute de la transmission.
+Pour un espacement entre éléments de longueur $L=0.1~m$, la bande de Bragg se situe autour de la fréquence $f_{b} = \frac{c}{2L} = 1715 Hz$. On constate sur la figure~\ref{ex_coef_RT} que ces bandes de Bragg sont bien présentes à la fréquence indiquée ainsi qu'a ses multiples (chute de la transmission et réflexion maximale).
  
 
 \subsection{Bande interdites liés aux résonateurs}
-L'équation de dispersion est cependant plus difficile à analyser qu'il n'y parait à cause des résonateurs qui servent d’éléments au réseau. Ceux-ci ont une impédance négligeable dès lors que la fréquence d'analyse se trouve suffisamment éloignées des fréquences de résonances. 
+L'équation de dispersion est cependant plus difficile à analyser qu'il n'y parait en raison des résonateurs qui constituent réseau. Ceux-ci ont une impédance négligeable dès lors que la fréquence d'analyse se trouve suffisamment éloigné des fréquences de résonances. 
 
-De plus le résonateur étant par nature un système résonant, il peut lui aussi induire une absorption de l'énergie de l'onde sur certaines fréquences. Sur la figure ~\ref{ex_coef_RT}, ces bandes interdites sont aussi présentes: elles se trouvent là ou l'admittance du résonateur est maximale. A ces fréquences, on a bien une chute de la transmission.
- \bigskip
-Il y a donc 2 phénomènes qui peuvent induire des bandes interdites, d'une part les bandes de Bragg liés a la géométrie du réseau et d'autre part l'énergie absorbée par les résonateurs.
+De plus le résonateur étant par nature un système résonant, il peut lui aussi induire une absorption de l'énergie de l'onde sur certaines fréquences. Sur la figure~\ref{ex_coef_RT}, ces bandes interdites sont aussi présentes: elles se trouvent là ou l'admittance du résonateur est maximale. A ces fréquences, on a bien une chute de la transmission.
 
 \begin{figure}
 \centering
 \includegraphics[scale=1]{./images_chp1/ex_coef_rapport.png}
-\caption{\label{ex_coef_RT} Coefficient de réflexion et de transmission pour un réseau de 60 résonateurs avec $L_c=14~cm$. En bas : Impédance d'entrée du résonateur.}
+\caption{\label{ex_coef_RT} Coefficient de réflexion (en haut) et de transmission (au milieu) pour un réseau de 60 résonateurs avec $L_c=14~cm$. En bas : Impédance d'entrée du résonateur.}
 \end{figure}
 
 \subsection{Cas désordonné}
-Afin d'étudier succinctement l'effet d'un désordre sur le volume des cavités du résonateur, une simulation numérique est réalisée pour différents écart types. Les figures~\ref{chaos10} et \ref{chaos2} présentent les coefficients de transmission pour.......
+
+\subsubsection{Désordre sur le volume des cavités}
+
+Afin d'étudier succinctement l'effet d'un désordre sur le volume des cavités du résonateur, une simulation numérique est réalisée pour des longueurs de cavité suivant une loi normale. La figure~\ref{chaos10} présente les coefficients de transmission et de réflexion pour une longueur de cavité moyenne de $\bar{L_c}=14$ cm et un écart-type  de $\sigma = 1$ cm.
 \begin{figure}
 	\centering
-	\includegraphics[scale=1]{./images_chp1/chaos_10mm.png}
-	\caption{\label{chaos10} Coefficient de réflexion et de transmission pour un réseau de 60 résonateurs avec $L_c=14~cm$.}
+	\includegraphics[scale=0.7]{./images_chp1/chaos_10mm.png}
+	\caption{\label{chaos10} Coefficient de réflexion (en haut) et de transmission (en bas) pour un réseau de 60 résonateurs avec $\bar{L_c}=14$~cm et $\sigma =1$ cm.}
 \end{figure}
 
-Dans le cas d'un écart type élevé, le désordre a pour principal effet d'élargir la bande liée à la seconde résonance des résonateurs. La bande de Bragg n'est pas impactée puisque le désordre touche le volume des cavités et non l'espacement des résonateurs. 
-\todo[inline]{Ecart-type ???}
+Dans le cas d'un écart-type élevé, le désordre a pour principal effet d'élargir la bande liée à la seconde résonance des résonateurs, liée à la résonance de la cavité. La bande de Bragg n'est pas impactée puisque le désordre touche le volume des cavités et non l'espacement des résonateurs.
+
+\paragraph{Désordre lié aux conditions expérimentales}
+Dans l'expérience menée plus loin, le volume des résonateur est fixé manuellement. La question de l'impact de l'erreur commise par la mise en place de l'expérience est donc directement liée à l'étude de désordre dans le réseau. On estime que la longueur des cavités va suivre une loi normale d'écart-type 2 mm et de longueur moyenne $\bar{L_c}=14.5$ cm. La figure~\ref{chaos2} montre alors que ce désordre n'a qu'une faible influence sur le coefficient de réflexion. 
 
 \begin{figure}
 	\centering
-	\includegraphics[scale=1]{./images_chp1/chaos_2mm.png}
-	\caption{\label{chaos2} Coefficient de réflexion et de transmission pour un réseau de 60 résonateurs avec $L_c=14~cm$.}
+	\includegraphics[scale=0.7]{./images_chp1/chaos_2mm.png}
+	\caption{\label{chaos2} Coefficient de réflexion (en haut) et de transmission (en bas) pour un réseau de 60 résonateurs avec $\bar{L_c}=14$~cm et $\sigma=2$ mm.}
 \end{figure}
 
+\subsubsection{Désordre sur la position des résonateurs}
+La même étude est menée sur le désordre lié à la conception du banc de mesure et aux défauts de position des résonateur.
+Les figures~\ref{chaospos10} et~\ref{chaospos2} montrent l'effet d'un désordre plus ou moins grand sur la réflexion et la transmission.
+
+\begin{figure}[h!]
+	\subfigure[\label{chaospos10}$\sigma=1$ cm]{
+		\includegraphics[scale=0.5]{./images_chp1/chaos_position_grand.png}
+	}
+	\subfigure[\label{chaospos2}$\sigma=2$ mm]{
+		\includegraphics[scale=0.5]{./images_chp1/chaos_position_petit.png}
+	}
+	\caption{Coefficients de réflexion (en haut) et de transmission (en bas) pour un réseau de 60 résonateurs avec $\bar{L}=10$ cm.}
+\end{figure}
+
+\section{Conclusion*} \todo[inline]{Conclusion partielle ?}
 
 

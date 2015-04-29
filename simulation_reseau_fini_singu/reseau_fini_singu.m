@@ -4,7 +4,7 @@ clc
 graphics_toolkit('gnuplot')          %affichage gnuplot
 
 %===============================================================================================================
-nb_cellule =9;
+nb_cellule =5;
 
 %Constantes physiques
 c = 340;
@@ -15,7 +15,7 @@ L = 0.10; 				% longueur du guide
 d = 0.05; 				% diametre du guide
 
 % Constantes Singularité
-NumSing = 6;
+NumSing = 3;
 
 Lcavs =0.08;			% seul truc qui change
 Lcols =0.02;			
@@ -33,7 +33,7 @@ Lcols = Lcols + L1s + L2s;
 
 
 % Constantes Résonateur
-Lcav =0.16;			% longueur de la cavité
+Lcav =0.145;			% longueur de la cavité
 Lcol =0.02;			% longueur du col
 Dcav =0.043;			% diametre de la cavité
 Dcol =0.02;				% diametre du col
@@ -47,8 +47,8 @@ L2 = 0.82 * (1- 0.235 * RN / RT - 1.32*(RN/RT)^2 + 1.54 * (RN/RT)^3 - 0.86*(RN/R
 Lcol = Lcol + L1 + L2;
 
 %Base fréquentielle
-Fmax=900;
-f = 0:0.5:Fmax;
+Fmax=600;
+f = 100:1:Fmax;
 N = length(f);
 w = 2*pi*f;
 %=================================================================================================================
@@ -229,7 +229,7 @@ hold on
 plot(f,abs(R),'r', 'Linewidth',3);
 hold on
 plot(f,A,'k');
-legend('Transmission','Reflexion','Admittance');
+legend('Transmission','Reflexion','Absorption');
 xlim([0 Fmax]);
 
 

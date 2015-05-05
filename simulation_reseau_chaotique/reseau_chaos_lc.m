@@ -20,7 +20,7 @@ d = 0.05; 				% diametre du guide
 
 % Constantes Résonateur
 %----------------------
-Lcav =0.145;			% longueur de la cavité
+Lcav =0.14;			% longueur de la cavité
 Lcol =0.02;			% longueur du col
 Dcav =0.043;			% diametre de la cavité
 Dcol =0.02;				% diametre du col
@@ -49,7 +49,7 @@ w = 2*pi*f;
 
 %Prise en compte du chaos (changement aléatoire de Lcav avec un écart-type de sigma)
 %-----------------------------------------------------------------------------------
-sigma =0.002;  %ecart type en mm
+sigma =0.000;  %ecart type en mm
 vec_Lcav = Lcav +sigma*randn(1,nb_cellule);
 
 %=================================================================================================================
@@ -165,7 +165,7 @@ R = (A + B./Zc - C.*Zc - D)./(A + C.*Zc + B./Zc + D);
 
 figure(2)
 subplot(2,1,1);
-plot(f,20*log10(abs(R)));
+plot(f,20*log10(abs(R)),'--');
 %~ axis([0 Fmax 0 1.5]);
 
 ylabel('20log(|R|)');
@@ -179,13 +179,13 @@ T = 2./(A + C.*Zc + B./Zc + D);
 
 figure(2)
 subplot(2,1,2);
-plot(f,20*log10(abs(T(1,1,:))));
+plot(f,20*log10(abs(T(1,1,:))),'--');
 axis([0 Fmax -100 0]);
 ylabel('20log(|T|)');
 title("Coefficient de transmission à l'entrée du réseau");
 grid on
 
-
+print -dsvg chaos_petit.svg
 
 %Affichage de l'admittance du résonateur
 %-----------------------------------------------
@@ -197,19 +197,19 @@ grid on
 %~ title('Admittance du résonateur de Helmholtz');
 %~ grid on
 
-print -dsvg chaos_grand.svg
+
 
 %Absorption A=1-abs(T)^2 -abs(R)^2
-A=1-abs(T).^2 -abs(R).^2;
+%~ A=1-abs(T).^2 -abs(R).^2;
 
-figure(3)
-plot(f,abs(T),'b');
-hold on
-plot(f,abs(R),'r');
-hold on
-plot(f,A,'k');
-xlim([0 1500]);
-legend('Transmission','Reflexion','Absorption');
-hold off
-title('chaotique')
+%~ figure(3)
+%~ plot(f,abs(T),'b');
+%~ hold on
+%~ plot(f,abs(R),'r');
+%~ hold on
+%~ plot(f,A,'k');
+%~ xlim([0 1500]);
+%~ legend('Transmission','Reflexion','Absorption');
+%~ hold off
+%~ title('chaotique')
 

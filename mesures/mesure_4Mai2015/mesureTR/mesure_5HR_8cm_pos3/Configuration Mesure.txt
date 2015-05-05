@@ -1,0 +1,27 @@
+[INFOS GENERALES]
+Version="2.5"
+Nom du Projet="mesureTR"
+Nom Mesure="mesure_5HR_8cm_pos3"
+Date="04/05/2015"
+Opérateur=""
+Nb voies="3"
+Commentaires="H=16cm\0Ad=0.1 m\0A5 HR\0Adefect on position 3\0ALcavs=7.5cm"
+Diamètre de l'instrument (mm)=50,000000
+Distance (impédance ramenée) (mm)=0,000000
+Longueur de la pièce d'adaptation (mm)=0,000000
+Température=20,000000
+
+[SIGNAL]
+Type de signal d'excitation="Chirp"
+
+[CHIRP]
+Freq min (Hz)=150,000000
+Freq max (Hz)=900,000000
+Freq Ech (Hz)=25600
+Durée (s)=5,000000
+Type de Chirp="Log"
+Niveau signal  (Vpk)=0,200000
+Nombre de moyennes=10
+
+[EXTERNE]
+Chemin du signal externe=""

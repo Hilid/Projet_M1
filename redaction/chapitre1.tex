@@ -29,10 +29,10 @@ On se place en régime harmonique et on note $\Gamma = jk$ la constante de propa
 
 \begin{eqnarray*}
 \begin{cases}
-p(x_1)  =  C1 e^{-\Gamma x_1} + C2 e^{\Gamma x_1} \\
-v(x_1)  =  -\frac{1}{j\omega\rho} [ -\Gamma C1 e^{-\Gamma x_1} + \Gamma e^{\Gamma x_1}]\\
-p(x_2)  =  C1 e^{-\Gamma x_2} + C2 e^{\Gamma x_2} \\
-v(x_2)  =  -\frac{1}{j\omega\rho} [ -\Gamma C1 e^{-\Gamma x_2} + \Gamma e^{\Gamma x_2}]
+p(x_1)  =  C_1 e^{-\Gamma x_1} + C_2 e^{\Gamma x_1} \\
+v(x_1)  =  -\frac{1}{j\omega\rho} [ -\Gamma C_1 e^{-\Gamma x_1} + \Gamma e^{\Gamma x_1}]\\
+p(x_2)  =  C_1 e^{-\Gamma x_2} + C_2 e^{\Gamma x_2} \\
+v(x_2)  =  -\frac{1}{j\omega\rho} [ -\Gamma C_1 e^{-\Gamma x_2} + \Gamma e^{\Gamma x_2}]
 \end{cases}
 \end{eqnarray*}
  
@@ -75,7 +75,7 @@ Le résonateur de Helmholtz est considéré dans le réseau comme un changement 
 
 On suppose que le résonateur est constitué de 2 guides à parois rigides d'impédance caractéristique $Z_{n}=\rho c/S_{n}$ pour le col et $Z_{c}=\rho c /S_{c}$ pour la cavité. La matrice de transfert mettant en relation les pression et débit à l'entrée du résonateur $P_e$ et $U_e$ et les pression et débit au niveau de la paroi extrême $P_s$ et $U_s=0$ est de la forme :
 \begin{eqnarray*}
-\begin{pmatrix} P_e \\U_e \end{pmatrix} & = & \begin{pmatrix} \cos(k L_n) & j Z_{n} \sin(k l) \\ \frac{1}{Z_{n}} \sin(k L_n) & \cos(k L_n) \end{pmatrix} \begin{pmatrix} \cos(k L_c) & j Z_{c} \sin(k L_c) \\ \frac{1}{Z_{c}} \sin(k L_c) & \cos(k L_c) \end{pmatrix} \begin{pmatrix} P_s \\ 0  \end{pmatrix} \\
+\begin{pmatrix} P_e \\U_e \end{pmatrix} & = & \begin{pmatrix} \cos(k L_n) & j Z_{n} \sin(k L_n) \\ \frac{1}{Z_{n}} \sin(k L_n) & \cos(k L_n) \end{pmatrix} \begin{pmatrix} \cos(k L_c) & j Z_{c} \sin(k L_c) \\ \frac{1}{Z_{c}} \sin(k L_c) & \cos(k L_c) \end{pmatrix} \begin{pmatrix} P_s \\ 0  \end{pmatrix} \\
 \begin{pmatrix} P_e \\U_e \end{pmatrix} & = & \begin{pmatrix} r_1 & r_2 \\ r_3 & r_4 \end{pmatrix} \begin{pmatrix} P_1 \\ 0  \end{pmatrix} \\
 ~ & \Leftrightarrow & Z_{r}	 = \frac{P_e}{U_e}= \frac{r_1}{r_3}
 \end{eqnarray*}
@@ -135,14 +135,14 @@ De plus le résonateur étant par nature un système résonant, il peut lui auss
 
 \subsubsection{Désordre sur le volume des cavités}
 
-Afin d'étudier succinctement l'effet d'un désordre sur le volume des cavités du résonateur, une simulation numérique est réalisée pour des longueurs de cavité suivant une loi normale. La figure~\ref{chaos10} présente les coefficients de transmission et de réflexion pour une longueur de cavité moyenne de $\bar{L_c}=14$ cm et un écart-type  de $\sigma = 1$ cm.
+Afin d'étudier succinctement l'effet d'un désordre sur le volume des cavités du résonateur, une simulation numérique est réalisée pour des longueurs de cavité suivant une loi normale. Comme précédemment, les résonateurs sont arbitrairement au nombre de 60 et sont séparés d'une distance $L=0.1$ m. La figure~\ref{chaos10} présente les coefficients de transmission et de réflexion pour une longueur de cavité moyenne de $\bar{L_c}=14$ cm et un écart-type  de $\sigma = 1$ cm.
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.7]{./images_chp1/chaos_10mm.png}
 	\caption{\label{chaos10} Coefficient de réflexion (en haut) et de transmission (en bas) pour un réseau de 60 résonateurs avec $\bar{L_c}=14$~cm et $\sigma =1$ cm.}
 \end{figure}
 
-Dans le cas d'un écart-type élevé, le désordre a pour principal effet d'élargir la bande liée à la seconde résonance des résonateurs, liée à la résonance de la cavité. La bande de Bragg n'est pas impactée puisque le désordre touche le volume des cavités et non l'espacement des résonateurs.
+Dans le cas d'un écart-type élevé, le désordre a pour principal effet d'élargir la bande interdite liée à la seconde résonance des résonateurs (résonance de la cavité). La bande de Bragg n'est pas impactée puisque le désordre touche le volume des cavités et non l'espacement des résonateurs.
 
 \paragraph{Désordre lié aux conditions expérimentales}
 Dans l'expérience menée plus loin, le volume des résonateur est fixé manuellement. La question de l'impact de l'erreur commise par la mise en place de l'expérience est donc directement liée à l'étude de désordre dans le réseau. On estime que la longueur des cavités va suivre une loi normale d'écart-type 2 mm et de longueur moyenne $\bar{L_c}=14.5$ cm. La figure~\ref{chaos2} montre alors que ce désordre n'a qu'une faible influence sur le coefficient de réflexion. 
@@ -167,6 +167,5 @@ Les figures~\ref{chaospos10} et~\ref{chaospos2} montrent l'effet d'un désordre 
 	\caption{Coefficients de réflexion (en haut) et de transmission (en bas) pour un réseau de 60 résonateurs avec $\bar{L}=10$ cm.}
 \end{figure}
 
-\section{Conclusion*} \todo[inline]{Conclusion partielle ?}
 
 

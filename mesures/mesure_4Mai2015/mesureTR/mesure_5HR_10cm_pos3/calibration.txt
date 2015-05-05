@@ -1,0 +1,22 @@
+[INFOS GENERALES]
+Version = "2.5"
+Opérateur = ""
+Date = "04/05/2015"
+Nb voies = "2"
+Commentaires = ""
+
+[CHIRP]
+Freq min (Hz) = 20,000000
+Freq max (Hz) = 6000,000000
+Freq Ech (Hz) = 25600,000000
+Durée (s) = 5,000000
+Type de Chirp = "Log"
+Niveau (Vpk) = 0,200000
+Nombre de moyennes = 5
+
+[Paramètres de calibration]
+Kr = 1,933499
+Tau1 = 0,021228
+Tau2 = 0,023852
+Polynome Amplitude = "0,916308	0,000146	-6,419018E-7	1,569285E-9	-2,318093E-12	2,204183E-15	-1,389683E-18	5,895841E-22	-1,684747E-25	3,189194E-29	-3,826147E-33	2,630374E-37	-7,884105E-42\0D\0A"
+Polynome Phase = "0,064362	-0,000669	3,230556E-6	-7,692155E-9	1,065615E-11	-9,256220E-15	5,273800E-18	-2,018622E-21	5,219633E-25	-8,985869E-29	9,860168E-33	-6,235309E-37	1,728463E-41\0D\0A"

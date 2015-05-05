@@ -1,0 +1,6 @@
+[Général]
+Version="2.5"
+Nom du projet="mesureTR"
+Date="04/05/2015"
+Auteur=""
+Commentaire=""

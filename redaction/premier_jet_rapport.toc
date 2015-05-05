@@ -17,12 +17,3 @@
 \contentsline {paragraph}{D\IeC {\'e}sordre li\IeC {\'e} aux conditions exp\IeC {\'e}rimentales}{8}
 \contentsline {subsubsection}{D\IeC {\'e}sordre sur la position des r\IeC {\'e}sonateurs}{10}
 \contentsline {section}{\numberline {2.3}Conclusion*}{10}
-\contentsline {chapter}{\numberline {3}Ajout d'une singularit\IeC {\'e} dans le r\IeC {\'e}seau}{11}
-\contentsline {section}{\numberline {3.1}Cas d'une singularit\IeC {\'e} hors bande de Bragg}{11}
-\contentsline {section}{\numberline {3.2}Cas d'une singularit\IeC {\'e} dans la bande de Bragg}{11}
-\contentsline {section}{\numberline {3.3}Calcul num\IeC {\'e}rique de la pression dans le r\IeC {\'e}seau}{11}
-\contentsline {section}{\numberline {3.4}Etude de l'influence de la position du d\IeC {\'e}faut}{11}
-\contentsline {chapter}{\numberline {4}Visualisation exp\IeC {\'e}rimental d'un mode localis\IeC {\'e}}{12}
-\contentsline {section}{\numberline {4.1}Protocole exp\IeC {\'e}rimental}{12}
-\contentsline {section}{\numberline {4.2}R\IeC {\'e}sultat et comparaison avec la simulation}{12}
-\contentsline {chapter}{\numberline {5}Conclusion}{13}

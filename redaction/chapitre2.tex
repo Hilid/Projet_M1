@@ -49,14 +49,17 @@ Du fait que cette pression soit localisée, elle n'a pas d'influence sur les coe
 On trace sur la figure \ref{defaut_b} la pression dans le tube pour un défaut dans une bande interdite. Dans cette simulation on reconstruit la pression en chaque points du réseau par rétro-propagation en partant d'une terminaison anéchoïque à la fin du réseau. Les valeurs qu'on peut voir au début du réseau n'ont donc pas nécessairement de réalité physique, on s'intéresse ici surtout à l'enveloppe du signal plus qu'aux ordres de grandeurs.
 
 
-\todo{tracer le truc}
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.25]{images_chp2/visu_pression_favo2.png}
+\caption{\label{defaut_hb} Visualisation de la pression dans le réseau avec un défaut dont la fréquence se trouve hors d'une bande interdite. La fréquence d'excitation est celle du défaut. Celui-ci se trouve en 25eme position dans un réseau de 50 résonateurs.}
+\end{figure}
 
 Il est a noter que la fréquence de résonance du défaut ne correspond pas nécessairement à la fréquence du mode localisé. En effet, celui-ci résulte du défaut couplé avec le reste du réseau, les fréquences de résonances peuvent donc changer.
 
 
 \section{Étude de l'influence de la position du défaut}
-On s’intéresse maintenant à l'influence de la position du défaut dans le réseau.
-
+La position du défaut est elle aussi très importante afin de pouvoir générer un mode localisé: le défaut doit être suffisamment proche de la source afin d'être excité par les ondes évanescentes mais pas trop proche des bords car alors il n'est plus complètement localisé.
 
 
 

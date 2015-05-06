@@ -16,4 +16,12 @@
 \contentsline {subsubsection}{D\IeC {\'e}sordre sur le volume des cavit\IeC {\'e}s}{8}
 \contentsline {paragraph}{D\IeC {\'e}sordre li\IeC {\'e} aux conditions exp\IeC {\'e}rimentales}{8}
 \contentsline {subsubsection}{D\IeC {\'e}sordre sur la position des r\IeC {\'e}sonateurs}{10}
-\contentsline {section}{\numberline {2.3}Conclusion*}{10}
+\contentsline {chapter}{\numberline {3}Ajout d'une singularit\IeC {\'e} dans le r\IeC {\'e}seau}{11}
+\contentsline {section}{\numberline {3.1}\IeC {\'E}tude de l'influence de la fr\IeC {\'e}quence de r\IeC {\'e}sonance du d\IeC {\'e}faut}{11}
+\contentsline {subsection}{\numberline {3.1.1}Cas du d\IeC {\'e}faut hors bandes interdites}{11}
+\contentsline {subsection}{\numberline {3.1.2}Cas du d\IeC {\'e}faut dans une bande interdite}{12}
+\contentsline {section}{\numberline {3.2}\IeC {\'E}tude de l'influence de la position du d\IeC {\'e}faut}{12}
+\contentsline {chapter}{\numberline {4}Visualisation exp\IeC {\'e}rimental d'un mode localis\IeC {\'e}}{13}
+\contentsline {section}{\numberline {4.1}Protocole exp\IeC {\'e}rimental}{13}
+\contentsline {section}{\numberline {4.2}R\IeC {\'e}sultat et comparaison avec la simulation}{13}
+\contentsline {chapter}{\numberline {5}Conclusion}{14}

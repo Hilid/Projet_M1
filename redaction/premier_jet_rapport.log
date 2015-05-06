@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.3)  4 MAY 2015 14:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.13)  6 MAY 2015 14:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **premier_jet_rapport.tex
 (./premier_jet_rapport.tex
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 6 languages loaded.
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -1166,21 +1166,21 @@ File: ./images_chp1/ex_coef_rapport.png Graphic file (type png)
 
 <use ./images_chp1/ex_coef_rapport.png>
 Package pdftex.def Info: ./images_chp1/ex_coef_rapport.png used on input line 1
-30.
+29.
 (pdftex.def)             Requested size: 399.09001pt x 306.74525pt.
 
 <./images_chp1/chaos_10mm.png, id=50, 462.528pt x 346.896pt>
 File: ./images_chp1/chaos_10mm.png Graphic file (type png)
 
 <use ./images_chp1/chaos_10mm.png>
-Package pdftex.def Info: ./images_chp1/chaos_10mm.png used on input line 141.
+Package pdftex.def Info: ./images_chp1/chaos_10mm.png used on input line 140.
 (pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
 
 <./images_chp1/chaos_2mm.png, id=51, 462.528pt x 346.896pt>
 File: ./images_chp1/chaos_2mm.png Graphic file (type png)
 
 <use ./images_chp1/chaos_2mm.png>
-Package pdftex.def Info: ./images_chp1/chaos_2mm.png used on input line 152.
+Package pdftex.def Info: ./images_chp1/chaos_2mm.png used on input line 151.
 (pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
  [8 <./images_chp1/ex_coef_rapport.png>]
 [9 <./images_chp1/chaos_10mm.png> <./images_chp1/chaos_2mm.png>]
@@ -1189,7 +1189,7 @@ File: ./images_chp1/chaos_position_grand.png Graphic file (type png)
 
 <use ./images_chp1/chaos_position_grand.png>
 Package pdftex.def Info: ./images_chp1/chaos_position_grand.png used on input l
-ine 163.
+ine 162.
 (pdftex.def)             Requested size: 198.742pt x 146.94862pt.
 
 <./images_chp1/chaos_position_petit.png, id=62, 397.485pt x 293.898pt>
@@ -1197,21 +1197,81 @@ File: ./images_chp1/chaos_position_petit.png Graphic file (type png)
 
 <use ./images_chp1/chaos_position_petit.png>
 Package pdftex.def Info: ./images_chp1/chaos_position_petit.png used on input l
-ine 166.
+ine 165.
 (pdftex.def)             Requested size: 198.742pt x 146.94862pt.
 ) [10 <./images_chp1/chaos_position_grand.png> <./images_chp1/chaos_position_pe
 tit.png>]
+\openout2 = `chapitre2.aux'.
+
+ (./chapitre2.tex
+Chapitre 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--4
+
+ []
+
+<images_chp2/schema_singu1.png, id=71, 320.397pt x 149.358pt>
+File: images_chp2/schema_singu1.png Graphic file (type png)
+
+<use images_chp2/schema_singu1.png>
+Package pdftex.def Info: images_chp2/schema_singu1.png used on input line 12.
+(pdftex.def)             Requested size: 160.1981pt x 74.6788pt.
+
+<images_chp2/schema_singu2.png, id=72, 331.639pt x 165.418pt>
+File: images_chp2/schema_singu2.png Graphic file (type png)
+
+<use images_chp2/schema_singu2.png>
+Package pdftex.def Info: images_chp2/schema_singu2.png used on input line 13.
+(pdftex.def)             Requested size: 165.81909pt x 82.70879pt.
+
+<images_chp2/visu_pression_defavo.png, id=73, 578.16pt x 433.62pt>
+File: images_chp2/visu_pression_defavo.png Graphic file (type png)
+
+<use images_chp2/visu_pression_defavo.png>
+Package pdftex.def Info: images_chp2/visu_pression_defavo.png used on input lin
+e 30.
+(pdftex.def)             Requested size: 289.07928pt x 216.80946pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[11
+
+
+
+ <./images_chp2/schema_singu1.png> <./images_chp2/schema_singu2.png>]
+
+LaTeX Warning: Reference `defaut_b' on page 12 undefined on input line 49.
+
+) [12 <./images_chp2/visu_pression_defavo.png>]
+\openout2 = `chapitre3.aux'.
+
+ (./chapitre3.tex
+Chapitre 4.
+) [13
+
+
+
+]
+\openout2 = `conclusion.aux'.
+
+ (./conclusion.tex
+Chapitre 5.
+) [14
+
+
+
+]
 \openout2 = `annexe.aux'.
 
- (./annexe.tex) [11
+ (./annexe.tex) [15
 
 
 
 ]
 \openout2 = `notations.aux'.
 
-
-(./notations.tex
+ (./notations.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--11
 
  []
@@ -1231,28 +1291,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
  []
 
-) [12
+) [16
 
 
 ] 
 AED: lastpage setting LastPage
-(./premier_jet_rapport.aux (./introduction.aux) (./chapitre1.aux) (./annexe.aux
-) (./notations.aux))
+(./premier_jet_rapport.aux (./introduction.aux) (./chapitre1.aux)
+(./chapitre2.aux) (./chapitre3.aux) (./conclusion.aux) (./annexe.aux)
+(./notations.aux))
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 15664 strings out of 494958
- 273765 string characters out of 6179214
- 334925 words of memory out of 5000000
- 18467 multiletter control sequences out of 15000+600000
+ 15697 strings out of 493304
+ 274532 string characters out of 6139871
+ 339040 words of memory out of 5000000
+ 18717 multiletter control sequences out of 15000+600000
  67501 words of font info for 59 fonts, out of 8000000 for 9000
- 36 hyphenation exceptions out of 8191
- 63i,13n,92p,543b,686s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 957 hyphenation exceptions out of 8191
+ 63i,13n,92p,686b,686s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
@@ -1267,10 +1325,10 @@ c/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share/tex
 mf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.
 pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/
 type1/public/lm/lmsy7.pfb>
-Output written on premier_jet_rapport.pdf (13 pages, 475482 bytes).
+Output written on premier_jet_rapport.pdf (17 pages, 584019 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
+ 153 PDF objects out of 1000 (max. 8388607)
+ 100 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 58 words of extra memory for PDF output out of 10000 (max. 10000000)
 

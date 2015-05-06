@@ -137,6 +137,7 @@ figure(1)
 axe = (1:1:length(PV(1,:)))./length(PV(1,:)).*(nb_cellule*L);
 ref1 = plot(axe,abs(real((PV(1,:)))),'o-')
 ylabel('Pression')
+xlabel('Distance en m');
 xlim([0 L*(nb_cellule+0.2)]);
 title(['Pression dans le guide pour f=',num2str(f)]);
 hold on

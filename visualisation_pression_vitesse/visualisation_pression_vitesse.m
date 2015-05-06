@@ -9,7 +9,7 @@ more off
 %Constantes physiques
 %--------------------
 %Fréquence imposée
-f= 600.3; 								%866 : Bragg  1000 : R=1
+f= 371; 								%866 : Bragg  1000 : R=1
 w=2*pi*f;
 
 %Périodisation
@@ -49,7 +49,7 @@ L2 = 0.82 * (1- 0.235 * RN / RT - 1.32*(RN/RT)^2 + 1.54 * (RN/RT)^3 - 0.86*(RN/R
 Lcol = Lcol + L1 + L2;
 
 
-Lcavs =0.16;  					
+Lcavs =0.08;  					
 Lcols =0.02;					
 Dcavs =0.043;				
 Dcols =0.02;					
@@ -134,7 +134,7 @@ disp('');
 %Affichage de la pression
 %-------------------------
 figure(1)
-plot(real((PV(1,:))),'o-')
+plot(abs(real((PV(1,:)))),'o-')
 ylabel('Pression')
 %ylim([0 10^10]);
 title(['Pression dans le guide pour f=',num2str(f)]);

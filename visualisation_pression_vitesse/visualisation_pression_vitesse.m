@@ -1,7 +1,7 @@
 clear all
 close all
 clc
-graphics_toolkit('gnuplot')          %affichage gnuplot
+graphics_toolkit('fltk')          %affichage gnuplot
 more off
 %hold on
 
@@ -134,18 +134,23 @@ disp('');
 %Affichage de la pression
 %-------------------------
 figure(1)
-plot(abs(real((PV(1,:)))),'o-')
+axe = (1:1:length(PV(1,:)))./length(PV(1,:)).*(nb_cellule*L);
+ref1 = plot(axe,abs(real((PV(1,:)))),'o-')
 ylabel('Pression')
-%ylim([0 10^10]);
+xlim([0 L*(nb_cellule+0.2)]);
 title(['Pression dans le guide pour f=',num2str(f)]);
 hold on
 Pmin=min(abs(real(PV(1,:))));
 Pmax=max(abs(real(PV(1,:))));
 hold on
-for n=1:nb_cellule
-	line((Ndiv+1)*n+1,[Pmin Pmax]); %ligne avant résonateur
-	line((Ndiv+1)*n,[Pmin Pmax]);	%ligne après résonateur
+for n=2:nb_cellule
+	line(n*L,[Pmin Pmax]); %ligne avant résonateur
+%	line((Ndiv+1)*n,[Pmin Pmax]);	%ligne après résonateur
 end
+ref2 = line(L,[Pmin Pmax]); %ligne avant résonateur
+ref3 = line(NumSing*L,[Pmin Pmax],'color','r'); %ligne avant résonateur
+legend([ref1 ref2 ref3],'Pression dans le tube','Resonateurs','Defaut');
+
 hold off
 
 %Affichage de la vitesse

@@ -1,5 +1,5 @@
 \chapter{Théorie d'un réseau acoustique fini constitué de résonateurs de Helmholtz}
-Ce chapitre a pour but de caractériser le champ de pression dans un guide sur lequel des résonateurs de Helmholtz sont placés en dérivation, espécés régulièrement d'une longueur $L$. On dispose pour cela d'un banc de mesure représenté en figure ~\ref{schema_infini}. Une simulation de la propagation dans le réseau pourra donc être confronté à une expérience.
+Ce chapitre a pour but de caractériser le champ de pression dans un guide sur lequel des résonateurs de Helmholtz sont placés en dérivation, espacés régulièrement d'une longueur $L$. On dispose pour cela d'un banc de mesure représenté en figure ~\ref{schema_infini}. Une simulation de la propagation dans le réseau pourra donc être confronté à une expérience.
 
 \begin{figure}[!ht] \centering
 \includegraphics[scale=0.5]{./images_chp1/schema_reseau_infini.png}
@@ -103,6 +103,7 @@ La matrice de transfert l'équation de dispersion pour le réseau à N cellules 
 
 Ainsi, on peut remonter à une expression de $kL$ en fonction de la fréquence. En particulier, les zones où $kL$ devient imaginaire nous intéressent particulièrement car cela induit une décroissance exponentielle de l'onde de propageant dans le guilde (onde évanescente). Ces bandes sont visibles sur la figure~\ref{bande_bragg} et sont appelées les bandes de Bragg.
 
+\todo{une figure de l’équation de dispersion avec bande de bragg}
 
 \subsection{Réflexion et transmission du réseau}
 Le coefficient de réflexion et de transmission du réseau complet peut être calculé de la manière suivante [\todo[inline]{Source biblio}] : 
@@ -126,7 +127,7 @@ De plus le résonateur étant par nature un système résonant, il peut lui auss
 
 \begin{figure}
 \centering
-\includegraphics[scale=1]{./images_chp1/ex_coef_rapport.png}
+\includegraphics[scale=0.7]{./images_chp1/ex_coef_rapport.png}
 \caption{\label{ex_coef_RT} Coefficient de réflexion (en haut) et de transmission (au milieu) pour un réseau de 60 résonateurs avec $L_c=14~cm$. En bas : Impédance d'entrée du résonateur.}
 \end{figure}
 
@@ -135,25 +136,32 @@ De plus le résonateur étant par nature un système résonant, il peut lui auss
 \subsubsection{Désordre sur le volume des cavités}
 
 Afin d'étudier succinctement l'effet d'un désordre sur le volume des cavités du résonateur, une simulation numérique est réalisée pour des longueurs de cavité suivant une loi normale. Comme précédemment, les résonateurs sont arbitrairement au nombre de 60 et sont séparés d'une distance $L=0.1$ m. La figure~\ref{chaos10} présente les coefficients de transmission et de réflexion pour une longueur de cavité moyenne de $\bar{L_c}=14$ cm et un écart-type  de $\sigma = 1$ cm.
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.7]{./images_chp1/chaos_10mm.png}
-	\caption{\label{chaos10} Coefficient de réflexion (en haut) et de transmission (en bas) pour un réseau de 60 résonateurs avec $\bar{L_c}=14$~cm et $\sigma =1$ cm.}
-\end{figure}
+
 
 Dans le cas d'un écart-type élevé, le désordre a pour principal effet d'élargir la bande interdite liée à la seconde résonance des résonateurs (résonance de la cavité). La bande de Bragg n'est pas impactée puisque le désordre touche le volume des cavités et non l'espacement des résonateurs.
 
 \paragraph{Désordre lié aux conditions expérimentales}
-Dans l'expérience menée plus loin, le volume des résonateur est fixé manuellement. La question de l'impact de l'erreur commise par la mise en place de l'expérience est donc directement liée à l'étude de désordre dans le réseau. On estime que la longueur des cavités va suivre une loi normale d'écart-type 2 mm et de longueur moyenne $\bar{L_c}=14.5$ cm. La figure~\ref{chaos2} montre alors que ce désordre n'a qu'une faible influence sur le coefficient de réflexion. 
+Dans l'expérience menée plus loin, le volume des résonateur est fixé manuellement. La question de l'impact de l'erreur commise par la mise en place de l'expérience est donc directement liée à l'étude de désordre dans le réseau. On estime que la longueur des cavités va suivre une loi normale d'écart-type 2 mm et de longueur moyenne $\bar{L_c}=14$ cm. La figure~\ref{chaos2} montre alors que ce désordre n'a qu'une faible influence sur le coefficient de réflexion. 
 
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.7]{./images_chp1/chaos_2mm.png}
-	\caption{\label{chaos2} Coefficient de réflexion (en haut) et de transmission (en bas) pour un réseau de 60 résonateurs avec $\bar{L_c}=14$~cm et $\sigma=2$ mm.}
+
+\begin{figure}[!h]
+	\begin{minipage}{0.45 \textwidth}
+		\centering
+		\includegraphics[scale=0.5]{./images_chp1/chaos_10mm.png}
+		\caption{\label{chaos10} Coefficient de réflexion (en haut) et de transmission (en bas) pour un réseau de 60 résonateurs avec $\bar{L_c}=14$~cm et $\sigma =1$ cm.}
+	\end{minipage}
+\hspace{0.5cm}
+	\begin{minipage}{0.45 \textwidth}
+		\centering
+		\includegraphics[scale=0.5]{./images_chp1/chaos_2mm.png}
+		\caption{\label{chaos2} Coefficient de réflexion (en haut) et de transmission (en bas) pour un réseau de 60 résonateurs avec $\bar{L_c}=14$~cm et $\sigma=2$ mm.}
+	\end{minipage}
 \end{figure}
 
+
+
 \subsubsection{Désordre sur la position des résonateurs}
-La même étude est menée sur le désordre lié à la conception du banc de mesure et aux défauts de position des résonateur.
+La même étude est menée sur le désordre lié à la conception du banc de mesure et aux défauts de position des résonateur. La configuration du réseau est la même.
 Les figures~\ref{chaospos10} et~\ref{chaospos2} montrent l'effet d'un désordre plus ou moins grand sur la réflexion et la transmission.
 
 \begin{figure}[h!]
@@ -163,8 +171,12 @@ Les figures~\ref{chaospos10} et~\ref{chaospos2} montrent l'effet d'un désordre 
 	\subfigure[\label{chaospos2}$\sigma=2$ mm]{
 		\includegraphics[scale=0.5]{./images_chp1/chaos_position_petit.png}
 	}
-	\caption{Coefficients de réflexion (en haut) et de transmission (en bas) pour un réseau de 60 résonateurs avec $\bar{L}=10$ cm.}
+	\caption{Coefficients de réflexion (en haut) et de transmission (en bas) pour un réseau de 60 résonateurs avec $\bar{L}=14$ cm.}
 \end{figure}
+
+Le désordre a pour principal effet d'augmenter la transmission au niveau de la bande de Bragg. Pour un désordre grand, l'effet du réseau n'est plus visible, puisque la bande interdite de Bragg va jusqu'à disparaître.
+
+Le désordre d'écart-type 2 mm est supérieur à celui estimé pour la réalisation du banc de mesure et est cependant moindre. On considère donc qu'il est négligeable par la suite.
 
 
 

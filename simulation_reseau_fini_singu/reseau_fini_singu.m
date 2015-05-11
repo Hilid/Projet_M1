@@ -33,7 +33,7 @@ Lcols = Lcols + L1s + L2s;
 
 
 % Constantes Résonateur
-Lcav =0.145;			% longueur de la cavité
+Lcav =0.16;			% longueur de la cavité
 Lcol =0.02;			% longueur du col
 Dcav =0.043;			% diametre de la cavité
 Dcol =0.02;				% diametre du col

@@ -4,7 +4,7 @@ clc
 graphics_toolkit('fltk')          %affichage gnuplot
 
 %===============================================================================================================
-nb_cellule =60;
+nb_cellule =5;
 
 %Constantes physiques
 %--------------------
@@ -20,7 +20,7 @@ d = 0.05; 				% diametre du guide
 
 % Constantes Résonateur
 %----------------------
-Lcav =0.145;			% longueur de la cavité
+Lcav =0.16;			% longueur de la cavité
 Lcol =0.02;			% longueur du col
 Dcav =0.043;			% diametre de la cavité
 Dcol =0.02;				% diametre du col
@@ -49,7 +49,7 @@ w = 2*pi*f;
 
 %Prise en compte du chaos (changement aléatoire de Lcav avec un écart-type de sigma)
 %-----------------------------------------------------------------------------------
-sigma =0.002;  %ecart type en mm
+sigma =0.1;  %ecart type en mm
 vec_L= L+sigma*randn(1,nb_cellule);
 
 %=================================================================================================================
@@ -164,8 +164,10 @@ Zc = Zc_perte;
 R = (A + B./Zc - C.*Zc - D)./(A + C.*Zc + B./Zc + D);
 
 figure(2)
+hold on
 subplot(2,1,1);
-plot(f,20*log10(abs(R)));
+hold on
+plot(f,20*log10(abs(R)))%,'--r');
 %~ axis([0 Fmax 0 1.5]);
 
 ylabel('20log(|R|)');
@@ -178,8 +180,10 @@ grid on
 T = 2./(A + C.*Zc + B./Zc + D);
 
 figure(2)
+hold on
 subplot(2,1,2);
-plot(f,20*log10(abs(T(1,1,:))));
+hold on
+plot(f,20*log10(abs(T(1,1,:))))%,'--r');
 axis([0 Fmax -100 0]);
 ylabel('20log(|T|)');
 title("Coefficient de transmission à l'entrée du réseau");
@@ -197,19 +201,21 @@ grid on
 %~ title('Admittance du résonateur de Helmholtz');
 %~ grid on
 
-print -dsvg chaos_position_petit.svg
+legend('Sans desordre','Avec desordre')
 
-%Absorption A=1-abs(T)^2 -abs(R)^2
-A=1-abs(T).^2 -abs(R).^2;
+print -dsvg chaos_position_grand.svg
 
-figure(3)
-plot(f,abs(T),'b');
-hold on
-plot(f,abs(R),'r');
-hold on
-plot(f,A,'k');
-xlim([0 1500]);
-legend('Transmission','Reflexion','Absorption');
-hold off
-title('chaotique')
+%~ %Absorption A=1-abs(T)^2 -abs(R)^2
+%~ A=1-abs(T).^2 -abs(R).^2;
+%~ 
+%~ figure(3)
+%~ plot(f,abs(T),'b');
+%~ hold on
+%~ plot(f,abs(R),'r');
+%~ hold on
+%~ plot(f,A,'k');
+%~ xlim([0 1500]);
+%~ legend('Transmission','Reflexion','Absorption');
+%~ hold off
+%~ title('chaotique')
 

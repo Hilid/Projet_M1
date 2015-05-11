@@ -20,11 +20,11 @@ Cette matrice dispose en effet de propriétés intéressantes et l'étude du sys
 Pour cela, les 2 éléments du réseau (guide et résonateur) doivent être mis sous forme matricielle puis multipliés.
 
 \subsection{Le guide d'onde}
+Le problème est considéré à une dimensions du fait de la longueur du guide et du domaine de fréquence de l'étude: on considère que seul des ondes planes se propagent.
 La solution de la propagation dans un guide d'onde peux être facilement déduite de l'équation d'onde suivante :
 \begin{equation}
 \frac{\partial ^2 p}{\partial x^2} -\frac{1}{c^{2}} \frac{\partial ^2 p}{\partial t^2}= 0
-\end{equation}\todo[inline]{Dire qu'on est en 1D (d'où dx) car guide long et BF}
-
+\end{equation}
 On se place en régime harmonique et on note $\Gamma = jk$ la constante de propagation du système. D’où les solutions (vitesses calculées avec l'équation d'Euler:
 
 \begin{eqnarray*}
@@ -77,11 +77,11 @@ On suppose que le résonateur est constitué de 2 guides à parois rigides d'imp
 \begin{eqnarray*}
 \begin{pmatrix} P_e \\U_e \end{pmatrix} & = & \begin{pmatrix} \cos(k L_n) & j Z_{n} \sin(k L_n) \\ \frac{1}{Z_{n}} \sin(k L_n) & \cos(k L_n) \end{pmatrix} \begin{pmatrix} \cos(k L_c) & j Z_{c} \sin(k L_c) \\ \frac{1}{Z_{c}} \sin(k L_c) & \cos(k L_c) \end{pmatrix} \begin{pmatrix} P_s \\ 0  \end{pmatrix} \\
 \begin{pmatrix} P_e \\U_e \end{pmatrix} & = & \begin{pmatrix} r_1 & r_2 \\ r_3 & r_4 \end{pmatrix} \begin{pmatrix} P_1 \\ 0  \end{pmatrix} \\
-~ & \Leftrightarrow & Z_{r}	 = \frac{P_e}{U_e}= \frac{r_1}{r_3}
+~ & \Rightarrow & Z_{r}	 = \frac{P_e}{U_e}= \frac{r_1}{r_3}
 \end{eqnarray*}
 
 \paragraph{Correction de longueur}
-La longueur effective du col est sujet à une correction présentée en annexe \todo[inline]{correction liée à quoi, détaille-t-on ce passage ?}
+La longueur effective du col est sujet à une correction présentée en annexe \ref{annexe_corr}.
 
 En ajoutant un résonateur en parallèle au guide, il y a toujours continuité des pressions mais plus des vitesses. La matrice de transfert pression-débit pour un résonateur dans le réseau est alors la suivante :
 
@@ -101,9 +101,7 @@ La matrice de transfert l'équation de dispersion pour le réseau à N cellules 
 \cos(NkL) = \frac{A+D}{2} 
 \end{equation}
 
-Ainsi, on peut remonter à une expression de $kL$ en fonction de la fréquence. En particulier, les zones où $kL$ devient imaginaire nous intéressent particulièrement car cela induit une décroissance exponentielle de l'onde de propageant dans le guilde (onde évanescente). Ces bandes sont visibles sur la figure~\ref{bande_bragg} et sont appelées les bandes de Bragg.
-
-\todo{une figure de l’équation de dispersion avec bande de bragg}
+Ainsi, on peut remonter à une expression de $kL$ en fonction de la fréquence. En particulier, les zones où $kL$ devient imaginaire nous intéressent particulièrement car cela induit une décroissance exponentielle de l'onde de propageant dans le guilde (onde évanescente). Ces bandes sont appelées les bandes de Bragg.
 
 \subsection{Réflexion et transmission du réseau}
 Le coefficient de réflexion et de transmission du réseau complet peut être calculé de la manière suivante [\todo[inline]{Source biblio}] : 
@@ -115,7 +113,7 @@ R & = & \frac{A + B / Zc_ - C Z_c -D}{A + B/Z_c + C Z_c + D}
 On trace ces coefficients en fonction de la fréquence (figure~\ref{ex_coef_RT}) ainsi que l'admittance des résonateurs utilisés. Il apparaît que la transmission chute pour trois bandes de fréquence : à la résonance du résonateur de Helmholtz, à celle de sa cavité et à la première bande de Bragg.
 
 \subsection{Bande de Bragg}
-Ces bandes sont visibles dès que des singularités apparaissent de manière periodique. L'énergie de l'onde est reste contenue entre chaque élément du fait que la longueur d'onde correspond à la moitié de l'espacement entre 2 éléments. 
+Ces bandes sont visibles dès que des singularités apparaissent de manière periodique. L'énergie de l'onde est reste contenue entre chaque éléments du fait que la longueur d'onde correspond à la moitié de l'espacement entre 2 éléments. 
 
 Pour un espacement entre éléments de longueur $L=0.1~m$, la bande de Bragg se situe autour de la fréquence $f_{b} = \frac{c}{2L} = 1715 Hz$. On constate sur la figure~\ref{ex_coef_RT} que ces bandes de Bragg sont bien présentes à la fréquence indiquée ainsi qu'a ses multiples (chute de la transmission et réflexion maximale).
  

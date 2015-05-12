@@ -44,9 +44,8 @@ On pose $x_1 - x_2 = L$. Tous calculs faits, on trouve finalement:
 La première fréquence de coupure du guide est donc d'environ $4kHz$ pour les dimensions du réseau que nous considérons. Dans la suite, on supposera donc que seul le mode plan est propagatif. Les simulations et mesures ne seront donc faite que sur une bande de fréquences allant de $0$ à $1~kHz$.
 
 \subsubsection{Ajout des pertes}
-\todo[inline]{source biblio à citer}
 
-Pour prendre en compte les pertes, on modifie l'expression de la constante de propagation et de l'impédance caractéristique. Les expressions sont donc:
+Pour prendre en compte les pertes, on modifie l'expression de la constante de propagation et de l'impédance caractéristique ~\cite{slow}. Les expressions sont donc:
 \begin{eqnarray*}
  k =  \frac{\omega}{c_0} \left( 1 + \frac{\beta}{s}(1+(\gamma-1)/ \chi \right) \\
  Z_c =  \frac{\rho c_0}{S} \left( 1 + \frac{\beta}{s}(1-(\gamma-1)/ \chi \right) 
@@ -104,7 +103,7 @@ La matrice de transfert l'équation de dispersion pour le réseau à N cellules 
 Ainsi, on peut remonter à une expression de $kL$ en fonction de la fréquence. En particulier, les zones où $kL$ devient imaginaire nous intéressent particulièrement car cela induit une décroissance exponentielle de l'onde de propageant dans le guilde (onde évanescente). Ces bandes sont appelées les bandes de Bragg.
 
 \subsection{Réflexion et transmission du réseau}
-Le coefficient de réflexion et de transmission du réseau complet peut être calculé de la manière suivante [\todo[inline]{Source biblio}] : 
+Le coefficient de réflexion et de transmission du réseau complet peut être calculé de la manière suivante ~\cite{guide_dalmont}: 
 \begin{eqnarray}
 T & = & \frac{2}{A + B/Z_c + C Z_c + D} \\
 R & = & \frac{A + B / Zc_ - C Z_c -D}{A + B/Z_c + C Z_c + D} 

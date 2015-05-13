@@ -17,7 +17,7 @@ d = 0.05; 				% diametre du guide
 % Constantes Singularité
 NumSing = 3;
 
-Lcavs =0.08;			% seul truc qui change
+Lcavs =0.16;			% seul truc qui change
 Lcols =0.02;			
 Dcavs =0.043;			
 Dcols =0.02;				
@@ -215,15 +215,11 @@ title('admittance du resonateur de Helmholtz');
 grid on
 
 
-
-
-
-
 %Affichage de l'absorption
 %-----------------------------------------------
 A=1-abs(T).^2 -abs(R).^2;
 figure(3)
-subplot(2,1,1)
+%subplot(2,1,1)
 plot(f,abs(T),'b', 'Linewidth',3);
 hold on
 plot(f,abs(R),'r', 'Linewidth',3);
@@ -232,18 +228,18 @@ plot(f,A,'k');
 legend('Transmission','Reflexion','Absorption');
 xlim([0 Fmax]);
 
-
-admittance_singu = ones(1,N);
-for x=1:1:N
-	matrice_resonateur = resonateur(w(x),Lcavs,Lcols,Dcavs,Dcols,rho,c);		
-	admittance_singu(x) = matrice_resonateur(2,1);
-
-end
-
-subplot(2,1,2);
-semilogy(f,abs(admittance_singu(1,:)));
-grid on
-hold on
-semilogy(f,abs(admittance_resonateur(1,:)),'-r');
-legend('admi singu','admi reso');
-xlim([0 Fmax]);
+%~ 
+%~ admittance_singu = ones(1,N);
+%~ for x=1:1:N
+	%~ matrice_resonateur = resonateur(w(x),Lcavs,Lcols,Dcavs,Dcols,rho,c);		
+	%~ admittance_singu(x) = matrice_resonateur(2,1);
+%~ 
+%~ end
+%~ 
+%~ subplot(2,1,2);
+%~ semilogy(f,abs(admittance_singu(1,:)));
+%~ grid on
+%~ hold on
+%~ semilogy(f,abs(admittance_resonateur(1,:)),'-r');
+%~ legend('admi singu','admi reso');
+%~ xlim([0 Fmax]);

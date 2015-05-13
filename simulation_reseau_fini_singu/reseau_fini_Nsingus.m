@@ -1,17 +1,17 @@
 clear all
 close all
 clc
-%graphics_toolkit('gnuplot')          %affichage gnuplot
+graphics_toolkit('gnuplot')          %affichage gnuplot
 
 %===============================================================================================================
-nb_cellule =60;
+nb_cellule =5;
 
 %Constantes physiques
 c = 340;
 rho = 1.177;       %a  300°K
 
 % Constantes guide
-L = 0.60; 				% longueur du guide
+L = 0.10; 				% longueur du guide
 d = 0.05; 				% diametre du guide
 
 %Nombre de singularité choisie et lieu de la première
@@ -19,7 +19,7 @@ NbSingu=input("Nombre de singularites : \n");
 NumeroSingu=input("Lieu de la 1ere singularite : \n")
 
 for i=1:NbSingu %Le seule grandeur amovible
-	Lcavs(i)=0.3+0.08*(i-1);
+	Lcavs(i)=0.16%+0.08*(i-1);
 end
 if NbSingu==0
 	Lcavs(1)=0;
@@ -40,7 +40,7 @@ Lcols = Lcols + L1s + L2s;
 
 
 % Constantes Résonateur
-Lcav =0.15;			% longueur de la cavité
+Lcav =0.16;			% longueur de la cavité
 Lcol =0.02;			% longueur du col
 Dcav =0.043;			% diametre de la cavité
 Dcol =0.02;				% diametre du col
@@ -54,8 +54,8 @@ L2 = 0.82 * (1- 0.235 * RN / RT - 1.32*(RN/RT)^2 + 1.54 * (RN/RT)^3 - 0.86*(RN/R
 Lcol = Lcol + L1 + L2;
 
 %Base fréquentielle
-Fmax=1000;
-f = 0:1.5:Fmax;
+Fmax=600;
+f = 100:1.5:Fmax;
 N = length(f);
 w = 2*pi*f;
 %=================================================================================================================
@@ -66,11 +66,9 @@ admittance_resonateur = ones(1,N);
 
 for x=1:1:N
 	reseau(:,:,x) = eye(2);
-	clc
-	fprintf(1,['\b%d  /' num2str(N)],x)	
 	y=1;
-	while y<=nb_cellule
-		if y!=NumeroSingu
+	while (y<=nb_cellule)
+		if (y!=NumeroSingu)
 			matrice_resonateur = resonateur(w(x),Lcav,Lcol,Dcav,Dcol,rho,c);	
 			cellule = guide(w(x),L,d,rho,c) * matrice_resonateur;
 			reseau(:,:,x) = reseau(:,:,x)*cellule;
@@ -149,7 +147,7 @@ hold on
 plot(ones(1,N), '-r');
 hold on
 plot(-ones(1,N), '-r');
-axis([0 2000 -10 10])
+axis([100 Fmax -10 10])
 legend('cos( Gamma d )','y=1','y=-1');
 ylabel('cos( Gamma d)');
 title("Representation graphique de l'equation de dispersion")
@@ -196,7 +194,7 @@ R = (A + B./Zc - C.*Zc - D)./(A + C.*Zc + B./Zc + D);
 figure(2)
 subplot(4,1,2);
 plot(f,abs(R));
-axis([0 2000 0 1.5]);
+axis([100 Fmax 0 1.5]);
 
 ylabel('abs(R)');
 title('Coefficient de reflexion a l entree du reseau')
@@ -210,7 +208,7 @@ T = 2./(A + C.*Zc + B./Zc + D);
 figure(2)
 subplot(4,1,3);
 plot(f,abs(T(1,1,:)));
-axis([0 2000 0 1.5]);
+axis([0 Fmax 0 1.5]);
 ylabel('abs(T)');
 title('Coefficient de transmission a l entree du reseau');
 grid on
@@ -231,7 +229,7 @@ grid on
 %-----------------------------------------------
 A=1-abs(T).^2 -abs(R).^2;
 figure(3)
-subplot(2,1,1)
+%subplot(2,1,1)
 plot(f,abs(T),'b', 'Linewidth',3);
 hold on
 plot(f,abs(R),'r', 'Linewidth',3);
@@ -239,17 +237,17 @@ hold on
 plot(f,A,'k');
 legend('Transmission','Reflexion');
 
-subplot(2,1,2);
-grid on
-for n=1:NbSingu
-	admittance_singu = ones(1,N);
-	for x=1:1:N
-		matrice_resonateur = resonateur(w(x),Lcavs(n),Lcols,Dcavs,Dcols,rho,c);		
-		admittance_singu(x) = matrice_resonateur(2,1);
-	end
-	hold on
-	semilogy(f,abs(admittance_singu(1,:)), 'Linewidth',3);
-end
-
-hold on
-semilogy(f,abs(admittance_resonateur(1,:)),'-r', 'Linewidth',3);
+%~ subplot(2,1,2);
+%~ grid on
+%~ for n=1:NbSingu
+	%~ admittance_singu = ones(1,N);
+	%~ for x=1:1:N
+		%~ matrice_resonateur = resonateur(w(x),Lcavs(n),Lcols,Dcavs,Dcols,rho,c);		
+		%~ admittance_singu(x) = matrice_resonateur(2,1);
+	%~ end
+	%~ hold on
+	%~ semilogy(f,abs(admittance_singu(1,:)), 'Linewidth',3);
+%~ end
+%~ 
+%~ hold on
+%~ semilogy(f,abs(admittance_resonateur(1,:)),'-r', 'Linewidth',3);

@@ -4,24 +4,24 @@ clc
 %graphics_toolkit('gnuplot')          %affichage gnuplot
 
 %===============================================================================================================
-nb_cellule =60;
+nb_cellule =6;
 
 %Constantes physiques
 c = 340;
 rho = 1.177;       %a  300°K
 
 % Constantes guide
-L = 0.60; 				% longueur du guide
+L = 0.10; 				% longueur du guide
 d = 0.05; 				% diametre du guide
 
 % Constantes Singularité
-NumSing1 = 10; %numéro du résonateur avec singularité
-NumSing2 = 9;
-NumSing3 = 8;
+NumSing1 = 3; %numéro du résonateur avec singularité
+NumSing2 = 4;
+NumSing3 = 5;
 
-Lcavs1 =0.32;			% seul truc qui change
-Lcavs2 =0.43;
-Lcavs3 =0.52;
+Lcavs1 =0.16;			% seul truc qui change
+Lcavs2 =0.16;
+Lcavs3 =0.16;
 Lcols =0.02;			
 Dcavs =0.043;			
 Dcols =0.02;				
@@ -37,7 +37,7 @@ Lcols = Lcols + L1s + L2s;
 
 
 % Constantes Résonateur
-Lcav =0.15;			% longueur de la cavité
+Lcav =0.16;			% longueur de la cavité
 Lcol =0.02;			% longueur du col
 Dcav =0.043;			% diametre de la cavité
 Dcol =0.02;				% diametre du col
@@ -51,8 +51,8 @@ L2 = 0.82 * (1- 0.235 * RN / RT - 1.32*(RN/RT)^2 + 1.54 * (RN/RT)^3 - 0.86*(RN/R
 Lcol = Lcol + L1 + L2;
 
 %Base fréquentielle
-Fmax=2000;
-f = 0:1.5:Fmax;
+Fmax=600;
+f = 150:1:Fmax;
 N = length(f);
 w = 2*pi*f;
 %=================================================================================================================
@@ -213,7 +213,7 @@ T = 2./(A + C.*Zc + B./Zc + D);
 figure(2)
 subplot(4,1,3);
 plot(f,abs(T(1,1,:)));
-axis([0 2000 0 1.5]);
+axis([0 900 0 1.5]);
 ylabel('abs(T)');
 title('Coefficient de transmission a l entree du reseau');
 grid on

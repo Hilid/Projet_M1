@@ -12,11 +12,11 @@ Le banc de mesure utilisé est constitué d'un tuyau perforé de 60 trous sur le
 \textbf{mode }
 
 \todo{photo manip}
-%\begin{figure}
-%	\centering
-%	\includegraphics[scale=0.5]{images_chp3/photo_manip.png}
-%	\caption{Photo du banc de mesure utilisé.}
-%\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.5]{images_chp3/dscn0123.png}
+	\caption{Photo du banc de mesure utilisé.}
+\end{figure}
 
 Les mesures de pression dans le guide sont faites par déplacement manuel d'un microphone (\textcolor{red}{reference}) directement placé à l'intérieur du réseau.
 
@@ -26,8 +26,7 @@ Les mesures de pression dans le guide sont faites par déplacement manuel d'un m
 
 \bigskip
 
-A l'autre extrémité du réseau se trouve une sortie anéchoïque préalablement réglée afin que le coefficient de réflexion au bout du réseau soit le plus faible possible. Le coefficient de réflexion du guide sans les résonateurs est en dessous de 8\% pour la bande de fréquence d'intérêt (cf figure~\ref{anecho} en annexe).
-\todo{une annexe sur la source anéchoi => explication sur le reglage+figure?}
+A l'autre extrémité du réseau se trouve une sortie anéchoïque préalablement réglée afin que le coefficient de réflexion au bout du réseau soit le plus faible possible. Le coefficient de réflexion du guide sans les résonateurs est en dessous de 8\% pour la bande de fréquence d'intérêt (cf annexe \ref{term_anecho}).
 
 
 \section{Mesure du coefficient de réflexion et de transmission du réseau}
@@ -65,3 +64,29 @@ Une fois la fréquence du mode de défaut relevée sur les coefficients de réfl
 \end{figure}
 
 On constate que les niveaux de pression mesurés sont près de 10 fois plus élevé dans le cas ou un défaut est présent. De plus, la décroissance à mesure qu'on s'éloigne du défaut est très importante: on est donc bien en présence d'un mode localisé. Il est a noté que dans cette configuration le niveau maximum dans le réseau ne ce situe pas au niveau de la source mais du défaut (ce qui n'est pas le cas quand il n'y a pas de défaut).
+\bigskip
+Pour des questions matériels il n'a pas été possible de placer la source au même endroit que le défaut dans le réseau, la symétrie du système n'est donc pas conservée. C'est pourquoi les 2 courbes figurent \ref{p_tube} ne sont pas centré sur le même point. La courbe sans défaut est centrée sur la source et la courbe avec défaut est centré sur le défaut. 
+
+\subsection{Changement de géométrie du défaut}
+Afin de pouvoir étudier la différence de décroissance entre les 2 courbes, on change la géométrie du défaut: celui-ci est maintenant constitué de 2 résonateurs afin de pouvoir placer la source au centre. On à alors des cellule constitués de 2 résonateurs (voir schéma figure \ref{fig_exp}. La source se trouve en $x=0$, les résonateurs ont une longueur de cavité de $16~cm$ et ceux du défaut une longueur de $8~cm$. Ces longueurs sont modifiés par rapport au cas précédent car le mode localisé à lieu a une fréquence différente que dans le cas d'un défaut d'un seul résonateur: le couplage de 2 résonateur abaisse la fréquence du mode localisé (dans les fait 2 modes localisés sont créé, un plus basse fréquence et un plus haute, on choisi celui basse fréquence car il est mieux placé). On prend donc des cavités plus faible pour partir d'une plus haute fréquence.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.3]{./images_chp3/chgmt_defaut.png}
+\caption{\label{fig_exp} Schéma décrivant le changement du défaut afin de rendre l'expérience symétrique.}
+\end{figure}
+
+
+
+On obtient les courbes de pression figure \ref{p_tube2}.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.3]{./images_chp3/comparaison_decroissance_lin.png}\hfill
+\includegraphics[scale=0.3]{./images_chp3/comparaison_decroissance_log.png}
+\caption{\label{_tube} Pression RMS mesurée dans le réseau avec un défaut à 2 résonateurs. A gauche en abscisse linéaire, a droite en abscisse logarithmique.}
+\end{figure}
+
+Les décroissances semblent les mêmes pour les 2 courbes: le défaut à donc juste pour effet d'augmenter le niveau sonore mais n'induit pas une décroissance plus forte.
+
+

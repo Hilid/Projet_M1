@@ -6,19 +6,16 @@ Un mode localisé dans un tel réseau est à la fois difficile à générer et �
 
 
 \section{Protocole expérimental}
-Le banc de mesure utilisé est constitué d'un tuyau perforé de 60 trous sur lesquels peuvent être fixés soit des résonateurs de longueurs de cavité variables (les dimensions sont présentes en annexe), soit des bouchons (cf figure~\ref{photo_manip}. La source utilisée est celle du capteur d'impédance (piézoélectrique) : celui-ci est fixé à une des extrémités du réseau et est relié à une carte d'acquisition piloté par le logiciel spécialisé du CTTM\footnote{Centre de Transfert de Technologie du Mans}. Ce capteur dispose de 2 microphones et permet donc de calculer directement le coefficient de réflexion du réseau. Afin de pouvoir calculer le coefficient de transmission, un autre microphone (\textcolor{red}{reference mic + ampli}) est ajouté à l'autre extrémité du réseau, $10~cm$ après le dernier résonateur.
+Le banc de mesure utilisé est constitué d'un tuyau perforé de 60 trous sur lesquels peuvent être fixés soit des résonateurs de longueurs de cavité variables (les dimensions sont présentes en annexe), soit des bouchons (cf figure~\ref{photo_manip}). La source utilisée est celle du capteur d'impédance (piézoélectrique). Celui-ci est préalablement calibré, puis fixé à une des extrémités du réseau et est relié à une carte d'acquisition piloté par le logiciel spécialisé du CTTM\footnote{Centre de Transfert de Technologie du Mans}. Ce capteur dispose de 2 microphones et permet donc de calculer directement le coefficient de réflexion du réseau. Afin de pouvoir calculer le coefficient de transmission, un autre microphone (B\&K 2669, calibré) amplifié (GRAS 12AQ) est ajouté à l'autre extrémité du réseau, $10~cm$ après le dernier résonateur.
 
 
-\textbf{mode }
-
-\todo{photo manip}
-\begin{figure}
+\begin{figure}[!h]
 	\centering
 	\includegraphics[scale=0.05]{images_chp3/DSCN0123.JPG}
-	\caption{Photo du banc de mesure utilisé.}
+	\caption{Photo du banc de mesure utilisé.\label{photo_manip}}
 \end{figure}
 
-Les mesures de pression dans le guide sont faites par déplacement manuel d'un microphone (\textcolor{red}{reference}) directement placé à l'intérieur du réseau.
+Les mesures de pression dans le guide sont faites par déplacement manuel d'un microphone (GRAS 26AC) directement placé à l'intérieur du réseau.
 
 \todo{citer une annexe sur la démo du coefficient de transmission et mettre la bonne annexe sur les dims des resonateurs}
 
@@ -30,26 +27,27 @@ A l'autre extrémité du réseau se trouve une sortie anéchoïque préalablemen
 
 
 \section{Mesure du coefficient de réflexion et de transmission du réseau}
-On s'intéresse tout d'abord à la mesure du coefficient de réflexion et de transmission dans le réseau. Le but est de chercher la fréquence précise à laquelle le mode de défaut a lieu afin de pouvoir par la suite l'observer expérimentalement. Pour cela, on ne prend que 5 résonateurs (avec un défaut sur le troisième) afin que le mode localisé puisse s'étaler sur les bords du réseau et qu'il soit ainsi visible sur les coefficients de réflexion et de transmission. Les résonateurs ont une longueur de cavité de $16~cm$ et le défaut de $8~cm$. Les courbes figure ~\ref{ref1} et ~\ref{trans1} correspondent aux coefficients de réflexion et de transmission pour cette configuration.
+On s'intéresse tout d'abord à la mesure du coefficient de réflexion et de transmission dans le réseau. Le but est de chercher la fréquence précise à laquelle le mode de défaut a lieu afin de pouvoir par la suite l'observer expérimentalement. Pour cela, on ne prend que 5 résonateurs (avec un défaut sur le troisième) afin que le mode localisé puisse s'étaler sur les bords du réseau et qu'il soit ainsi visible sur les coefficients de réflexion et de transmission. Les résonateurs ont une longueur de cavité de $16~cm$ et le défaut de $7.5~cm$. Les courbes figure ~\ref{ref_trans1} et ~\ref{ref_reflexion1} correspondent aux coefficients de réflexion et de transmission pour cette configuration, en comparaison avec le cas sans défaut.
 
 \begin{figure}[!h]
 \centering
-\includegraphics[scale=0.4]{images_chp3/5HR165_nodefect.png}\hfill
-\includegraphics[scale=0.4]{images_chp3/5HR165_8cm_pos3.png}
+\includegraphics[scale=0.3]{images_chp3/T_5HR165_nodefect.png}
+\includegraphics[scale=0.3]{images_chp3/T_5HR165_8cm_pos3.png}
 \caption{\label{ref_trans1} Coefficients de transmission du réseau dans un cas sans défaut et avec défaut. Les courbes de simulations et de l’expérience sont superposées.}
 \end{figure}
 
-On constate qu'un pic de transmission est visible dans la bande interdite tant théoriquement qu'expérimentalement: le défaut permet à l'onde de traverser le réseau pour une fréquence donnée alors que dans le cas ou celui-ci n'est pas présent aucune transmission n'est possible. Ce comportement laisse supposer qu'un mode localisé est présent au niveau du défaut: si on augmente le nombre de résonateur, l'atténuation est plus forte et le pic disparaît, le mode est alors complètement localisé.
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.3]{images_chp3/R_5HR165_nodefect.png}
+\includegraphics[scale=0.3]{images_chp3/R_5HR165_8cm_pos3.png}
+\caption{\label{ref_reflexion1} Coefficients de réflexion du réseau dans un cas sans défaut et avec défaut. Les courbes de simulations et de l’expérience sont superposées.}
+\end{figure}
 
-Ces résultats se retrouvent aussi sur la réflexion.
-%
-%\begin{figure}
-%\centering
-%\includegraphics[scale=0.3]{•}\hfill
-%\includegraphics[scale=0.3]{•}
-%\caption{\label{ref_trans1} Coefficient de transmission du réseau dans un cas sans défaut et avec défaut. Les courbes de simulations et de l'expériences sont superposées.}
-%\end{figure}
-\todo{coefficient de réflexion  pour ce truc la}
+On constate qu'un pic de transmission est visible autour de 370 Hz, dans la bande interdite, tant théoriquement qu'expérimentalement : le défaut amplifie et permet à l'onde de traverser le réseau pour une fréquence donnée, alors que dans le cas sans défaut, aucune transmission n'est possible. Ce comportement laisse supposer qu'un mode localisé est présent au niveau du défaut : si on augmente le nombre de résonateur, l'atténuation est plus forte et le pic disparaît. Le mode est alors complètement localisé.
+
+Ces résultats se retrouvent de la même manière sur la réflexion.
+
+
 
 \section{Mesure d'un mode localisé par insertion de capteur dans le réseau}
 

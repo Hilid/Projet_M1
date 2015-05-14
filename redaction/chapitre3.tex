@@ -57,11 +57,11 @@ Selon la géométrie du réseau, la fréquence du mode de défaut peut apparaît
 
 
 
-Le nombre de résonateurs de part et d'autre du défaut est augmenté de manière à créer un mode complètement localisé. Afin de pouvoir quand même exciter le défaut à la fréquence du mode recherché malgré la longueur du réseau, une source est placée dans un des orifices au voisinage du défaut. Pour des raisons techniques, les résonateurs sont alors espacés de $20~cm$. De plus, pour éviter le bruit en basses fréquences dû à la réponse des transducteurs utilisés, la longueur de cavité des résonateurs est diminuée à $9.5~cm$, permettant ainsi de monter la première bande interdite en fréquence. Enfin, la cavité du défaut est fixée à $8~cm$. Dans ces conditions, les cellules étant plus grande, l'atténuation dans le guide est plus forte et la fréquence du mode de défaut est moins visible sur les coefficients de transmission et de réflexion. Cependant, avec l'aide d'une simulation, il possible de détecter sur la figure~\ref{ref_loc} une modification de la réflexion quand il y a un défaut. Un pic correspondant au mode de défaut apparaît à $370~Hz$.
+Le nombre de résonateurs de part et d'autre du défaut est augmenté de manière à créer un mode complètement localisé. Afin de pouvoir quand même exciter le défaut à la fréquence du mode recherché, et ce malgré la longueur du réseau, une source est placée dans un des orifices au voisinage du défaut. Pour des raisons techniques, les résonateurs sont alors espacés de $20~cm$. De plus, pour éviter le bruit en basses fréquences dû à la réponse des transducteurs utilisés, la longueur de cavité des résonateurs est diminuée à $9.5~cm$, permettant ainsi de monter la première bande interdite en fréquence. Enfin, la cavité du défaut est fixée à $8~cm$. Dans ces conditions, les cellules étant plus grande, l'atténuation dans le guide est plus forte et la fréquence du mode de défaut est moins visible sur les coefficients de transmission et de réflexion. Cependant, avec l'aide d'une simulation, il possible de détecter sur la figure~\ref{ref_loc} une modification de la réflexion quand il y a un défaut. Un pic correspondant au mode de défaut apparaît à $370~Hz$.
 
 
 
- Le signal d'excitation est donc un sinus à $370~Hz$ et un microphone est inséré dans le réseau afin de mesure la pression en n'importe quel point. Le microphone n'est pas intrusif car sa taille (quart de pouce) est petite devant celle de la longueur d'onde. L'amplitude de la pression mesurée dans le tube est représenté figure ~\ref{p_tube} pour une configuration avec et sans défaut. 
+ Le signal d'excitation est donc un sinus à $370~Hz$ et un microphone est inséré dans le réseau afin de mesure la pression en tout point. Le microphone n'est pas intrusif car sa taille (quart de pouce) est petite devant celle de la longueur d'onde. L'amplitude de la pression mesurée dans le tube est représenté figure ~\ref{p_tube} pour une configuration avec et sans défaut. 
 
 
 \begin{figure}[!h]
@@ -75,37 +75,48 @@ Le nombre de résonateurs de part et d'autre du défaut est augmenté de manièr
 	\begin{minipage}[r]{0.5 \textwidth}
 		\centering
 		\subfigure[]{\includegraphics[scale=0.2]{./images_chp3/non_norm_lin.png}}
-		\caption{Amplitude de la pression dans le guide avec et sans défaut.\label{p_tube}}
+		\caption{Amplitude du microphone mesurée dans le guide avec et sans défaut.\label{p_tube}}
 	\end{minipage}
 \end{figure}
 
-Les niveaux de pression mesurés sont près de 10 fois plus élevés dans le cas où un défaut est présent. De plus, la décroissance à mesure qu'on s'éloigne du défaut est très importante : on est donc bien en présence d'un mode localisé. Il est a noter que dans cette configuration, le niveau maximum dans le réseau ne se situe pas au niveau de la source mais au niveau du défaut (ce qui n'est pas le cas quand il n'y a pas de défaut).
-\bigskip
-Pour des questions matériels il n'a pas été possible de placer la source au même endroit que le défaut dans le réseau. La symétrie du système n'est donc pas conservée. C'est pourquoi les 2 courbes de la figure \ref{p_tube} ne sont pas centrées sur le même point.
+Les niveaux de pression mesurés sont près de 10 fois plus élevés dans le cas où un défaut est présent. De plus, la décroissance à mesure qu'on s'éloigne du défaut est très importante : on est donc bien en présence d'un mode localisé. Il est a noter que dans cette configuration, le niveau maximum dans le réseau ne se situe pas au niveau de la source mais au niveau du défaut (ce qui n'est pas le cas quand il n'y a pas de défaut).\\~\\
+
+
+Pour des questions matérielles, il n'a pas été possible de placer la source au même endroit que le défaut dans le réseau. La symétrie du système n'est donc pas conservée. C'est pourquoi les 2 courbes de la figure \ref{p_tube} ne sont pas centrées sur le même point.
 
 \subsection{Changement de géométrie du défaut}
-Afin de pouvoir étudier la différence de décroissance entre les 2 courbes, on change la géométrie de la cellule singulière : celle-ci est maintenant constituée de 2 résonateurs afin de pouvoir placer la source au centre. Les cellules sont alors constitués de 2 résonateurs (voir schéma figure \ref{fig_exp}). La source se trouve au point $x=0$, les résonateurs ont une longueur de cavité de $16~cm$ et ceux du défaut une longueur de $8~cm$.
+Afin de pouvoir comparer la différence de décroissance entre les 2 courbes, on change la géométrie de la cellule singulière : celle-ci est maintenant constituée de 2 résonateurs afin de pouvoir placer la source au centre. Les cellules sont alors constitués de 2 résonateurs (voir schéma figure \ref{fig_exp}). La source se trouve au point $x=0$, les résonateurs ont une longueur de cavité de $16~cm$ et ceux du défaut une longueur de $8~cm$.
 
 
-Le couplage des deux défauts engendre en réalité deux fréquences de résonance. En prenant des longueur de cavité plus grande, l'une d'elle tombe dans une bande interdite, générant ainsi un mode localisé.
+Le couplage des deux défauts engendre en réalité deux fréquences de résonance. En prenant des longueur de cavité plus grande (16 cm au lieu de 8), l'une d'elle tombe dans une bande interdite, générant ainsi un mode localisé.
 
 \begin{figure}[!h]
 \centering
-\includegraphics[scale=0.3]{./images_chp3/chgmt_defaut.png}
+\includegraphics[scale=0.5]{./images_chp3/chgmt_defaut.png}
 \caption{\label{fig_exp} Schéma décrivant le changement du défaut afin de rendre le réseau symétrique.}
 \end{figure}
 
 
 
-On obtient les courbes de pression figure \ref{p_tube2}.
+Après avoir effectué ce changement de géométrie, les courbes de pression obtenues sont celles de la figure \ref{p_tube2}.
+Les mesures sont comparées avec une courbe de décroissance théorique calculée à partir de l'équation de dispersion~\ref{eq_dispersion} en isolant la constante de propagation $k$. La décroissance est alors donnée par $e^{-\Im{k}x}$ où $x$ est la distance parcourue par l'onde.
 
 \begin{figure}[!h]
 \centering
-\includegraphics[scale=0.3]{./images_chp3/comparaison_decroissance_lin.png}\hfill
-\includegraphics[scale=0.3]{./images_chp3/comparaison_decroissance_log.png}
-\caption{\label{_tube} Pression RMS mesurée dans le réseau avec un défaut à 2 résonateurs. A gauche en ordonnées linéaires, a droite en ordonnées logarithmiques.}
+\includegraphics[width=0.5 \textwidth]{./images_chp3/comparaison_decroissance_lin_theo.png}\hfill
+\includegraphics[width=0.5 \textwidth]{./images_chp3/comparaison_decroissance_log_theo.png}
+\caption{\label{p_tube2} Amplitude du microphone mesurée dans le réseau avec un défaut à 2 résonateurs. À gauche en ordonnées linéaires, à droite en ordonnées logarithmiques, normalisée.}
 \end{figure}
 
-Les décroissances semblent les mêmes pour les 2 courbes: le défaut à donc juste pour effet d'augmenter le niveau sonore mais n'induit pas une décroissance plus forte.
+Dans le cas sans défaut, la décroissance mesurée est légèrement plus importante que celle simulée, en raison des pertes dues aux fuites.
+
+Dans le cas avec défaut, la pression ne décroît pas dans la première cellule (sur les 10 premiers centimètres, correspondant à la distance source-défaut) car le défaut résonne. Il y a ensuite une décroissance équivalente à celle d'un réseau sans défaut.
+Une onde de forte amplitude est donc bien localisée au niveau de la singularité. Mais le défaut ne semble pas agir sur le reste du réseau. \\~\\
+
+\todo{2 réseaux, soit 2 k ? pb source ?}
+
+\todo{normalisé} 
+
+%Les décroissances sont les mêmes pour les 2 courbes : le défaut a donc juste pour effet d'augmenter le niveau sonore mais n'induit pas une décroissance plus forte.
 
 

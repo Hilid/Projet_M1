@@ -11,7 +11,7 @@ Le banc de mesure utilisé est constitué d'un tuyau perforé de 60 trous sur le
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[scale=0.05]{images_chp3/DSCN0123.JPG}
+	\includegraphics[scale=0.03]{images_chp3/DSCN0123.JPG}
 	\caption{Photo du banc de mesure utilisé.\label{photo_manip}}
 \end{figure}
 
@@ -27,25 +27,29 @@ A l'autre extrémité du réseau se trouve une sortie anéchoïque préalablemen
 
 
 \section{Mesure du coefficient de réflexion et de transmission du réseau}
-On s'intéresse tout d'abord à la mesure du coefficient de réflexion et de transmission dans le réseau. Le but est de chercher la fréquence précise à laquelle le mode de défaut a lieu afin de pouvoir par la suite l'observer expérimentalement. Pour cela, on ne prend que 5 résonateurs (avec un défaut sur le troisième) afin que le mode localisé puisse s'étaler sur les bords du réseau et qu'il soit ainsi visible sur les coefficients de réflexion et de transmission. Les résonateurs ont une longueur de cavité de $16~cm$ et le défaut de $7.5~cm$. Les courbes figure ~\ref{ref_trans1} et ~\ref{ref_reflexion1} correspondent aux coefficients de réflexion et de transmission pour cette configuration, en comparaison avec le cas sans défaut.
+On s'intéresse tout d'abord à la mesure du coefficient de réflexion et de transmission dans le réseau. Le but est de chercher la fréquence précise à laquelle le mode de défaut a lieu afin de pouvoir par la suite l'observer expérimentalement. Pour cela, on ne prend que 5 résonateurs (avec un défaut sur le troisième) afin que le mode localisé puisse s'étaler sur les bords du réseau et qu'il soit ainsi visible sur les coefficients de réflexion et de transmission. Les résonateurs ont une longueur de cavité de $16~cm$ et le défaut de $7.5~cm$, et sont espacés de $10~cm$. Les courbes figure ~\ref{ref_trans1} et ~\ref{ref_reflexion1} correspondent aux coefficients de réflexion et de transmission pour cette configuration, en comparaison avec le cas sans défaut.
 
 \begin{figure}[!h]
-\centering
-\includegraphics[scale=0.3]{images_chp3/T_5HR165_nodefect.png}
-\includegraphics[scale=0.3]{images_chp3/T_5HR165_8cm_pos3.png}
-\caption{\label{ref_trans1} Coefficients de transmission du réseau dans un cas sans défaut et avec défaut. Les courbes de simulations et de l’expérience sont superposées.}
+	\centering
+	\subfigure[Sans défaut]{\includegraphics[scale=0.3]{images_chp3/T_5HR165_nodefect.png}}
+	\subfigure[Avec un défaut résonant à 485 Hz]{\includegraphics[scale=0.3]{images_chp3/T_5HR165_8cm_pos3.png}}
+	\caption{\label{ref_trans1} Coefficients de transmission du réseau dans un cas sans défaut et avec défaut. Les courbes de simulations (tiretée) et de l’expérience (continue) sont superposées.}
 \end{figure}
 
 \begin{figure}[!h]
-\centering
-\includegraphics[scale=0.3]{images_chp3/R_5HR165_nodefect.png}
-\includegraphics[scale=0.3]{images_chp3/R_5HR165_8cm_pos3.png}
-\caption{\label{ref_reflexion1} Coefficients de réflexion du réseau dans un cas sans défaut et avec défaut. Les courbes de simulations et de l’expérience sont superposées.}
+	\centering
+	\subfigure[Sans défaut]{\includegraphics[scale=0.3]{images_chp3/R_5HR165_nodefect.png}}
+	\subfigure[Avec un défaut résonant à 485 Hz]{\includegraphics[scale=0.3]{images_chp3/R_5HR165_8cm_pos3.png}}
+\caption{\label{ref_reflexion1} Coefficients de réflexion du réseau dans un cas sans défaut et avec défaut. Les courbes de simulations (tiretée) et de l’expérience (continue) sont superposées.}
 \end{figure}
 
-On constate qu'un pic de transmission est visible autour de 370 Hz, dans la bande interdite, tant théoriquement qu'expérimentalement : le défaut amplifie et permet à l'onde de traverser le réseau pour une fréquence donnée, alors que dans le cas sans défaut, aucune transmission n'est possible. Ce comportement laisse supposer qu'un mode localisé est présent au niveau du défaut : si on augmente le nombre de résonateur, l'atténuation est plus forte et le pic disparaît. Le mode est alors complètement localisé.
+Dans l'ensemble, simulations et mesures sont en accord. Certaines variations sont moins marquées sur les courbes expérimentales en raison des fuites aux jonctions du guide et des résonateurs non prises en comptes dans la simulation.\\
+Aux fréquences pour lesquelles la transmission est théoriquement proche de 1, il y a de fortes variations expérimentalement, dépassant 1. Cet écart entre théorie et expérience s'explique par la contribution des faibles réflexions provenant de la terminaison anéchoïque qui n'est pas parfaite.\\~\\
 
-Ces résultats se retrouvent de la même manière sur la réflexion.
+
+On constate qu'un pic de transmission est visible autour de 370 Hz, dans la bande interdite, tant théoriquement qu'expérimentalement : le défaut amplifie et permet à l'onde de traverser le réseau pour une fréquence donnée, alors que dans le cas sans défaut, aucune transmission n'est possible. Ce comportement laisse supposer qu'un mode localisé est présent au niveau du défaut : si on augmente le nombre de résonateur, l'atténuation est plus forte et le pic disparaît. Le mode est alors complètement localisé. 
+
+Selon la géométrie du réseau, la fréquence du mode de défaut peut apparaître plus clairement sur le coefficient de réflexion. Dans le cas présenté ici, le réseau est suffisamment court pour que l'effet du défaut soit aussi bine visible en transmission qu'en réflexion.
 
 
 
@@ -53,25 +57,42 @@ Ces résultats se retrouvent de la même manière sur la réflexion.
 
 
 
-Une fois la fréquence du mode de défaut relevée sur les coefficients de réflexions et transmissions on augmente le nombre de résonateurs de part et d'autre du défaut afin de créer un mode complètement localisé. Afin de pouvoir quand même exciter le mode localisé, une source est placé dans un des orifices au voisinage du défaut. Un microphone est inséré dans le réseau afin de mesure la pression en n'importe quel point. La pression RMS mesurée dans le tube est représenté figure ~\ref{p_tube} pour une configuration avec et sans défaut.
+Le nombre de résonateurs de part et d'autre du défaut est augmenté de manière à créer un mode complètement localisé. Afin de pouvoir quand même exciter le défaut à la fréquence du mode recherché malgré la longueur du réseau, une source est placée dans un des orifices au voisinage du défaut. Pour des raisons techniques, les résonateurs sont alors espacés de $20~cm$. De plus, pour éviter le bruit en basses fréquences dû à la réponse des transducteurs utilisés, la longueur de cavité des résonateurs est diminuée à $9.5~cm$, permettant ainsi de monter la première bande interdite en fréquence. Enfin, la cavité du défaut est fixée à $8~cm$. Dans ces conditions, les cellules étant plus grande, l'atténuation dans le guide est plus forte et la fréquence du mode de défaut est moins visible sur les coefficients de transmission et de réflexion. Cependant, avec l'aide d'une simulation, il possible de détecter sur la figure~\ref{ref_loc} une modification de la réflexion quand il y a un défaut. Un pic correspondant au mode de défaut apparaît à $370~Hz$.
+
+
+
+ Le signal d'excitation est donc un sinus à $370~Hz$ et un microphone est inséré dans le réseau afin de mesure la pression en n'importe quel point. Le microphone n'est pas intrusif car sa taille (quart de pouce) est petite devant celle de la longueur d'onde. L'amplitude de la pression mesurée dans le tube est représenté figure ~\ref{p_tube} pour une configuration avec et sans défaut. 
+
 
 \begin{figure}[!h]
-\centering
-\includegraphics[scale=0.5]{./images_chp3/non_norm_lin.png}
-\caption{\label{_tube} Pression RMS mesurée dans le réseau afin de mettre en évidence un mode localisé.}
+	\begin{minipage}[l]{0.45 \textwidth}
+		\subfigure[Avec défaut est en 3\textsuperscript{ème} position]{\includegraphics[scale=0.25]{./images_chp3/R_5HR10cm_Lcell20_85mm_pos3.png}}
+		\centering
+		\subfigure[Sans défaut]{\includegraphics[scale=0.25]{./images_chp3/R_5HR10cm_Lcell20_nodefect.png}}
+		\caption{Coefficient de réflexion à l'entrée d'un réseau de 5 cellules.\label{ref_loc}}
+	\end{minipage}
+	\hspace{0.5cm}
+	\begin{minipage}[r]{0.5 \textwidth}
+		\centering
+		\subfigure[]{\includegraphics[scale=0.2]{./images_chp3/non_norm_lin.png}}
+		\caption{Amplitude de la pression dans le guide avec et sans défaut.\label{p_tube}}
+	\end{minipage}
 \end{figure}
 
-On constate que les niveaux de pression mesurés sont près de 10 fois plus élevé dans le cas ou un défaut est présent. De plus, la décroissance à mesure qu'on s'éloigne du défaut est très importante: on est donc bien en présence d'un mode localisé. Il est a noté que dans cette configuration le niveau maximum dans le réseau ne ce situe pas au niveau de la source mais du défaut (ce qui n'est pas le cas quand il n'y a pas de défaut).
+Les niveaux de pression mesurés sont près de 10 fois plus élevés dans le cas où un défaut est présent. De plus, la décroissance à mesure qu'on s'éloigne du défaut est très importante : on est donc bien en présence d'un mode localisé. Il est a noter que dans cette configuration, le niveau maximum dans le réseau ne se situe pas au niveau de la source mais au niveau du défaut (ce qui n'est pas le cas quand il n'y a pas de défaut).
 \bigskip
-Pour des questions matériels il n'a pas été possible de placer la source au même endroit que le défaut dans le réseau, la symétrie du système n'est donc pas conservée. C'est pourquoi les 2 courbes figurent \ref{p_tube} ne sont pas centré sur le même point. La courbe sans défaut est centrée sur la source et la courbe avec défaut est centré sur le défaut. 
+Pour des questions matériels il n'a pas été possible de placer la source au même endroit que le défaut dans le réseau. La symétrie du système n'est donc pas conservée. C'est pourquoi les 2 courbes de la figure \ref{p_tube} ne sont pas centrées sur le même point.
 
 \subsection{Changement de géométrie du défaut}
-Afin de pouvoir étudier la différence de décroissance entre les 2 courbes, on change la géométrie du défaut: celui-ci est maintenant constitué de 2 résonateurs afin de pouvoir placer la source au centre. On à alors des cellule constitués de 2 résonateurs (voir schéma figure \ref{fig_exp}. La source se trouve en $x=0$, les résonateurs ont une longueur de cavité de $16~cm$ et ceux du défaut une longueur de $8~cm$. Ces longueurs sont modifiés par rapport au cas précédent car le mode localisé à lieu a une fréquence différente que dans le cas d'un défaut d'un seul résonateur: le couplage de 2 résonateur abaisse la fréquence du mode localisé (dans les fait 2 modes localisés sont créé, un plus basse fréquence et un plus haute, on choisi celui basse fréquence car il est mieux placé). On prend donc des cavités plus faible pour partir d'une plus haute fréquence.
+Afin de pouvoir étudier la différence de décroissance entre les 2 courbes, on change la géométrie de la cellule singulière : celle-ci est maintenant constituée de 2 résonateurs afin de pouvoir placer la source au centre. Les cellules sont alors constitués de 2 résonateurs (voir schéma figure \ref{fig_exp}). La source se trouve au point $x=0$, les résonateurs ont une longueur de cavité de $16~cm$ et ceux du défaut une longueur de $8~cm$.
+
+
+Le couplage des deux défauts engendre en réalité deux fréquences de résonance. En prenant des longueur de cavité plus grande, l'une d'elle tombe dans une bande interdite, générant ainsi un mode localisé.
 
 \begin{figure}[!h]
 \centering
 \includegraphics[scale=0.3]{./images_chp3/chgmt_defaut.png}
-\caption{\label{fig_exp} Schéma décrivant le changement du défaut afin de rendre l'expérience symétrique.}
+\caption{\label{fig_exp} Schéma décrivant le changement du défaut afin de rendre le réseau symétrique.}
 \end{figure}
 
 
@@ -82,7 +103,7 @@ On obtient les courbes de pression figure \ref{p_tube2}.
 \centering
 \includegraphics[scale=0.3]{./images_chp3/comparaison_decroissance_lin.png}\hfill
 \includegraphics[scale=0.3]{./images_chp3/comparaison_decroissance_log.png}
-\caption{\label{_tube} Pression RMS mesurée dans le réseau avec un défaut à 2 résonateurs. A gauche en abscisse linéaire, a droite en abscisse logarithmique.}
+\caption{\label{_tube} Pression RMS mesurée dans le réseau avec un défaut à 2 résonateurs. A gauche en ordonnées linéaires, a droite en ordonnées logarithmiques.}
 \end{figure}
 
 Les décroissances semblent les mêmes pour les 2 courbes: le défaut à donc juste pour effet d'augmenter le niveau sonore mais n'induit pas une décroissance plus forte.

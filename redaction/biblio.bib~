@@ -1,0 +1,25 @@
+@Article{slow,
+author = {G Theocharis and O Richoux and V Romero García and A Merkel and V Tournat},
+title = {Limits of slow sound propagation and transparency in
+lossy, locally resonant periodic structures},
+journal = {New Journal of Physics},
+year = {2014},
+}
+
+
+@PhdThesis{these_richoux,
+author = {O Richoux},
+title = {Étude de la propagation des ondes mécaniques dans un réseau unidimensionnel comportant du désordre et/ou des non-linéarités localisées},
+school = {Université du Maine},
+year = {1999},
+}
+
+
+@Proceedings{guide_dalmont,
+title = {Guide des guides d'ondes acoustiques},
+author = {J-P Dalmont},
+note = {Cours dispensé à l'université du Maine},
+year = {2010},
+}
+
+

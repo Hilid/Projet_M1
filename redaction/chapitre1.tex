@@ -1,5 +1,5 @@
 \chapter{Théorie d'un réseau acoustique fini constitué de résonateurs de Helmholtz}
-Ce chapitre a pour but de caractériser le champ de pression dans un guide sur lequel des résonateurs de Helmholtz sont placés en dérivation, espacés régulièrement d'une longueur $L$. On dispose pour cela d'un banc de mesure représenté en figure ~\ref{schema_infini}. Une simulation de la propagation dans le réseau pourra donc être confronté à une expérience.
+Ce chapitre a pour but de caractériser le champ de pression dans un guide sur lequel des résonateurs de Helmholtz sont placés en dérivation, espacés régulièrement d'une longueur $L$. On dispose pour cela d'un banc de mesure représenté en figure ~\ref{schema_infini}. Une simulation de la propagation dans le réseau pourra donc être confronté à une expérience (voir les sections suivantes).
 
 \begin{figure}[!ht] \centering
 \includegraphics[scale=0.5]{./images_chp1/schema_reseau_infini.png}
@@ -10,7 +10,7 @@ Ce chapitre a pour but de caractériser le champ de pression dans un guide sur l
 Le guide principal a pour section $S$ ; le col des résonateurs a pour longueur $L_{n}$ et pour section $S_{n}$ ; la cavité des résonateurs a pour longueur $L_{c}$ et pour section $S_{c}$. Par la suite, on note $\rho$ la masse volumique de l'air et $c$ la célérité du son dans l'air.
 
 \section{Mise sous forme matricielle}
-On s’intéresse ici a la mise sous forme matricielle du problème de la propagation acoustique dans le réseau periodique vu ci-dessus. Le but est de mettre en relation les pressions et débits en entrée du système ($P_{in}$ et $U_{in}$) avec ceux en sortie ($P_{out}$ et $U_{out}$) sous la forme suivante:
+On s’intéresse ici a la mise sous forme matricielle du problème de la propagation acoustique dans le réseau periodique vu ci-dessus. Le but est de mettre en relation les pression et débit en entrée du système ($P_{in}$ et $U_{in}$) avec ceux en sortie ($P_{out}$ et $U_{out}$) sous la forme suivante:
 \begin{equation}
 \begin{pmatrix} P_{out} \\ U_{out} \end{pmatrix} =\begin{pmatrix} a & b \\ c & d \end{pmatrix}^N \begin{pmatrix} P_{in} \\ U_{in} \end{pmatrix} = \begin{pmatrix} A & B \\ C & D \end{pmatrix} \begin{pmatrix} P_{in} \\ U_{in} \end{pmatrix} .
 \end{equation}
@@ -20,42 +20,43 @@ Cette matrice dispose en effet de propriétés intéressantes et l'étude du sys
 Pour cela, les 2 éléments du réseau (guide et résonateur) doivent être mis sous forme matricielle puis multipliés.
 
 \subsection{Le guide d'onde}
-Le problème est considéré à une dimension du fait de la longueur du guide et du domaine de fréquence de l'étude: on considère que seul le mode plan est propagatif. Le guide principal ayant un diamètre de 5 cm, le premier mode non plan se propage à partir de 4000 Hz. Les simulations et mesures ne seront donc faite que sur une bande de fréquences allant de $0$ à $1~kHz$.
+Le problème est considéré à une dimension du fait de la longueur du guide et du domaine de fréquence de l'étude: on considère que seul le mode plan est propagatif. 
 
 La solution de la propagation dans un guide d'onde peux être facilement déduite de l'équation d'onde suivante :
 \begin{equation}
 \frac{\partial ^2 p}{\partial x^2} -\frac{1}{c^{2}} \frac{\partial ^2 p}{\partial t^2}= 0
 \end{equation}
-On se place en régime harmonique et on note $\Gamma = jk$ la constante de propagation du système. D’où les solutions (vitesses calculées avec l'équation d'Euler):
+On se place en régime harmonique et on note $\Gamma = jk$ la constante de propagation du système. Les solutions pour la pression $p$ et la vitesse $v$ au point $x_{i}$ sont alors :
 
 \begin{eqnarray*}
 \begin{cases}
 p(x_1)  =  C_1 e^{-\Gamma x_1} + C_2 e^{\Gamma x_1} \\
 v(x_1)  =  -\frac{1}{j\omega\rho} [ -\Gamma C_1 e^{-\Gamma x_1} + \Gamma e^{\Gamma x_1}]\\
 p(x_2)  =  C_1 e^{-\Gamma x_2} + C_2 e^{\Gamma x_2} \\
-v(x_2)  =  -\frac{1}{j\omega\rho} [ -\Gamma C_1 e^{-\Gamma x_2} + \Gamma e^{\Gamma x_2}]
+v(x_2)  =  -\frac{1}{j\omega\rho} [ -\Gamma C_1 e^{-\Gamma x_2} + \Gamma e^{\Gamma x_2}].
 \end{cases}
 \end{eqnarray*}
  
-On pose $x_1 - x_2 = L$. Tous calculs faits, on trouve finalement:
+On pose $x_1 - x_2 = L$. Tous calculs faits, on trouve finalement la relation matricielle suivante :
 \begin{eqnarray*}
-\begin{pmatrix} p(x_1) \\ v(x_1) \end{pmatrix} = \begin{pmatrix} \cosh(kL) & \frac{j\omega\rho}{k} \sinh(k L) \\  \frac{k}{j\omega\rho}\sinh(k L) & \cosh(k L) \end{pmatrix} \begin{pmatrix} p(x_2) \\ v(x_2) \end{pmatrix}
+\begin{pmatrix} p(x_1) \\ v(x_1) \end{pmatrix} = \begin{pmatrix} \cosh(kL) & \frac{j\omega\rho}{k} \sinh(k L) \\  \frac{k}{j\omega\rho}\sinh(k L) & \cosh(k L) \end{pmatrix} \begin{pmatrix} p(x_2) \\ v(x_2)
+\end{pmatrix}.
 \end{eqnarray*}
 
-\subsubsection{Ajout des pertes}
+\subsubsection{Prise en compte des pertes}
 
-Pour prendre en compte les pertes, on modifie l'expression de la constante de propagation et de l'impédance caractéristique avec les expressions de l'article ~\cite{slow} (voir la bibliographie de l'article pour plus de détail). Les expressions prenant en compte les pertes viscothermiques sont donc:
+Pour prendre en compte les pertes visco-thermique, on modifie l'expression de la constante de propagation et de l'impédance caractéristique avec les expressions de l'article~\cite{slow} (voir la bibliographie de l'article pour plus de détail). Les expressions prenant en compte les pertes visco-thermiques sont donc:
 \begin{eqnarray*}
  k =  \frac{\omega}{c_0} \left( 1 + \frac{\beta}{s}(1+(\gamma-1)/ \chi \right) \\
- Z_c =  \frac{\rho c_0}{S} \left( 1 + \frac{\beta}{s}(1-(\gamma-1)/ \chi \right) 
+Z_c =  \frac{\rho c_0}{S} \left( 1 + \frac{\beta}{s}(1-(\gamma-1)/ \chi \right). 
 \end{eqnarray*}
 
 Dans ces expressions, on a:
 \begin{itemize}
- \item  $s=R/ \delta$ avec $\delta = \sqrt{\frac{2 \mu}{\rho \omega}}$
- \item  $\chi = \sqrt{P_r}$ ou $P_r$ est le nombre de Prandtl
- \item $\beta = (1-j)/\sqrt{2}$ 
- \item $\mu$ la viscosité de l'air
+ \item  $s=R/ \delta$ avec $\delta = \sqrt{\frac{2 \mu}{\rho \omega}}$,
+ \item  $\chi = \sqrt{P_r}$ où $P_r$ est le nombre de Prandtl,
+ \item $\beta = (1-j)/\sqrt{2}$,
+ \item $\mu$ la viscosité de l'air.
 \end{itemize}
 
 Du fait de la géométrie assez complexe du système et du faible rayon des cols des résonateurs, ces pertes ne peuvent pas être négligées comme cela peux être souvent le cas en acoustique.
@@ -67,12 +68,16 @@ Le résonateur de Helmholtz est considéré dans le réseau comme un changement 
 On suppose que le résonateur est constitué de 2 guides à parois rigides d'impédance caractéristique $Z_{n}=\rho c/S_{n}$ pour le col et $Z_{c}=\rho c /S_{c}$ pour la cavité. La matrice de transfert mettant en relation les pression et débit à l'entrée du résonateur $P_e$ et $U_e$ et les pression et débit au niveau de la paroi extrême $P_s$ et $U_s=0$ est de la forme :
 \begin{eqnarray*}
 \begin{pmatrix} P_e \\U_e \end{pmatrix} & = & \begin{pmatrix} \cos(k L_n) & j Z_{n} \sin(k L_n) \\ \frac{1}{Z_{n}} \sin(k L_n) & \cos(k L_n) \end{pmatrix} \begin{pmatrix} \cos(k L_c) & j Z_{c} \sin(k L_c) \\ \frac{1}{Z_{c}} \sin(k L_c) & \cos(k L_c) \end{pmatrix} \begin{pmatrix} P_s \\ 0  \end{pmatrix} \\
-\begin{pmatrix} P_e \\U_e \end{pmatrix} & = & \begin{pmatrix} r_1 & r_2 \\ r_3 & r_4 \end{pmatrix} \begin{pmatrix} P_1 \\ 0  \end{pmatrix} \\
-~ & \Rightarrow & Z_{r}	 = \frac{P_e}{U_e}= \frac{r_1}{r_3}
+\begin{pmatrix} P_e \\U_e \end{pmatrix} & = & \begin{pmatrix} r_1 & r_2 \\ r_3 & r_4 \end{pmatrix} \begin{pmatrix} P_s \\ 0  \end{pmatrix} ,
 \end{eqnarray*}
+ce qui conduit à 
+\begin{equation}
+ Z_{r}	 = \frac{P_e}{U_e}= \frac{r_1}{r_3}\text{.}
+\end{equation}
 
-\paragraph{Correction de longueur}
-La longueur effective du col est sujet à une correction présentée en annexe \ref{annexe_corr}.
+\subsubsection{Correction de longueur}
+
+La longueur effective du col est sujet à une correction présentée en annexe \ref{annexe_corr}.\\
 
 En ajoutant un résonateur en parallèle au guide, il y a toujours continuité des pressions mais plus des vitesses. La matrice de transfert pression-débit pour un résonateur dans le réseau est alors la suivante :
 
@@ -84,11 +89,11 @@ M_{r} = \begin{pmatrix} 1 &  0 \\ 1 /Z_{r} & 1  \end{pmatrix}\\
 
 Une fois les matrices du guide et du résonateur connues, il suffit alors de les multiplier afin d'obtenir la matrice d'une cellule du réseau. C'est sur l'étude de cette matrice que se basent les analyses de cette section. 
 
-Dans la suite les paramètres de la simulation sont ceux de l'expérience dont nous disposons. Ces paramètres sont disponible en annexe \ref{annexe_corr}.
+Dans la suite les paramètres de la simulation sont ceux de l'expérience dont nous disposons. Ces paramètres sont disponibles en annexe \ref{annexe_corr}.
 
 \subsection{Équation de dispersion}
 La matrice de transfert l'équation de dispersion pour le réseau à N cellules s'écrit alors : 
-\begin{equation}
+\begin{equation}\label{eq_dispersion}
 \cos(NkL) = \frac{A+D}{2} 
 \end{equation}
 

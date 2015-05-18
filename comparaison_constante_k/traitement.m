@@ -28,12 +28,15 @@ N = 50;
 d_max = 0.8;      %distance max de 80 cm
 axe_distance = (1:1:N)./N .*d_max;
 
-%[Zc k] = pertes(d,w,rho,c);
-%pt 12 du N singu
-coef = 28.0498;
-coef = 0.074079;
+coef_defaut =  5.92387; % Coef pour 2 singu
 
-theo = exp(-coef*axe_distance);
+%coef_defaut = 6.77178; % Coef pour une seul singu
+
+theo_avecdefaut = exp(-coef_defaut*axe_distance);
+
+coef_sansdefaut=7.4115;
+theo_sansdefaut=exp(-coef_sansdefaut*axe_distance);
+
 axe_distance = axe_distance * 100;   % Passage en cm pour coller au mesures
 
 %======================================================================
@@ -41,43 +44,48 @@ axe_distance = axe_distance * 100;   % Passage en cm pour coller au mesures
 figure(1)
 plot(defect_high(:,1), defect_high_norm, 'o-r', 'Linewidth',3)
 hold on
-plot(defect_low(:,1), defect_low_norm,'Linewidth',3);
+plot(defect_low(:,1), defect_low_norm,'o-b','Linewidth',3);
 legend('defect with high lvl','defect with low lvl');
 xlabel('distance source recepteur en m');
-ylabel('Pression RMS mesuree');
+ylabel('Amplitude (V)');
 %print -dpng comparaison_lvl_defaut.png
 
 figure(2)
 plot(no_defect_high(:,1), no_defect_high_norm, 'o-r','Linewidth',3)
 hold on
-plot(no_defect_low(:,1), no_defect_low_norm,'Linewidth',3);
+plot(no_defect_low(:,1), no_defect_low_norm,'o-b','Linewidth',3);
 legend('no_defect with high lvl','no_defect with low lvl');
 xlabel('distance source recepteur en m');
-ylabel('Pression RMS mesuree');
+ylabel('Amplitude (V)');
 %print -dpng comparaison_lvl_sans_defaut.png
 
 figure(3)
 plot(defect_low(:,1), defect_low_norm,'o-r','Linewidth',3);
 hold on
-plot(no_defect_low(:,1), no_defect_low_norm,'Linewidth',3);
-legend('defect','no defect');
-%print -dpng comparaison_decroissance_lin.png
-xlabel('distance source recepteur en m');
-ylabel('Pression RMS mesuree');
+plot(no_defect_low(:,1), no_defect_low_norm,'o-b','Linewidth',3);
+hold on
+legend('Avec defaut','Sans defaut');
+xlabel('Distance source recepteur en cm');
+ylabel('Amplitude (V)');
+print -dpng comparaison_decroissance_lin_theo.png
 
 
 figure(4)
 semilogy(defect_low(:,1), defect_low_norm,'o-r','Linewidth',3);
 hold on
-semilogy(no_defect_low(:,1), no_defect_low_norm,'Linewidth',3);
-legend('defect','no defect');
-xlabel('distance source recepteur en m');
-ylabel('Pression RMS mesuree');
-%print -dpng comparaison_decroissance_log.png
+semilogy(no_defect_low(:,1), no_defect_low_norm,'o-b','Linewidth',3);
+xlabel('Distance source recepteur en cm');
+ylabel('Amplitude (V)');
 
-figure(5)
-%semilogy(defect_low(:,1), defect_low_norm,'o-r','Linewidth',3);
-%hold on
-semilogy(no_defect_low(:,1), no_defect_low_norm,'r','Linewidth',3);
 hold on
-semilogy(axe_distance,theo, 'Linewidth',3);
+%semilogy(axe_distance,theo_avecdefaut,'-r', 'Linewidth',2);
+hold on
+semilogy(axe_distance,theo_sansdefaut,'--b', 'Linewidth',2);
+hold on
+pos_10cm=ceil(10*N/d_max/100); %positition de 10cm dans axe_distance
+semilogy(axe_distance(pos_10cm:end),exp(-coef_sansdefaut*axe_distance(1:end-pos_10cm+1)./100),'r--', 'Linewidth',2)
+legend('Mesures avec défaut','Mesures sans défaut','Théorie sans défaut','Théorie sans défaut, partant de x=10cm');
+
+
+
+print -dsvg comparaison_decroissance_log_theo.svg

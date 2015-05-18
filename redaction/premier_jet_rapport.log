@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.13)  6 MAY 2015 14:44
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.3)  18 MAY 2015 10:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **premier_jet_rapport.tex
 (./premier_jet_rapport.tex
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+Babel <3.9h> and hyphenation patterns for 6 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -944,8 +944,7 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfig@bottom=\skip69
 )
 (./premier_jet_rapport.aux (./introduction.aux) (./chapitre1.aux)
-(./chapitre2.aux) (./chapitre3.aux) (./conclusion.aux) (./annexe.aux)
-(./notations.aux))
+(./chapitre2.aux) (./chapitre3.aux) (./conclusion.aux) (./annexe.aux))
 \openout1 = `premier_jet_rapport.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
@@ -962,7 +961,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
 LaTeX Font Info:    ... okay on input line 43.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 43.
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 43.
@@ -1077,258 +1077,436 @@ Package lastpage Info: Please have a look at the pageslts package at
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 44.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 57.
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 44.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 57.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 44.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 57.
 
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 44.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 57.
 
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 44.
+(Font)              <14.4> on input line 57.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 44.
+(Font)              <10> on input line 57.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 44.
-LaTeX Font Info:    Try loading font information for U+msa on input line 44.
+(Font)              <7> on input line 57.
+LaTeX Font Info:    Try loading font information for U+msa on input line 57.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 44.
+LaTeX Font Info:    Try loading font information for U+msb on input line 57.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./premier_jet_rapport.toc
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 5.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 5.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 5.
 )
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 79.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./remerciements.tex) (./a
+bstract.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
+) [1] (./premier_jet_rapport.toc)
 \tf@toc=\write5
 \openout5 = `premier_jet_rapport.toc'.
 
- [1
-
-] [2
-
-] [3
+ [2
 
 ]
 \openout2 = `introduction.aux'.
 
-
-(./introduction.tex
-Chapitre 1.
-) [4
+ (./introduction.tex) [3
 
 
 ]
 \openout2 = `chapitre1.aux'.
 
  (./chapitre1.tex
-Chapitre 2.
-<./images_chp1/schema_reseau_infini.png, id=26, 455.301pt x 169.433pt>
+Chapitre 1.
+<./images_chp1/schema_reseau_infini.png, id=24, 455.301pt x 169.433pt>
 File: ./images_chp1/schema_reseau_infini.png Graphic file (type png)
 
 <use ./images_chp1/schema_reseau_infini.png>
 Package pdftex.def Info: ./images_chp1/schema_reseau_infini.png used on input l
 ine 5.
 (pdftex.def)             Requested size: 227.64993pt x 84.71628pt.
- [5
+ [4
 
 
 
- <./images_chp1/schema_reseau_infini.png>] [6]
+ <./images_chp1/schema_reseau_infini.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
 
-LaTeX Warning: Reference `bande_bragg' on page 7 undefined on input line 104.
+ []
 
-[7] <./images_chp1/ex_coef_rapport.png, id=49, 399.091pt x 306.746pt>
+[5] [6] <./images_chp1/ex_coef_rapport.png, id=46, 399.091pt x 306.746pt>
 File: ./images_chp1/ex_coef_rapport.png Graphic file (type png)
 
 <use ./images_chp1/ex_coef_rapport.png>
 Package pdftex.def Info: ./images_chp1/ex_coef_rapport.png used on input line 1
-29.
-(pdftex.def)             Requested size: 399.09001pt x 306.74525pt.
+24.
+(pdftex.def)             Requested size: 279.36179pt x 214.72073pt.
 
-<./images_chp1/chaos_10mm.png, id=50, 462.528pt x 346.896pt>
+<./images_chp1/chaos_10mm.png, id=47, 462.528pt x 346.896pt>
 File: ./images_chp1/chaos_10mm.png Graphic file (type png)
 
 <use ./images_chp1/chaos_10mm.png>
-Package pdftex.def Info: ./images_chp1/chaos_10mm.png used on input line 140.
-(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
+Package pdftex.def Info: ./images_chp1/chaos_10mm.png used on input line 144.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<./images_chp1/chaos_2mm.png, id=51, 462.528pt x 346.896pt>
+Overfull \hbox (39.20863pt too wide) in paragraph at lines 144--145
+ [][] 
+ []
+
+<./images_chp1/chaos_2mm.png, id=48, 462.528pt x 346.896pt>
 File: ./images_chp1/chaos_2mm.png Graphic file (type png)
 
 <use ./images_chp1/chaos_2mm.png>
-Package pdftex.def Info: ./images_chp1/chaos_2mm.png used on input line 151.
-(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
- [8 <./images_chp1/ex_coef_rapport.png>]
-[9 <./images_chp1/chaos_10mm.png> <./images_chp1/chaos_2mm.png>]
-<./images_chp1/chaos_position_grand.png, id=61, 397.485pt x 293.898pt>
-File: ./images_chp1/chaos_position_grand.png Graphic file (type png)
+Package pdftex.def Info: ./images_chp1/chaos_2mm.png used on input line 150.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-<use ./images_chp1/chaos_position_grand.png>
-Package pdftex.def Info: ./images_chp1/chaos_position_grand.png used on input l
-ine 162.
-(pdftex.def)             Requested size: 198.742pt x 146.94862pt.
-
-<./images_chp1/chaos_position_petit.png, id=62, 397.485pt x 293.898pt>
-File: ./images_chp1/chaos_position_petit.png Graphic file (type png)
-
-<use ./images_chp1/chaos_position_petit.png>
-Package pdftex.def Info: ./images_chp1/chaos_position_petit.png used on input l
-ine 165.
-(pdftex.def)             Requested size: 198.742pt x 146.94862pt.
-) [10 <./images_chp1/chaos_position_grand.png> <./images_chp1/chaos_position_pe
-tit.png>]
-\openout2 = `chapitre2.aux'.
-
- (./chapitre2.tex
-Chapitre 3.
-
-Underfull \hbox (badness 10000) in paragraph at lines 2--4
-
+Overfull \hbox (39.20863pt too wide) in paragraph at lines 150--151
+ [][] 
  []
-
-<images_chp2/schema_singu1.png, id=71, 320.397pt x 149.358pt>
-File: images_chp2/schema_singu1.png Graphic file (type png)
-
-<use images_chp2/schema_singu1.png>
-Package pdftex.def Info: images_chp2/schema_singu1.png used on input line 12.
-(pdftex.def)             Requested size: 160.1981pt x 74.6788pt.
-
-<images_chp2/schema_singu2.png, id=72, 331.639pt x 165.418pt>
-File: images_chp2/schema_singu2.png Graphic file (type png)
-
-<use images_chp2/schema_singu2.png>
-Package pdftex.def Info: images_chp2/schema_singu2.png used on input line 13.
-(pdftex.def)             Requested size: 165.81909pt x 82.70879pt.
-
-<images_chp2/visu_pression_defavo.png, id=73, 578.16pt x 433.62pt>
-File: images_chp2/visu_pression_defavo.png Graphic file (type png)
-
-<use images_chp2/visu_pression_defavo.png>
-Package pdftex.def Info: images_chp2/visu_pression_defavo.png used on input lin
-e 30.
-(pdftex.def)             Requested size: 289.07928pt x 216.80946pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[11
+<./images_chp1/chaos_position_grand.png, id=49, 397.485pt x 293.898pt>
+File: ./images_chp1/chaos_position_grand.png Graphic file (type png)
+
+<use ./images_chp1/chaos_position_grand.png>
+Package pdftex.def Info: ./images_chp1/chaos_position_grand.png used on input l
+ine 164.
+(pdftex.def)             Requested size: 198.742pt x 146.94862pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 164.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 164.
+
+<./images_chp1/chaos_position_petit.png, id=50, 397.485pt x 293.898pt>
+File: ./images_chp1/chaos_position_petit.png Graphic file (type png)
+
+<use ./images_chp1/chaos_position_petit.png>
+Package pdftex.def Info: ./images_chp1/chaos_position_petit.png used on input l
+ine 167.
+(pdftex.def)             Requested size: 198.742pt x 146.94862pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[7 <./images_chp1/ex_coef_rapport.png>]) [8 <./images_chp1/chaos_10mm.png> <./i
+mages_chp1/chaos_2mm.png> <./images_chp1/chaos_position_grand.png> <./images_ch
+p1/chaos_position_petit.png>]
+\openout2 = `chapitre2.aux'.
+
+ (./chapitre2.tex
+Chapitre 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--3
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+
+ []
+
+<images_chp2/schema_singu1.png, id=65, 320.397pt x 149.358pt>
+File: images_chp2/schema_singu1.png Graphic file (type png)
+
+<use images_chp2/schema_singu1.png>
+Package pdftex.def Info: images_chp2/schema_singu1.png used on input line 14.
+(pdftex.def)             Requested size: 160.1981pt x 74.6788pt.
+
+<images_chp2/schema_singu2.png, id=66, 331.639pt x 165.418pt>
+File: images_chp2/schema_singu2.png Graphic file (type png)
+
+<use images_chp2/schema_singu2.png>
+Package pdftex.def Info: images_chp2/schema_singu2.png used on input line 15.
+(pdftex.def)             Requested size: 165.81909pt x 82.70879pt.
+ [9
 
 
 
  <./images_chp2/schema_singu1.png> <./images_chp2/schema_singu2.png>]
+<images_chp2/horsbande_50RH_500Hz_71mm.png, id=72, 462.528pt x 346.896pt>
+File: images_chp2/horsbande_50RH_500Hz_71mm.png Graphic file (type png)
 
-LaTeX Warning: Reference `defaut_b' on page 12 undefined on input line 49.
+<use images_chp2/horsbande_50RH_500Hz_71mm.png>
+Package pdftex.def Info: images_chp2/horsbande_50RH_500Hz_71mm.png used on inpu
+t line 31.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-) [12 <./images_chp2/visu_pression_defavo.png>]
+<images_chp2/visu_pression_favo2.png, id=73, 1371.2028pt x 681.747pt>
+File: images_chp2/visu_pression_favo2.png Graphic file (type png)
+
+<use images_chp2/visu_pression_favo2.png>
+Package pdftex.def Info: images_chp2/visu_pression_favo2.png used on input line
+ 54.
+(pdftex.def)             Requested size: 256.07741pt x 127.3175pt.
+
+<images_chp2/reflexion_50HR16_pos3_8cm.png, id=74, 462.528pt x 346.896pt>
+File: images_chp2/reflexion_50HR16_pos3_8cm.png Graphic file (type png)
+
+<use images_chp2/reflexion_50HR16_pos3_8cm.png>
+Package pdftex.def Info: images_chp2/reflexion_50HR16_pos3_8cm.png used on inpu
+t line 55.
+(pdftex.def)             Requested size: 149.37958pt x 112.03586pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[10 <./images_chp2/horsbande_50RH_500Hz_71mm.png>]
+<images_chp2/pos_singu.png, id=80, 462.528pt x 346.896pt>
+File: images_chp2/pos_singu.png Graphic file (type png)
+
+<use images_chp2/pos_singu.png>
+Package pdftex.def Info: images_chp2/pos_singu.png used on input line 68.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+) [11 <./images_chp2/visu_pression_favo2.png> <./images_chp2/reflexion_50HR16_p
+os3_8cm.png> <./images_chp2/pos_singu.png>]
 \openout2 = `chapitre3.aux'.
 
- (./chapitre3.tex
-Chapitre 4.
-) [13
+
+(./chapitre3.tex
+Chapitre 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--3
+
+ []
+
+<images_chp3/DSCN0123.JPG, id=86, 3468.96pt x 4625.28pt>
+File: images_chp3/DSCN0123.JPG Graphic file (type jpg)
+
+<use images_chp3/DSCN0123.JPG>
+Package pdftex.def Info: images_chp3/DSCN0123.JPG used on input line 14.
+(pdftex.def)             Requested size: 104.0643pt x 138.75241pt.
+ [12
 
 
 
-]
+ <./images_chp3/DSCN0123.JPG>]
+<images_chp3/T_5HR165_nodefect.png, id=91, 462.528pt x 346.896pt>
+File: images_chp3/T_5HR165_nodefect.png Graphic file (type png)
+
+<use images_chp3/T_5HR165_nodefect.png>
+Package pdftex.def Info: images_chp3/T_5HR165_nodefect.png used on input line 3
+4.
+(pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
+
+<images_chp3/T_5HR165_8cm_pos3.png, id=92, 462.528pt x 346.896pt>
+File: images_chp3/T_5HR165_8cm_pos3.png Graphic file (type png)
+
+<use images_chp3/T_5HR165_8cm_pos3.png>
+Package pdftex.def Info: images_chp3/T_5HR165_8cm_pos3.png used on input line 3
+5.
+(pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
+
+<images_chp3/R_5HR165_nodefect.png, id=93, 466.543pt x 347.699pt>
+File: images_chp3/R_5HR165_nodefect.png Graphic file (type png)
+
+<use images_chp3/R_5HR165_nodefect.png>
+Package pdftex.def Info: images_chp3/R_5HR165_nodefect.png used on input line 4
+1.
+(pdftex.def)             Requested size: 139.96397pt x 104.3105pt.
+
+<images_chp3/R_5HR165_8cm_pos3.png, id=94, 462.528pt x 346.896pt>
+File: images_chp3/R_5HR165_8cm_pos3.png Graphic file (type png)
+
+<use images_chp3/R_5HR165_8cm_pos3.png>
+Package pdftex.def Info: images_chp3/R_5HR165_8cm_pos3.png used on input line 4
+2.
+(pdftex.def)             Requested size: 138.75946pt x 104.0696pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--48
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--48
+
+ []
+
+[13 <./images_chp3/T_5HR165_nodefect.png> <./images_chp3/T_5HR165_8cm_pos3.png>
+ <./images_chp3/R_5HR165_nodefect.png> <./images_chp3/R_5HR165_8cm_pos3.png>]
+<./images_chp3/R_5HR10cm_Lcell20_85mm_pos3.png, id=102, 462.528pt x 346.896pt>
+File: ./images_chp3/R_5HR10cm_Lcell20_85mm_pos3.png Graphic file (type png)
+
+<use ./images_chp3/R_5HR10cm_Lcell20_85mm_pos3.png>
+Package pdftex.def Info: ./images_chp3/R_5HR10cm_Lcell20_85mm_pos3.png used on 
+input line 69.
+(pdftex.def)             Requested size: 115.63171pt x 86.72379pt.
+
+<./images_chp3/R_5HR10cm_Lcell20_nodefect.png, id=103, 462.528pt x 346.896pt>
+File: ./images_chp3/R_5HR10cm_Lcell20_nodefect.png Graphic file (type png)
+
+<use ./images_chp3/R_5HR10cm_Lcell20_nodefect.png>
+Package pdftex.def Info: ./images_chp3/R_5HR10cm_Lcell20_nodefect.png used on i
+nput line 71.
+(pdftex.def)             Requested size: 115.63171pt x 86.72379pt.
+
+<./images_chp3/non_norm_lin.png, id=104, 1204.5pt x 903.375pt>
+File: ./images_chp3/non_norm_lin.png Graphic file (type png)
+
+<use ./images_chp3/non_norm_lin.png>
+Package pdftex.def Info: ./images_chp3/non_norm_lin.png used on input line 77.
+(pdftex.def)             Requested size: 240.89574pt x 180.6718pt.
+
+Overfull \hbox (27.50006pt too wide) in paragraph at lines 77--78
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
+
+ []
+
+[14 <./images_chp3/R_5HR10cm_Lcell20_85mm_pos3.png> <./images_chp3/R_5HR10cm_Lc
+ell20_nodefect.png> <./images_chp3/non_norm_lin.png>]
+<./images_chp3/chgmt_defaut.png, id=111, 595.023pt x 317.185pt>
+File: ./images_chp3/chgmt_defaut.png Graphic file (type png)
+
+<use ./images_chp3/chgmt_defaut.png>
+Package pdftex.def Info: ./images_chp3/chgmt_defaut.png used on input line 95.
+(pdftex.def)             Requested size: 297.51077pt x 158.5921pt.
+
+<./images_chp3/comparaison_decroissance_lin_theo.png, id=112, 578.16pt x 433.62
+pt>
+File: ./images_chp3/comparaison_decroissance_lin_theo.png Graphic file (type pn
+g)
+ <use ./images_chp3/comparaison_decroissance_lin_theo.png>
+Package pdftex.def Info: ./images_chp3/comparaison_decroissance_lin_theo.png us
+ed on input line 106.
+(pdftex.def)             Requested size: 213.39568pt x 160.04651pt.
+
+<./images_chp3/comparaison_decroissance_log_theo.png, id=113, 462.528pt x 346.8
+96pt>
+File: ./images_chp3/comparaison_decroissance_log_theo.png Graphic file (type pn
+g)
+ <use ./images_chp3/comparaison_decroissance_log_theo.png>
+Package pdftex.def Info: ./images_chp3/comparaison_decroissance_log_theo.png us
+ed on input line 107.
+(pdftex.def)             Requested size: 213.39568pt x 160.05048pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--115
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--115
+
+ []
+
+[15 <./images_chp3/chgmt_defaut.png> <./images_chp3/comparaison_decroissance_li
+n_theo.png> <./images_chp3/comparaison_decroissance_log_theo.png>]) [16]
 \openout2 = `conclusion.aux'.
 
- (./conclusion.tex
-Chapitre 5.
-) [14
+
+(./conclusion.tex
+Chapitre 4.
+) [17
 
 
 
 ]
 \openout2 = `annexe.aux'.
 
- (./annexe.tex) [15
+ (./annexe.tex
+<./images_annexe/anecho.png, id=125, 462.528pt x 346.896pt>
+File: ./images_annexe/anecho.png Graphic file (type png)
+
+<use ./images_annexe/anecho.png>
+Package pdftex.def Info: ./images_annexe/anecho.png used on input line 9.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+) [18
 
 
 
-]
-\openout2 = `notations.aux'.
-
- (./notations.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--11
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 14--15
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
-
- []
-
-) [16
-
-
-] 
+ <./images_annexe/anecho.png>] [19]
+(./premier_jet_rapport.bbl) 
 AED: lastpage setting LastPage
-(./premier_jet_rapport.aux (./introduction.aux) (./chapitre1.aux)
-(./chapitre2.aux) (./chapitre3.aux) (./conclusion.aux) (./annexe.aux)
-(./notations.aux))
+[20
 
-LaTeX Warning: There were undefined references.
 
- ) 
+] (./premier_jet_rapport.aux (./introduction.aux) (./chapitre1.aux)
+(./chapitre2.aux) (./chapitre3.aux) (./conclusion.aux) (./annexe.aux)) ) 
 Here is how much of TeX's memory you used:
- 15697 strings out of 493304
- 274532 string characters out of 6139871
- 339040 words of memory out of 5000000
- 18717 multiletter control sequences out of 15000+600000
- 67501 words of font info for 59 fonts, out of 8000000 for 9000
- 957 hyphenation exceptions out of 8191
- 63i,13n,92p,686b,686s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share
-/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
--mathex.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcs
-c10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fo
-nts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi5.pf
-b></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/typ
-e1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/
-share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/publi
-c/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share/tex
-mf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/
-type1/public/lm/lmsy7.pfb>
-Output written on premier_jet_rapport.pdf (17 pages, 584019 bytes).
+ 15731 strings out of 494958
+ 276136 string characters out of 6179214
+ 333701 words of memory out of 5000000
+ 18493 multiletter control sequences out of 15000+600000
+ 87562 words of font info for 65 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 63i,13n,92p,1169b,418s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/s
+hare/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
+-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fo
+nts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.e
+nc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb><
+/usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1
+/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi5.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/tex
+mf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/
+share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/publ
+ic/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmsy7.pfb>
+Output written on premier_jet_rapport.pdf (21 pages, 5148175 bytes).
 PDF statistics:
- 153 PDF objects out of 1000 (max. 8388607)
- 100 compressed objects within 1 object stream
+ 204 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 133 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,27 +1,30 @@
 \select@language {french}
-\contentsline {chapter}{\numberline {1}Introduction}{4}
-\contentsline {chapter}{\numberline {2}Th\IeC {\'e}orie d'un r\IeC {\'e}seau acoustique fini constitu\IeC {\'e} de r\IeC {\'e}sonateurs de Helmholtz}{5}
-\contentsline {paragraph}{Notations}{5}
-\contentsline {section}{\numberline {2.1}Mise sous forme matricielle}{5}
-\contentsline {subsection}{\numberline {2.1.1}Le guide d'onde}{6}
-\contentsline {subsubsection}{Ajout des pertes}{6}
-\contentsline {subsection}{\numberline {2.1.2}Imp\IeC {\'e}dance d'entr\IeC {\'e}e d'un r\IeC {\'e}sonateur}{6}
-\contentsline {paragraph}{Correction de longueur}{7}
-\contentsline {section}{\numberline {2.2}\IeC {\'E}tude du r\IeC {\'e}seau fini}{7}
-\contentsline {subsection}{\numberline {2.2.1}\IeC {\'E}quation de dispersion}{7}
-\contentsline {subsection}{\numberline {2.2.2}R\IeC {\'e}flexion et transmission du r\IeC {\'e}seau}{7}
-\contentsline {subsection}{\numberline {2.2.3}Bande de Bragg}{7}
-\contentsline {subsection}{\numberline {2.2.4}Bande interdites li\IeC {\'e}s aux r\IeC {\'e}sonateurs}{8}
-\contentsline {subsection}{\numberline {2.2.5}Cas d\IeC {\'e}sordonn\IeC {\'e}}{8}
-\contentsline {subsubsection}{D\IeC {\'e}sordre sur le volume des cavit\IeC {\'e}s}{8}
-\contentsline {paragraph}{D\IeC {\'e}sordre li\IeC {\'e} aux conditions exp\IeC {\'e}rimentales}{8}
-\contentsline {subsubsection}{D\IeC {\'e}sordre sur la position des r\IeC {\'e}sonateurs}{10}
-\contentsline {chapter}{\numberline {3}Ajout d'une singularit\IeC {\'e} dans le r\IeC {\'e}seau}{11}
-\contentsline {section}{\numberline {3.1}\IeC {\'E}tude de l'influence de la fr\IeC {\'e}quence de r\IeC {\'e}sonance du d\IeC {\'e}faut}{11}
-\contentsline {subsection}{\numberline {3.1.1}Cas du d\IeC {\'e}faut hors bandes interdites}{11}
-\contentsline {subsection}{\numberline {3.1.2}Cas du d\IeC {\'e}faut dans une bande interdite}{12}
-\contentsline {section}{\numberline {3.2}\IeC {\'E}tude de l'influence de la position du d\IeC {\'e}faut}{12}
-\contentsline {chapter}{\numberline {4}Visualisation exp\IeC {\'e}rimental d'un mode localis\IeC {\'e}}{13}
-\contentsline {section}{\numberline {4.1}Protocole exp\IeC {\'e}rimental}{13}
-\contentsline {section}{\numberline {4.2}R\IeC {\'e}sultat et comparaison avec la simulation}{13}
-\contentsline {chapter}{\numberline {5}Conclusion}{14}
+\contentsline {chapter}{\numberline {1}Th\IeC {\'e}orie d'un r\IeC {\'e}seau acoustique fini constitu\IeC {\'e} de r\IeC {\'e}sonateurs de Helmholtz}{4}
+\contentsline {paragraph}{Notations}{4}
+\contentsline {section}{\numberline {1.1}Mise sous forme matricielle}{4}
+\contentsline {subsection}{\numberline {1.1.1}Le guide d'onde}{4}
+\contentsline {subsubsection}{Prise en compte des pertes}{5}
+\contentsline {subsection}{\numberline {1.1.2}Imp\IeC {\'e}dance d'entr\IeC {\'e}e d'un r\IeC {\'e}sonateur}{5}
+\contentsline {subsubsection}{Correction de longueur}{6}
+\contentsline {section}{\numberline {1.2}\IeC {\'E}tude du r\IeC {\'e}seau fini}{6}
+\contentsline {subsection}{\numberline {1.2.1}\IeC {\'E}quation de dispersion}{6}
+\contentsline {subsection}{\numberline {1.2.2}R\IeC {\'e}flexion et transmission du r\IeC {\'e}seau}{6}
+\contentsline {subsection}{\numberline {1.2.3}Bande de Bragg}{6}
+\contentsline {subsection}{\numberline {1.2.4}Bande interdites li\IeC {\'e}s aux r\IeC {\'e}sonateurs}{7}
+\contentsline {subsection}{\numberline {1.2.5}Cas d\IeC {\'e}sordonn\IeC {\'e}}{7}
+\contentsline {subsubsection}{D\IeC {\'e}sordre sur le volume des cavit\IeC {\'e}s}{7}
+\contentsline {paragraph}{D\IeC {\'e}sordre li\IeC {\'e} aux conditions exp\IeC {\'e}rimentales}{7}
+\contentsline {subsubsection}{D\IeC {\'e}sordre sur la position des r\IeC {\'e}sonateurs}{7}
+\contentsline {chapter}{\numberline {2}Ajout d'une singularit\IeC {\'e} dans le r\IeC {\'e}seau}{9}
+\contentsline {section}{\numberline {2.1}\IeC {\'E}tude de l'influence de la fr\IeC {\'e}quence de r\IeC {\'e}sonance du d\IeC {\'e}faut}{9}
+\contentsline {subsection}{\numberline {2.1.1}Cas du d\IeC {\'e}faut hors bandes interdites}{9}
+\contentsline {subsection}{\numberline {2.1.2}Cas du d\IeC {\'e}faut dans une bande interdite}{10}
+\contentsline {section}{\numberline {2.2}\IeC {\'E}tude de l'influence de la position du d\IeC {\'e}faut}{10}
+\contentsline {chapter}{\numberline {3}Visualisation exp\IeC {\'e}rimental d'un mode localis\IeC {\'e}}{12}
+\contentsline {section}{\numberline {3.1}Protocole exp\IeC {\'e}rimental}{12}
+\contentsline {section}{\numberline {3.2}Mesure du coefficient de r\IeC {\'e}flexion et de transmission du r\IeC {\'e}seau}{13}
+\contentsline {section}{\numberline {3.3}Mesure d'un mode localis\IeC {\'e} par insertion de capteur dans le r\IeC {\'e}seau}{14}
+\contentsline {subsection}{\numberline {3.3.1}Changement de g\IeC {\'e}om\IeC {\'e}trie du d\IeC {\'e}faut}{15}
+\contentsline {chapter}{\numberline {4}Conclusion}{17}
+\contentsline {section}{\numberline {4.1}Terminaison an\IeC {\'e}cho\IeC {\"\i }que}{18}
+\contentsline {section}{\numberline {4.2}Param\IeC {\`e}tres du r\IeC {\'e}seau \IeC {\'e}tudi\IeC {\'e}}{18}

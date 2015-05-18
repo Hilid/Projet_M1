@@ -1,0 +1,20 @@
+\begin{thebibliography}{1}
+
+\bibitem{guide_dalmont}
+{\em Guide des guides d'ondes acoustiques}, 2010.
+\newblock Cours dispensé à l'université du Maine par J-P Dalmont.
+
+\bibitem{these_richoux}
+O~Richoux.
+\newblock {\em Étude de la propagation des ondes mécaniques dans un réseau
+  unidimensionnel comportant du désordre et/ou des non-linéarités
+  localisées}.
+\newblock PhD thesis, Université du Maine, 1999.
+
+\bibitem{slow}
+G~Theocharis, O~Richoux, V~Romero García, A~Merkel, and V~Tournat.
+\newblock Limits of slow sound propagation and transparency in lossy, locally
+  resonant periodic structures.
+\newblock {\em New Journal of Physics}, 2014.
+
+\end{thebibliography}

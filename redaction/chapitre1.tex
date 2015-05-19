@@ -15,12 +15,12 @@ On s’intéresse ici a la mise sous forme matricielle du problème de la propag
 \begin{pmatrix} P_{out} \\ U_{out} \end{pmatrix} =\begin{pmatrix} a & b \\ c & d \end{pmatrix}^N \begin{pmatrix} P_{in} \\ U_{in} \end{pmatrix} = \begin{pmatrix} A & B \\ C & D \end{pmatrix} \begin{pmatrix} P_{in} \\ U_{in} \end{pmatrix} .
 \end{equation}
 
-Cette matrice dispose en effet de propriétés intéressantes et l'étude du système sera grandement facilité par ce formalise. De plus, les simulations sont faciles à mettre en œuvre dès lors que celle-ci est connue.
+Cette matrice dispose en effet de propriétés intéressantes et l'étude du système sera grandement facilité par ce formalisme. De plus, les simulations sont faciles à mettre en œuvre dès lors que cette matrice de transfert est connue.
 
 Pour cela, les 2 éléments du réseau (guide et résonateur) doivent être mis sous forme matricielle puis multipliés.
 
 \subsection{Le guide d'onde}
-Le problème est considéré à une dimension du fait de la longueur du guide et du domaine de fréquence de l'étude: on considère que seul le mode plan est propagatif. 
+On considère la propagation selon une seule direction du fait de la longueur du guide et du domaine de fréquence de l'étude. De plus, seul le mode plan est propagatif. 
 
 La solution de la propagation dans un guide d'onde peux être facilement déduite de l'équation d'onde suivante :
 \begin{equation}
@@ -31,9 +31,9 @@ On se place en régime harmonique et on note $\Gamma = jk$ la constante de propa
 \begin{eqnarray*}
 \begin{cases}
 p(x_1)  =  C_1 e^{-\Gamma x_1} + C_2 e^{\Gamma x_1} \\
-v(x_1)  =  -\frac{1}{j\omega\rho} [ -\Gamma C_1 e^{-\Gamma x_1} + \Gamma e^{\Gamma x_1}]\\
+v(x_1)  =  -\frac{1}{j\omega\rho} [ -\Gamma C_1 e^{-\Gamma x_1} + \Gamma C_2 e^{\Gamma x_1}]\\
 p(x_2)  =  C_1 e^{-\Gamma x_2} + C_2 e^{\Gamma x_2} \\
-v(x_2)  =  -\frac{1}{j\omega\rho} [ -\Gamma C_1 e^{-\Gamma x_2} + \Gamma e^{\Gamma x_2}].
+v(x_2)  =  -\frac{1}{j\omega\rho} [ -\Gamma C_1 e^{-\Gamma x_2} + \Gamma C_2 e^{\Gamma x_2}].
 \end{cases}
 \end{eqnarray*}
  
@@ -70,7 +70,7 @@ On suppose que le résonateur est constitué de 2 guides à parois rigides d'imp
 \begin{pmatrix} P_e \\U_e \end{pmatrix} & = & \begin{pmatrix} \cos(k L_n) & j Z_{n} \sin(k L_n) \\ \frac{1}{Z_{n}} \sin(k L_n) & \cos(k L_n) \end{pmatrix} \begin{pmatrix} \cos(k L_c) & j Z_{c} \sin(k L_c) \\ \frac{1}{Z_{c}} \sin(k L_c) & \cos(k L_c) \end{pmatrix} \begin{pmatrix} P_s \\ 0  \end{pmatrix} \\
 \begin{pmatrix} P_e \\U_e \end{pmatrix} & = & \begin{pmatrix} r_1 & r_2 \\ r_3 & r_4 \end{pmatrix} \begin{pmatrix} P_s \\ 0  \end{pmatrix} ,
 \end{eqnarray*}
-ce qui conduit à 
+ce qui conduit à l'impédance du résonateur exprimé de la manière suivante:
 \begin{equation}
  Z_{r}	 = \frac{P_e}{U_e}= \frac{r_1}{r_3}\text{.}
 \end{equation}
@@ -134,7 +134,7 @@ Afin d'étudier succinctement l'effet d'un désordre sur le volume des cavités 
 
 Dans le cas d'un écart-type élevé, le désordre a pour principal effet d'élargir la bande interdite liée à la seconde résonance des résonateurs (résonance de la cavité). La bande de Bragg n'est pas impactée puisque le désordre touche le volume des cavités et non l'espacement des résonateurs.
 
-\paragraph{Désordre lié aux conditions expérimentales}
+\subsubsection*{Désordre lié aux conditions expérimentales} 
 Dans l'expérience menée plus loin, le volume des résonateur est fixé manuellement. La question de l'impact de l'erreur commise par la mise en place de l'expérience est donc directement liée à l'étude de désordre dans le réseau. On estime que la longueur des cavités va suivre une loi normale d'écart-type $2~mm$ et de longueur moyenne $\bar{L_c}=14~cm$. La figure~\ref{chaos2} montre alors que ce désordre n'a qu'une faible influence sur le coefficient de réflexion. 
 
 

@@ -1,14 +1,11 @@
 \beamer@endinputifotherversion {3.24pt}
 \select@language {french}
-\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
-\beamer@sectionintoc {2}{R\IeC {\'e}seau infini}{4}{0}{2}
-\beamer@subsectionintoc {2}{1}{Formalisme matriciel}{4}{0}{2}
-\beamer@subsectionintoc {2}{2}{Bande interdites}{6}{0}{2}
-\beamer@sectionintoc {3}{Ajout d'une singularit\IeC {\'e}}{7}{0}{3}
-\beamer@subsectionintoc {3}{1}{Influence de la position et de la fr\IeC {\'e}quence de r\IeC {\'e}sonance du d\IeC {\'e}faut}{8}{0}{3}
-\beamer@subsectionintoc {3}{2}{Simulation de la pression dans le tube}{9}{0}{3}
-\beamer@subsectionintoc {3}{3}{Changements sur les coefficients de r\IeC {\'e}flexion et transmission}{10}{0}{3}
-\beamer@sectionintoc {4}{Visualisation exp\IeC {\'e}rimentale du mode localis\IeC {\'e}}{11}{0}{4}
-\beamer@subsectionintoc {4}{1}{Mesure de la pression dans le tube}{11}{0}{4}
-\beamer@subsectionintoc {4}{2}{Changement de g\IeC {\'e}om\IeC {\'e}trie du r\IeC {\'e}seau}{12}{0}{4}
-\beamer@sectionintoc {5}{Conclusions}{13}{0}{5}
+\beamer@sectionintoc {2}{R\IeC {\'e}seau infini}{4}{0}{1}
+\beamer@subsectionintoc {2}{1}{Formalisme matriciel}{4}{0}{1}
+\beamer@subsectionintoc {2}{2}{Bande interdites}{5}{0}{1}
+\beamer@sectionintoc {3}{Ajout d'une singularit\IeC {\'e}}{6}{0}{2}
+\beamer@subsectionintoc {3}{1}{\IeC {\`a} quelle position ?}{7}{0}{2}
+\beamer@subsectionintoc {3}{2}{\IeC {\`a} quelle fr\IeC {\'e}quence ?}{8}{0}{2}
+\beamer@subsectionintoc {3}{3}{r\IeC {\'e}flexion et transmission}{9}{0}{2}
+\beamer@sectionintoc {4}{Visualisation exp\IeC {\'e}rimentale du mode localis\IeC {\'e}}{10}{0}{3}
+\beamer@subsectionintoc {4}{1}{Changement de g\IeC {\'e}om\IeC {\'e}trie du r\IeC {\'e}seau}{11}{0}{3}

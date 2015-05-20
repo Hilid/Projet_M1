@@ -5,6 +5,7 @@
 \usepackage{todonotes}
 \usepackage{tikz}
 \usepackage{color}
+\usepackage{subfigure}
 
 
 %\usepackage{palatino}
@@ -25,6 +26,7 @@
 \setbeamercolor{frametitle}{fg=DeepSkyBlue4}
 \setbeamercolor{title}{fg=DeepSkyBlue4}
 \setbeamercolor{itemize item}{fg=black}
+\setbeamercolor{itemize subitem}{fg=black}
 \setbeamercolor{toc}{fg=DeepSkyBlue4}
 
 %couleur table des matières
@@ -50,9 +52,7 @@
 	\titlepage 
 \end{frame}
 
-\begin{frame}
-\tableofcontents[hideallsubsections]
-\end{frame}
+
 
 \section*{Introduction}
 \begin{frame}{\insertsectionhead}
@@ -71,6 +71,10 @@
 	
 \end{frame}
 
+\begin{frame}{Plan}
+\tableofcontents[hideallsubsections]
+\end{frame}
+
 
 \section{Réseau infini}
 
@@ -80,7 +84,7 @@ Matrices de transfert :
 \begin{itemize}
 	\item pour un guide 
 	\begin{eqnarray*}
-	\begin{pmatrix} p_1 \\ v_1 \end{pmatrix} = \begin{pmatrix} \cosh(kL) & \frac{j\omega\rho}{k} \sinh(k L) \\  \frac{k}{j\omega\rho}\sinh(k L) & \cosh(k L) 		\end{pmatrix} 	\begin{pmatrix} p_2 \\ v_2 \end{pmatrix}
+	\begin{pmatrix} p_1 \\ v_1 \end{pmatrix} = \begin{pmatrix} \cos(kL) & \frac{j\omega\rho}{k} \sin(k L) \\  \frac{k}{j\omega\rho}\sin(k L) & \cos(k L) 		\end{pmatrix} 	\begin{pmatrix} p_2 \\ v_2 \end{pmatrix}
 	\end{eqnarray*}
 	
 	\item pour un résonateur
@@ -88,7 +92,10 @@ Matrices de transfert :
 
 \begin{footnotesize}
 		\begin{eqnarray*}
-\begin{pmatrix} P_e \\U_e \end{pmatrix}&=&\begin{pmatrix} \cos(k L_n) & j Z_{n} \sin(k L_n) \\ \frac{1}{Z_{n}} 						\sin(k L_n) & \cos(k L_n) \end{pmatrix} \begin{pmatrix} \cos(k L_c) & j Z_{c} \sin(k L_c) \\ \frac{1}{Z_{c}} \sin(k 				L_c) & \cos(k L_c) \end{pmatrix} \begin{pmatrix} P_s \\ 0  \end{pmatrix}
+\begin{pmatrix} P_e \\U_e \end{pmatrix}&=&\underbrace{
+				\begin{pmatrix} \cos(k L_n) & j Z_{n} \sin(k L_n) \\ \frac{1}{Z_{n}} \sin(k L_n) & \cos(k L_n) \end{pmatrix}}_{\text{\normalsize Col}}
+				\underbrace{\begin{pmatrix} \cos(k L_c) & j Z_{c} \sin(k L_c) \\ \frac{1}{Z_{c}} \sin(kL_c) & \cos(k L_c) \end{pmatrix}}_{\text{\normalsize Cavité}}
+				 \begin{pmatrix} P_s \\ 0  \end{pmatrix}
 		\end{eqnarray*}
 \end{footnotesize}
 
@@ -175,14 +182,6 @@ Matrices de transfert :
  
 \end{frame}
 
-\subsection{à quelle position ?}
-\begin{frame}{\insertsectionhead : \insertsubsectionhead}
-
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.4]{pos_singu.png}
-\end{figure}
-\end{frame}
 
 \subsection{à quelle fréquence ?}
 \begin{frame}{\insertsectionhead : \insertsubsectionhead}
@@ -203,21 +202,35 @@ Matrices de transfert :
 \end{columns}
 \end{frame}
 
+\subsection{à quelle position ?}
+\begin{frame}{\insertsectionhead : \insertsubsectionhead}
+
+
+Transmission en fonction de la position :
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.5]{pos_singu.png}
+\end{figure}
+\end{frame}
+
+
 
 \subsection{réflexion et transmission}
 \begin{frame}{\insertsectionhead : \insertsubsectionhead}
 Sans défaut :
+\vspace{-0.3cm}
 \begin{figure}
 \centering
-\includegraphics[width=0.4\textwidth]{R_5HR165_nodefect}
-\includegraphics[width=0.4\textwidth]{T_5HR165_nodefect.png}
+\subfigure[Réflexion]{\includegraphics[width=0.35\textwidth]{R_5HR165_nodefect}}
+\subfigure[Transmission]{\includegraphics[width=0.35\textwidth]{T_5HR165_nodefect.png}}
 \end{figure}
 
 Avec défaut (bord de bande interdite) : 
+\vspace{-0.3cm}
 \begin{figure}
 \centering
-\includegraphics[width=0.36\textwidth]{R_5HR165_8cm_pos3.png}
-\includegraphics[width=0.36\textwidth]{T_5HR165_8cm_pos3.png}
+\subfigure{\includegraphics[width=0.35\textwidth]{R_5HR165_8cm_pos3.png}}
+\subfigure{\includegraphics[width=0.35\textwidth]{T_5HR165_8cm_pos3.png}}
 \end{figure}
 
 
@@ -229,8 +242,12 @@ Avec défaut (bord de bande interdite) :
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.5]{non_norm_lin.png}
+\includegraphics[scale=0.4]{non_norm_lin.png}
 \end{figure}
+
+\begin{center}
+	Pression mesurée dans le réseau.
+\end{center}
 
 \end{frame}
 
@@ -262,33 +279,28 @@ Ajout d'un 2\textsuperscript{ème} défaut $\rightarrow$ symétrie
 
 
 \section*{Conclusions}
-\begin{frame}{~}
-\insertsectionhead
-	\begin{block}{Notions abordées}
-		\centering
+\begin{frame}{\insertsectionhead}
+
+%ouvertures
+\begin{itemize}
+	\item Forte amplitude locale $\rightarrow$ effets non-linéaires possibles\\~\\
+	\item Applications en acoustique non-linéaire : 
 		\begin{itemize}
-			\item Acoustique non-linéaire : dispersion
-			\item Réseaux acoustiques
-			\item Modes localisés
+			\item[•] filtrage dynamique,
+			\item[•] système asymétrique, 
+			\item[•] conception de matériaux variés.
 		\end{itemize}
-	\end{block}
+\end{itemize}
+
 	
-	\begin{exampleblock}{Savoir-faire acquis}
-		\begin{itemize}
-			\item Formalisme matriciel
-			\item Simulations numériques
-			\item Mesures de transmission
-		\end{itemize}
-	\end{exampleblock}
-	
-	\begin{alertblock}{Outils utilisés}
-		\begin{itemize}
-			\item Git
-			\item Octave
-			\item Capteur d'impédance CTTM
-		\end{itemize}
-	\end{alertblock}
-	
+\end{frame}
+
+\begin{frame}{Bibliographie}
+\indent J P Dalmont. Guide des Guides d'ondes acoustiques (version 1.4). 2010 \\ ~\\
+\indent O Richoux. Étude de la propagation des ondes mécaniques dans un réseau unidimensionnel comportant du désordre et/ou des non-linéarités localisées. Th. doct. : Acoustique. Le Mans : université du Maine, 1999 \\~\\
+\indent G Theocharis, O Richoux, V Romero García, A Merkel, and V Tournat. Limits of slow sound propagation and transparency in lossy, locally resonant periodic structures. New Journal of Physics, 2014.
+
+
 \end{frame}
 
 

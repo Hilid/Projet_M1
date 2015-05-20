@@ -4,8 +4,8 @@
 \beamer@subsectionintoc {2}{1}{Formalisme matriciel}{4}{0}{1}
 \beamer@subsectionintoc {2}{2}{Bande interdites}{5}{0}{1}
 \beamer@sectionintoc {3}{Ajout d'une singularit\IeC {\'e}}{6}{0}{2}
-\beamer@subsectionintoc {3}{1}{\IeC {\`a} quelle position ?}{7}{0}{2}
-\beamer@subsectionintoc {3}{2}{\IeC {\`a} quelle fr\IeC {\'e}quence ?}{8}{0}{2}
+\beamer@subsectionintoc {3}{1}{\IeC {\`a} quelle fr\IeC {\'e}quence ?}{7}{0}{2}
+\beamer@subsectionintoc {3}{2}{\IeC {\`a} quelle position ?}{8}{0}{2}
 \beamer@subsectionintoc {3}{3}{r\IeC {\'e}flexion et transmission}{9}{0}{2}
 \beamer@sectionintoc {4}{Visualisation exp\IeC {\'e}rimentale du mode localis\IeC {\'e}}{10}{0}{3}
 \beamer@subsectionintoc {4}{1}{Changement de g\IeC {\'e}om\IeC {\'e}trie du r\IeC {\'e}seau}{11}{0}{3}

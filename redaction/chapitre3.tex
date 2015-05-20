@@ -1,4 +1,4 @@
-\chapter{Visualisation expérimental d'un mode localisé}
+\chapter{Visualisation expérimentale d'un mode localisé}
 Comme vu précédemment, un défaut dans le réseau provoque un mode localisé. L'objectif est ici de mettre en évidence ce phénomène de manière expérimentale.\\
 
 
@@ -16,10 +16,6 @@ Le banc de mesure utilisé est constitué d'un tuyau perforé de 60 trous sur le
 \end{figure}
 
 Les mesures de pression dans le guide sont faites par déplacement manuel d'un microphone (GRAS 26AC) directement placé à l'intérieur du réseau.
-
-%\todo{citer une annexe sur la démo du coefficient de transmission et mettre la bonne annexe sur les dims des resonateurs}
-
-
 
 \bigskip
 
@@ -44,7 +40,7 @@ On s'intéresse tout d'abord à la mesure du coefficient de réflexion et de tra
 \end{figure}
 
 Dans l'ensemble, simulations et mesures sont en accord. Certaines variations sont moins marquées sur les courbes expérimentales en raison des fuites aux jonctions du guide et des résonateurs non prises en comptes dans la simulation.\\
-Aux fréquences pour lesquelles la transmission est théoriquement proche de 1, il y a de fortes variations expérimentalement, dépassant 1. Cet écart entre théorie et expérience s'explique par la contribution des faibles réflexions provenant de la terminaison anéchoïque qui n'est pas parfaite.\\~\\
+Aux fréquences pour lesquelles la transmission est théoriquement proche de 1, il y a de fortes variations observées expérimentalement, allant jusqu'a dépasser 1. Cet écart entre théorie et expérience s'explique par la contribution des faibles réflexions provenant de la terminaison anéchoïque qui n'est pas parfaite.\\~\\
 
 
 On constate qu'un pic de transmission est visible autour de 370 Hz, dans la bande interdite, tant théoriquement qu'expérimentalement : le défaut amplifie et permet à l'onde de traverser le réseau pour une fréquence donnée, alors que dans le cas sans défaut, aucune transmission n'est possible. Ce comportement laisse supposer qu'un mode localisé est présent au niveau du défaut : si on augmente le nombre de résonateur, l'atténuation est plus forte et le pic disparaît. Le mode est alors complètement localisé. 
@@ -61,7 +57,7 @@ Le nombre de résonateurs de part et d'autre du défaut est augmenté de manièr
 
 
 
- Le signal d'excitation est donc un sinus à $370~Hz$ et un microphone est inséré dans le réseau afin de mesure la pression en tout point. Le microphone n'est pas intrusif car sa taille (quart de pouce) est petite devant celle de la longueur d'onde. L'amplitude de la pression mesurée dans le tube est représenté figure ~\ref{p_tube} pour une configuration avec et sans défaut. 
+ Le signal d'excitation est donc un sinus à $370~Hz$ et un microphone est inséré dans le réseau afin de mesurer la pression en tout point. Le microphone n'est pas intrusif car sa taille (quart de pouce) est petite devant celle de la longueur d'onde. L'amplitude de la pression mesurée dans le tube est représenté figure ~\ref{p_tube} pour une configuration avec et sans défaut. 
 
 
 \begin{figure}[!h]
@@ -88,7 +84,7 @@ Pour des questions matérielles, il n'a pas été possible de placer la source a
 Afin de pouvoir comparer la différence de décroissance entre les 2 courbes, on change la géométrie de la cellule singulière : celle-ci est maintenant constituée de 2 résonateurs afin de pouvoir placer la source au centre. Les cellules sont alors constitués de 2 résonateurs (voir schéma figure \ref{fig_exp}). La source se trouve au point $x=0$, les résonateurs ont une longueur de cavité de $16~cm$ et ceux du défaut une longueur de $8~cm$.
 
 
-Le couplage des deux défauts engendre en réalité deux fréquences de résonance. En prenant des longueur de cavité plus grande (16 cm au lieu de 8), l'une d'elle tombe dans une bande interdite, générant ainsi un mode localisé.
+Le couplage des deux défauts engendre en réalité deux fréquences de résonance. En prenant des longueurs de cavité plus grandes (16 cm au lieu de 8), l'une d'elle tombe dans une bande interdite, générant ainsi un mode localisé.
 
 \begin{figure}[!h]
 \centering
@@ -105,7 +101,7 @@ Les mesures sont comparées avec une courbe de décroissance théorique calculé
 \centering
 \includegraphics[width=0.5 \textwidth]{./images_chp3/comparaison_decroissance_lin.png}\hfill
 \includegraphics[width=0.5 \textwidth]{./images_chp3/comparaison_decroissance_log_theo.png}
-\caption{\label{p_tube2} Amplitude du microphone mesurée dans le réseau avec un défaut à 2 résonateurs. À gauche en ordonnées linéaires, à droite en ordonnées logarithmiques, la courbe de comparaison des décroissances est normalisée.}
+\caption{\label{p_tube2} Amplitude du microphone mesurée dans le réseau avec un défaut à 2 résonateurs. À gauche en échelle linéaire, à droite en échelle logarithmique, la courbe de comparaison des décroissances est normalisée.}
 \end{figure}
 
 Tout d'abord il est visible sur la première courbe figure~\ref{p_tube2} que l'amplitude du mode localisé est nettement plus élevée que dans un cas sans défaut. Le résultat de la partie précédente est donc bien retrouvé ici. \\~\\

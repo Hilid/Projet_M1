@@ -1,5 +1,5 @@
 \chapter{Théorie d'un réseau acoustique fini constitué de résonateurs de Helmholtz}
-Ce chapitre a pour but de caractériser le champ de pression dans un guide sur lequel des résonateurs de Helmholtz sont placés en dérivation, espacés régulièrement d'une longueur $L$. On dispose pour cela d'un banc de mesure représenté en figure ~\ref{schema_infini}. Une simulation de la propagation dans le réseau pourra donc être confronté à une expérience (voir les sections suivantes).
+Ce chapitre a pour but de caractériser le champ de pression dans un guide sur lequel des résonateurs de Helmholtz sont placés en dérivation, espacés régulièrement d'une longueur $L$. On dispose pour cela d'un banc de mesure représenté en figure ~\ref{schema_infini}. Une simulation de la propagation dans le réseau pourra donc être confrontée à une expérience (voir les sections suivantes).
 
 \begin{figure}[!ht] \centering
 \includegraphics[scale=0.5]{./images_chp1/schema_reseau_infini.png}
@@ -15,14 +15,14 @@ On s’intéresse ici a la mise sous forme matricielle du problème de la propag
 \begin{pmatrix} P_{out} \\ U_{out} \end{pmatrix} =\begin{pmatrix} a & b \\ c & d \end{pmatrix}^N \begin{pmatrix} P_{in} \\ U_{in} \end{pmatrix} = \begin{pmatrix} A & B \\ C & D \end{pmatrix} \begin{pmatrix} P_{in} \\ U_{in} \end{pmatrix} .
 \end{equation}
 
-Cette matrice dispose en effet de propriétés intéressantes et l'étude du système sera grandement facilité par ce formalisme. De plus, les simulations sont faciles à mettre en œuvre dès lors que cette matrice de transfert est connue.
+Cette matrice dispose en effet de propriétés intéressantes et l'étude du système sera grandement facilitée par ce formalisme. De plus, les simulations sont faciles à mettre en œuvre dès lors que cette matrice de transfert est connue.
 
 Pour cela, les 2 éléments du réseau (guide et résonateur) doivent être mis sous forme matricielle puis multipliés.
 
 \subsection{Le guide d'onde}
 On considère la propagation selon une seule direction du fait de la longueur du guide et du domaine de fréquence de l'étude. De plus, seul le mode plan est propagatif. 
 
-La solution de la propagation dans un guide d'onde peux être facilement déduite de l'équation d'onde suivante :
+La solution de la propagation dans un guide d'onde peut être facilement déduite de l'équation d'onde suivante :
 \begin{equation}
 \frac{\partial ^2 p}{\partial x^2} -\frac{1}{c^{2}} \frac{\partial ^2 p}{\partial t^2}= 0
 \end{equation}
@@ -39,13 +39,13 @@ v(x_2)  =  -\frac{1}{j\omega\rho} [ -\Gamma C_1 e^{-\Gamma x_2} + \Gamma C_2 e^{
  
 On pose $x_1 - x_2 = L$. Tous calculs faits, on trouve finalement la relation matricielle suivante :
 \begin{eqnarray*}
-\begin{pmatrix} p(x_1) \\ v(x_1) \end{pmatrix} = \begin{pmatrix} \cosh(kL) & \frac{j\omega\rho}{k} \sinh(k L) \\  \frac{k}{j\omega\rho}\sinh(k L) & \cosh(k L) \end{pmatrix} \begin{pmatrix} p(x_2) \\ v(x_2)
+\begin{pmatrix} p(x_1) \\ v(x_1) \end{pmatrix} = \begin{pmatrix} \cos(kL) & \frac{j\omega\rho}{k} \sin(k L) \\  \frac{k}{j\omega\rho}\sin(k L) & \cos(k L) \end{pmatrix} \begin{pmatrix} p(x_2) \\ v(x_2)
 \end{pmatrix}.
 \end{eqnarray*}
 
 \subsubsection{Prise en compte des pertes}
 
-Pour prendre en compte les pertes visco-thermique, on modifie l'expression de la constante de propagation et de l'impédance caractéristique avec les expressions de l'article~\cite{slow} (voir la bibliographie de l'article pour plus de détail). Les expressions prenant en compte les pertes visco-thermiques sont donc:
+Pour prendre en compte les pertes visco-thermiques, on modifie l'expression de la constante de propagation et de l'impédance caractéristique avec les expressions de l'article~\cite{slow} (voir la bibliographie de l'article pour plus de détail). Les expressions prenant en compte les pertes visco-thermiques sont donc:
 \begin{eqnarray*}
  k =  \frac{\omega}{c_0} \left( 1 + \frac{\beta}{s}(1+(\gamma-1)/ \chi \right) \\
 Z_c =  \frac{\rho c_0}{S} \left( 1 + \frac{\beta}{s}(1-(\gamma-1)/ \chi \right). 
@@ -57,6 +57,7 @@ Dans ces expressions, on a:
  \item  $\chi = \sqrt{P_r}$ où $P_r$ est le nombre de Prandtl,
  \item $\beta = (1-j)/\sqrt{2}$,
  \item $\mu$ la viscosité de l'air.
+ \item $\gamma$ coefficient adiabatique de l'air
 \end{itemize}
 
 Du fait de la géométrie assez complexe du système et du faible rayon des cols des résonateurs, ces pertes ne peuvent pas être négligées comme cela peux être souvent le cas en acoustique.
@@ -77,7 +78,7 @@ ce qui conduit à l'impédance du résonateur exprimé de la manière suivante:
 
 \subsubsection{Correction de longueur}
 
-La longueur effective du col est sujet à une correction présentée en annexe \ref{annexe_corr}.\\
+La longueur effective du col est sujette à une correction présentée en annexe \ref{annexe_corr}.\\
 
 En ajoutant un résonateur en parallèle au guide, il y a toujours continuité des pressions mais plus des vitesses. La matrice de transfert pression-débit pour un résonateur dans le réseau est alors la suivante :
 
@@ -89,7 +90,7 @@ M_{r} = \begin{pmatrix} 1 &  0 \\ 1 /Z_{r} & 1  \end{pmatrix}\\
 
 Une fois les matrices du guide et du résonateur connues, il suffit alors de les multiplier afin d'obtenir la matrice d'une cellule du réseau. C'est sur l'étude de cette matrice que se basent les analyses de cette section. 
 
-Dans la suite les paramètres de la simulation sont ceux de l'expérience dont nous disposons. Ces paramètres sont disponibles en annexe \ref{annexe_corr}.
+Dans la suite les paramètres de la simulation sont celles du banc de mesure nous disposons. Ces paramètres sont disponibles en annexe \ref{annexe_corr}.
 
 \subsection{Équation de dispersion}
 La matrice de transfert l'équation de dispersion pour le réseau à N cellules s'écrit alors : 
@@ -97,25 +98,25 @@ La matrice de transfert l'équation de dispersion pour le réseau à N cellules 
 \cos(NkL) = \frac{A+D}{2} 
 \end{equation}
 
-Ainsi, on peut remonter à une expression de $kL$ en fonction de la fréquence. En particulier, les zones où $kL$ devient imaginaire nous intéressent particulièrement car cela induit une décroissance exponentielle de l'onde de propageant dans le guilde (onde évanescente).
+Ainsi, on peut remonter à une expression de $kL$ en fonction de la fréquence. En particulier, les zones où $kL$ devient imaginaire nous intéressent particulièrement car cela induit une décroissance exponentielle de l'onde se propageant dans le guilde (onde évanescente).
 
 \subsection{Réflexion et transmission du réseau}
-Le coefficient de réflexion et de transmission de l'onde allé dans réseau complet peut être calculé de la manière suivante ~\cite{guide_dalmont}: 
+Le coefficient de réflexion et de transmission de l'onde aller dans le réseau complet peut être calculé de la manière suivante ~\cite{guide_dalmont}: 
 \begin{eqnarray}
 T^{+} & = & \frac{2}{A + B/Z_c + C Z_c + D} \\
-R^{+} & = & \frac{A + B / Zc_ - C Z_c -D}{A + B/Z_c + C Z_c + D} 
+R^{+} & = & \frac{A + B / Z_c_ - C Z_c -D}{A + B/Z_c + C Z_c + D} 
 \end{eqnarray}
 
 On trace ces coefficients en fonction de la fréquence (figure~\ref{ex_coef_RT}) ainsi que l'admittance des résonateurs utilisés. Il apparaît que la transmission chute pour trois bandes de fréquence : à la résonance du résonateur de Helmholtz, à celle de sa cavité et à la première bande de Bragg.
 
 \subsection{Bande de Bragg}
-Ces bandes sont visibles dès que des singularités apparaissent de manière periodique. L'énergie de l'onde reste contenue entre chaque éléments du fait que la longueur d'onde correspond à la moitié de l'espacement entre 2 éléments. 
+Ces bandes sont visibles dès que des singularités apparaissent de manière périodique. L'énergie de l'onde reste contenue entre chaque élément du fait que la longueur d'onde correspond à la moitié de l'espacement entre 2 éléments. 
 
 Pour un espacement entre éléments de longueur $L=0.1~m$, la bande de Bragg se situe autour de la fréquence $f_{b} = \frac{c}{2L} = 1715 Hz$. On constate sur la figure~\ref{ex_coef_RT} que ces bandes de Bragg sont bien présentes à la fréquence indiquée ainsi qu'a ses multiples (chute de la transmission et réflexion maximale).
  
 
-\subsection{Bande interdites liés aux résonateurs}
-L'équation de dispersion est cependant plus difficile à analyser qu'il n'y parait en raison des résonateurs qui constituent le réseau. Ceux-ci ont une impédance négligeable dès lors que la fréquence d'analyse se trouve suffisamment éloignée des fréquences de résonances. 
+\subsection{Bandes interdites liées aux résonateurs}
+L'équation de dispersion est cependant plus difficile à analyser qu'il n'y paraît en raison des résonateurs qui constituent le réseau. Ceux-ci ont une impédance négligeable dès lors que la fréquence d'analyse se trouve suffisamment éloignée des fréquences de résonance. 
 
 De plus, le résonateur étant par nature un système résonant, il peut lui aussi induire une absorption de l'énergie de l'onde sur certaines fréquences. Sur la figure~\ref{ex_coef_RT}, ces bandes interdites sont aussi présentes: elles se trouvent là ou l'admittance du résonateur est maximale. A ces fréquences, on a bien une chute de la transmission.
 
@@ -135,7 +136,7 @@ Afin d'étudier succinctement l'effet d'un désordre sur le volume des cavités 
 Dans le cas d'un écart-type élevé, le désordre a pour principal effet d'élargir la bande interdite liée à la seconde résonance des résonateurs (résonance de la cavité). La bande de Bragg n'est pas impactée puisque le désordre touche le volume des cavités et non l'espacement des résonateurs.
 
 \subsubsection*{Désordre lié aux conditions expérimentales} 
-Dans l'expérience menée plus loin, le volume des résonateur est fixé manuellement. La question de l'impact de l'erreur commise par la mise en place de l'expérience est donc directement liée à l'étude de désordre dans le réseau. On estime que la longueur des cavités va suivre une loi normale d'écart-type $2~mm$ et de longueur moyenne $\bar{L_c}=14~cm$. La figure~\ref{chaos2} montre alors que ce désordre n'a qu'une faible influence sur le coefficient de réflexion. 
+Dans l'expérience menée plus loin, le volume des résonateurs est fixé manuellement. La question de l'impact de l'erreur commise par la mise en place de l'expérience est donc directement liée à l'étude de désordre dans le réseau. On estime que la longueur des cavités va suivre une loi normale d'écart-type $2~mm$ et de longueur moyenne $\bar{L_c}=14~cm$. La figure~\ref{chaos2} montre alors que ce désordre n'a qu'une faible influence sur le coefficient de réflexion. 
 
 
 \begin{figure}[!h]
@@ -155,7 +156,7 @@ Dans l'expérience menée plus loin, le volume des résonateur est fixé manuell
 
 
 \subsubsection{Désordre sur la position des résonateurs}
-La même étude est menée sur le désordre lié à la conception du banc de mesure et aux défauts de position des résonateur. La configuration du réseau est la même.
+La même étude est menée sur le désordre lié à la conception du banc de mesure et aux défauts de position des résonateurs. La configuration du réseau est la même.
 Les figures~\ref{chaospos10} et~\ref{chaospos2} montrent l'effet d'un désordre plus ou moins grand sur la réflexion et la transmission.
 
 \begin{figure}[h!]

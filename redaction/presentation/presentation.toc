@@ -1,8 +1,8 @@
 \beamer@endinputifotherversion {3.24pt}
 \select@language {french}
 \beamer@sectionintoc {2}{R\IeC {\'e}seau infini}{4}{0}{1}
-\beamer@subsectionintoc {2}{1}{Formalisme matriciel}{4}{0}{1}
-\beamer@subsectionintoc {2}{2}{Bande interdites}{5}{0}{1}
+\beamer@subsectionintoc {2}{1}{formalisme matriciel}{4}{0}{1}
+\beamer@subsectionintoc {2}{2}{Bandes interdites}{5}{0}{1}
 \beamer@sectionintoc {3}{Ajout d'une singularit\IeC {\'e}}{6}{0}{2}
 \beamer@subsectionintoc {3}{1}{\IeC {\`a} quelle fr\IeC {\'e}quence ?}{7}{0}{2}
 \beamer@subsectionintoc {3}{2}{\IeC {\`a} quelle position ?}{8}{0}{2}

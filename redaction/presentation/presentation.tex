@@ -38,10 +38,10 @@
 
 \addtobeamertemplate{footline}{\hspace{11cm} \insertframenumber/\inserttotalframenumber}
 
-\author{Alice \textsc{Dinsenmeyer} \& Thomas \textsc{Lechat} \\ encadrés par Olivier \textsc{Richoux}}
+\author{Alice \textsc{Dinsenmeyer} \& Thomas \textsc{Lechat} \\ encadrés par Olivier \textsc{Richoux}, Maître de conférence}
 
 \title{ Réseaux acoustiques et modes localisés}
-\subtitle{M1 Acoustique}
+\subtitle{M1 Acoustique à l'université du Maine}
 \date{\today}
 
 
@@ -78,7 +78,7 @@
 
 \section{Réseau infini}
 
-\subsection{Formalisme matriciel}
+\subsection{formalisme matriciel}
 \begin{frame}{\insertsectionhead : \insertsubsectionhead }
 Matrices de transfert : 
 \begin{itemize}
@@ -87,17 +87,30 @@ Matrices de transfert :
 	\begin{pmatrix} p_1 \\ v_1 \end{pmatrix} = \begin{pmatrix} \cos(kL) & \frac{j\omega\rho}{k} \sin(k L) \\  \frac{k}{j\omega\rho}\sin(k L) & \cos(k L) 		\end{pmatrix} 	\begin{pmatrix} p_2 \\ v_2 \end{pmatrix}
 	\end{eqnarray*}
 	
+
 	\item pour un résonateur
+	\begin{eqnarray*}
+	\begin{pmatrix} p_1 \\ v_1 \end{pmatrix} = \begin{pmatrix} 1 &  0 \\ 1 /Z_{r} & 1  \end{pmatrix} \begin{pmatrix} p_2 \\ v_2 \end{pmatrix}
+	\end{eqnarray*}
 \end{itemize}
 
-\begin{footnotesize}
-		\begin{eqnarray*}
-\begin{pmatrix} P_e \\U_e \end{pmatrix}&=&\underbrace{
-				\begin{pmatrix} \cos(k L_n) & j Z_{n} \sin(k L_n) \\ \frac{1}{Z_{n}} \sin(k L_n) & \cos(k L_n) \end{pmatrix}}_{\text{\normalsize Col}}
-				\underbrace{\begin{pmatrix} \cos(k L_c) & j Z_{c} \sin(k L_c) \\ \frac{1}{Z_{c}} \sin(kL_c) & \cos(k L_c) \end{pmatrix}}_{\text{\normalsize Cavité}}
-				 \begin{pmatrix} P_s \\ 0  \end{pmatrix}
-		\end{eqnarray*}
-\end{footnotesize}
+
+\vspace{-0.5cm}
+
+\begin{columns}[T]
+
+		\column{0.5 \textwidth}
+
+\begin{figure}
+\centering
+\includegraphics[width= 0.8\textwidth]{schema_cellule.png}
+\end{figure}
+
+		\column{0.5 \textwidth}
+		\vspace{2cm}
+$Z_r$ est calculé a partir de 2 matrices de guide
+
+\end{columns}
 
 \end{frame}
 
@@ -121,7 +134,7 @@ Matrices de transfert :
 %\end{frame}
 
 
-\subsection{Bande interdites}
+\subsection{Bandes interdites}
 \begin{frame}{\insertsectionhead : \insertsubsectionhead}
 \vspace{0.3cm}
 
@@ -161,6 +174,9 @@ Matrices de transfert :
 		\includegraphics[scale=0.45]{transmission.png}
 	\end{figure}
 	
+\begin{center}
+	Coefficient de transmission et admittance des résonateurs
+\end{center}
 
 \end{frame}
 
@@ -170,8 +186,13 @@ Matrices de transfert :
 
 	Ajout d'une \textbf{singularité} sur un des résonateurs\\
 	  \hspace{1cm} $\hookrightarrow$ création d'un mode localisé \\
+	\vspace{0.5cm}
+\begin{figure}
+\centering
+\includegraphics[scale=0.45]{chgmt_defaut1.png}
+\end{figure}
 
-	\vspace{1cm}
+	\vspace{0.5cm}
 	\begin{block}{Problématique}
 		\begin{itemize}
 			\item Où placer cette singularité ?
@@ -187,19 +208,24 @@ Matrices de transfert :
 \begin{frame}{\insertsectionhead : \insertsubsectionhead}
 \begin{columns}[T]
 	\column{0.5 \textwidth}
-	 Hors d'une bande interdite : réflexion totale 
+	 Hors d'une bande interdite : absorption quasi-totale 
 	\begin{figure}
 		\centering
-		\includegraphics[width=\textwidth]{horsbande_50RH_500Hz_71mm.png}
+		\includegraphics[width=\textwidth]{horsbande_50RH_500Hz_71mm.png}\\
+		\includegraphics[width=0.7 \textwidth]{schema_singu1.png}
 	\end{figure}
 	
 	\column{0.5 \textwidth}
 	 Dans une bande interdite : localisation de l'onde
 	\begin{figure}
 		\centering
-		\includegraphics[width=\textwidth]{visu_pression_favo2.png}
+		\includegraphics[width=\textwidth]{visu_pression_favo2.png}\\
+		\includegraphics[width=0.7 \textwidth]{schema_singu2.png}
 	\end{figure}
 \end{columns}
+
+
+
 \end{frame}
 
 \subsection{à quelle position ?}
@@ -239,10 +265,10 @@ Avec défaut (bord de bande interdite) :
 \section{Visualisation expérimentale du mode localisé}
 
 \begin{frame}{\insertsectionhead}
-
 \begin{figure}
 \centering
-\includegraphics[scale=0.4]{non_norm_lin.png}
+\includegraphics[scale=0.3]{visu1_lin.png}
+\includegraphics[scale=0.3]{visu1_log.png}
 \end{figure}
 
 \begin{center}
@@ -256,7 +282,18 @@ Avec défaut (bord de bande interdite) :
 \begin{frame}{\insertsectionhead}
 \insertsubsectionhead\\~\\
 
-Ajout d'un 2\textsuperscript{ème} défaut $\rightarrow$ symétrie
+\begin{columns}[T]
+	\column{0.5 \textwidth}
+Ajout d'un 2\textsuperscript{ème} défaut \\ 
+	\hspace{1cm} $\hookrightarrow$ symétrie
+	\column{0.5 \textwidth}
+\vspace{-0.5cm}
+\begin{figure}
+\centering
+\includegraphics[width= \textwidth]{chgmt_defaut2.png}
+\end{figure}
+\end{columns}
+
 \vspace{-0.5cm}
 \begin{columns}[T]
 	\column{0.5 \textwidth}
@@ -265,6 +302,7 @@ Ajout d'un 2\textsuperscript{ème} défaut $\rightarrow$ symétrie
 		\includegraphics[height=0.5\textheight]{comparaison_decroissance_lin.png}
 	\end{figure}
 	\centering
+    \vspace{-0.2cm}	
 	\footnotesize{Échelle linéaire.}
 	
 	\column{0.5 \textwidth}
@@ -273,6 +311,7 @@ Ajout d'un 2\textsuperscript{ème} défaut $\rightarrow$ symétrie
 		\includegraphics[height=0.5\textheight]{comparaison_decroissance_log_theo.png}
 	\end{figure}
 	\centering
+	\vspace{-0.2cm}
 	\footnotesize{Échelle logarithmique, amplitude normalisée.}
 \end{columns}
 \end{frame}
@@ -296,9 +335,9 @@ Ajout d'un 2\textsuperscript{ème} défaut $\rightarrow$ symétrie
 \end{frame}
 
 \begin{frame}{Bibliographie}
-\indent J P Dalmont. Guide des Guides d'ondes acoustiques (version 1.4). 2010 \\ ~\\
-\indent O Richoux. Étude de la propagation des ondes mécaniques dans un réseau unidimensionnel comportant du désordre et/ou des non-linéarités localisées. Th. doct. : Acoustique. Le Mans : université du Maine, 1999 \\~\\
-\indent G Theocharis, O Richoux, V Romero García, A Merkel, and V Tournat. Limits of slow sound propagation and transparency in lossy, locally resonant periodic structures. New Journal of Physics, 2014.
+\indent J P Dalmont, Support de cours: Guide des Guides d'ondes acoustiques (version 1.4). 2010 \\ ~\\
+\indent O Richoux. Étude de la propagation des ondes mécaniques dans un réseau unidimensionnel comportant du désordre et/ou des non-linéarités localisées. Thèse d'acoustique : université du Maine, 1999 \\~\\
+\indent G Theocharis, O Richoux, V Romero García, A Merkel, and V Tournat. Limits of slow sound propagation and transparency in lossy, locally resonant periodic structures. New Journal of Physics, 2014, n°16
 
 
 \end{frame}

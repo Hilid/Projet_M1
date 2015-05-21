@@ -90,7 +90,7 @@ M_{r} = \begin{pmatrix} 1 &  0 \\ 1 /Z_{r} & 1  \end{pmatrix}\\
 
 Une fois les matrices du guide et du résonateur connues, il suffit alors de les multiplier afin d'obtenir la matrice d'une cellule du réseau. C'est sur l'étude de cette matrice que se basent les analyses de cette section. 
 
-Dans la suite les paramètres de la simulation sont celles du banc de mesure nous disposons. Ces paramètres sont disponibles en annexe \ref{annexe_corr}.
+Dans la suite les paramètres de la simulation sont ceux du banc de mesure nous disposons. Ces paramètres sont disponibles en annexe \ref{annexe_corr}.
 
 \subsection{Équation de dispersion}
 La matrice de transfert l'équation de dispersion pour le réseau à N cellules s'écrit alors : 
@@ -104,7 +104,7 @@ Ainsi, on peut remonter à une expression de $kL$ en fonction de la fréquence. 
 Le coefficient de réflexion et de transmission de l'onde aller dans le réseau complet peut être calculé de la manière suivante ~\cite{guide_dalmont}: 
 \begin{eqnarray}
 T^{+} & = & \frac{2}{A + B/Z_c + C Z_c + D} \\
-R^{+} & = & \frac{A + B / Z_c_ - C Z_c -D}{A + B/Z_c + C Z_c + D} 
+R^{+} & = & \frac{A + B / Z_c - C Z_c -D}{A + B/Z_c + C Z_c + D} 
 \end{eqnarray}
 
 On trace ces coefficients en fonction de la fréquence (figure~\ref{ex_coef_RT}) ainsi que l'admittance des résonateurs utilisés. Il apparaît que la transmission chute pour trois bandes de fréquence : à la résonance du résonateur de Helmholtz, à celle de sa cavité et à la première bande de Bragg.
@@ -133,24 +133,16 @@ De plus, le résonateur étant par nature un système résonant, il peut lui aus
 Afin d'étudier succinctement l'effet d'un désordre sur le volume des cavités du résonateur, une simulation numérique est réalisée pour des longueurs de cavité suivant une loi normale. Comme précédemment, les résonateurs sont arbitrairement au nombre de 60 et sont séparés d'une distance $L=0.1~m$. La figure~\ref{chaos10} présente les coefficients de transmission et de réflexion pour une longueur de cavité moyenne de $\bar{L_c}=14~cm$ et un écart-type  de $\sigma = 1~cm$.
 
 
-Dans le cas d'un écart-type élevé, le désordre a pour principal effet d'élargir la bande interdite liée à la seconde résonance des résonateurs (résonance de la cavité). La bande de Bragg n'est pas impactée puisque le désordre touche le volume des cavités et non l'espacement des résonateurs.
+Dans le cas d'un désordre important, le désordre a pour principal effet d'élargir la bande interdite liée à la seconde résonance des résonateurs (résonance de la cavité). La bande de Bragg est très peu impactée puisque le désordre touche le volume des cavités et non l'espacement des résonateurs.
 
 \subsubsection*{Désordre lié aux conditions expérimentales} 
-Dans l'expérience menée plus loin, le volume des résonateurs est fixé manuellement. La question de l'impact de l'erreur commise par la mise en place de l'expérience est donc directement liée à l'étude de désordre dans le réseau. On estime que la longueur des cavités va suivre une loi normale d'écart-type $2~mm$ et de longueur moyenne $\bar{L_c}=14~cm$. La figure~\ref{chaos2} montre alors que ce désordre n'a qu'une faible influence sur le coefficient de réflexion. 
+Dans l'expérience menée plus loin, le volume des résonateurs est fixé manuellement. La question de l'impact de l'erreur commise par la mise en place de l'expérience est donc directement liée à l'étude de désordre dans le réseau. On estime que la longueur des cavités va suivre une loi normale d'écart-type $2~mm$ et de longueur moyenne $\bar{L_c}=14~cm$. La figure~\ref{chaos2} montre alors que ce désordre n'a qu'une faible influence sur les coefficients de réflexion et de transmission. 
 
 
 \begin{figure}[!h]
-	\begin{minipage}{0.45 \textwidth}
-		\centering
-		\includegraphics[scale=0.5]{./images_chp1/chaos_10mm.png}
-		\caption{\label{chaos10} Coefficient de réflexion (en haut) et de transmission (en bas) pour un réseau de 60 résonateurs avec $\bar{L_c}=14$~cm et $\sigma =1~cm$.}
-	\end{minipage}
-\hspace{0.5cm}
-	\begin{minipage}{0.45 \textwidth}
-		\centering
-		\includegraphics[scale=0.5]{./images_chp1/chaos_2mm.png}
-		\caption{\label{chaos2} Coefficient de réflexion (en haut) et de transmission (en bas) pour un réseau de 60 résonateurs avec $\bar{L_c}=14$~cm et $\sigma=2~mm$.}
-	\end{minipage}
+		\subfigure[\label{chaos10} $\sigma =1$~cm]{\includegraphics[scale=0.5]{./images_chp1/chaos_lc_grand.png}}
+		\subfigure[\label{chaos2} $\sigma=2$~mm]{\includegraphics[scale=0.5]{./images_chp1/chaos_lc_petit.png}}
+		\caption{ Coefficient de réflexion (en haut) et de transmission (en bas) pour un réseau de 60 résonateurs avec $\bar{L_c}=14$~cm. Courbe rouge tiretée : sans désordre. Courbe bleue : avec désordre. Une seule réalisation est effectuée (pas de moyenne).}
 \end{figure}
 
 
@@ -166,12 +158,12 @@ Les figures~\ref{chaospos10} et~\ref{chaospos2} montrent l'effet d'un désordre 
 	\subfigure[\label{chaospos2}$\sigma=2$ mm]{
 		\includegraphics[scale=0.5]{./images_chp1/chaos_position_petit.png}
 	}
-	\caption{Coefficients de réflexion (en haut) et de transmission (en bas) pour un réseau de 60 résonateurs avec $\bar{L}=14~cm$.}
+	\caption{Coefficients de réflexion (en haut) et de transmission (en bas) pour un réseau de 60 résonateurs avec $\bar{L}=14~cm$. Courbe rouge tiretée : sans désordre. Courbe bleue : avec désordre. Une seule réalisation est effectuée (pas de moyenne).}
 \end{figure}
 
-Le désordre a pour principal effet d'augmenter la transmission au niveau de la bande de Bragg. Pour un désordre grand, l'effet du réseau n'est plus visible, puisque la bande interdite de Bragg va jusqu'à disparaître.
+Le désordre engendre une chute de la transmission dans la bande de fréquence située entre la résonance de la cavité des résonateurs et la fréquence de Bragg $f_b$. 
 
-Le désordre d'écart-type $2~mm$ est supérieur à celui estimé pour la réalisation du banc de mesure et est cependant moindre. On considère donc qu'il est négligeable par la suite.
+Quand le désordre est d'écart-type $2~mm$, son effet est moindre. Or, on estime que le désordre lié à la conception du banc de mesure est plus faible que ce dernier. On considère donc qu'il est négligeable par la suite.
 
 
 

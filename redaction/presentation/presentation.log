@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.3)  19 MAY 2015 22:56
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.13)  20 MAY 2015 18:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **presentation.tex
 (./presentation.tex
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 6 languages loaded.
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
 (/usr/share/texmf/tex/latex/beamer/base/beamer.cls
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasercs.sty
 Package: beamerbasercs 2012/11/13 (rcs-revision cb16a617839f)
@@ -1066,130 +1066,176 @@ Package pdftex.def Info: photo.jpg used on input line 72.
  <./schema_reseau_infini.png> <./photo.jpg>]
 (./presentation.toc) [3
 
-]
-Overfull \hbox (13.28159pt too wide) in alignment at lines 102--102
- [][][] []
- []
+] <schema_cellule.png, id=194, 205.568pt x 161.403pt>
+File: schema_cellule.png Graphic file (type png)
 
-[4
+<use schema_cellule.png>
+Package pdftex.def Info: schema_cellule.png used on input line 115.
+(pdftex.def)             Requested size: 122.9164pt x 96.51006pt.
+ [4
 
-] <transmission.png, id=237, 498.86375pt x 264.99pt>
+ <./schema_cellule.png>]
+<transmission.png, id=238, 498.86375pt x 264.99pt>
 File: transmission.png Graphic file (type png)
  <use transmission.png>
-Package pdftex.def Info: transmission.png used on input line 165.
+Package pdftex.def Info: transmission.png used on input line 181.
 (pdftex.def)             Requested size: 224.4866pt x 119.24438pt.
+
+Overfull \vbox (3.77939pt too high) detected at line 181
+ []
 
 [5
 
- <./transmission.png>] [6
+ <./transmission.png>] <chgmt_defaut1.png, id=278, 595.023pt x 150.161pt>
+File: chgmt_defaut1.png Graphic file (type png)
 
-]
-<horsbande_50RH_500Hz_71mm.png, id=324, 462.528pt x 346.896pt>
+<use chgmt_defaut1.png>
+Package pdftex.def Info: chgmt_defaut1.png used on input line 204.
+(pdftex.def)             Requested size: 267.75787pt x 67.57181pt.
+ [6
+
+ <./chgmt_defaut1.png>]
+<horsbande_50RH_500Hz_71mm.png, id=326, 462.528pt x 346.896pt>
 File: horsbande_50RH_500Hz_71mm.png Graphic file (type png)
 
 <use horsbande_50RH_500Hz_71mm.png>
-Package pdftex.def Info: horsbande_50RH_500Hz_71mm.png used on input line 203.
+Package pdftex.def Info: horsbande_50RH_500Hz_71mm.png used on input line 229.
 (pdftex.def)             Requested size: 153.64493pt x 115.23296pt.
 
-<visu_pression_favo2.png, id=325, 578.16pt x 433.62pt>
+<schema_singu1.png, id=327, 320.397pt x 149.358pt>
+File: schema_singu1.png Graphic file (type png)
+ <use schema_singu1.png>
+Package pdftex.def Info: schema_singu1.png used on input line 229.
+(pdftex.def)             Requested size: 107.55098pt x 50.13608pt.
+
+<visu_pression_favo2.png, id=328, 578.16pt x 433.62pt>
 File: visu_pression_favo2.png Graphic file (type png)
 
 <use visu_pression_favo2.png>
-Package pdftex.def Info: visu_pression_favo2.png used on input line 203.
+Package pdftex.def Info: visu_pression_favo2.png used on input line 229.
 (pdftex.def)             Requested size: 153.64493pt x 115.23296pt.
- [7
 
- <./horsbande_50RH_500Hz_71mm.png> <./visu_pression_favo2.png>] <pos_singu.png,
- id=365, 462.528pt x 346.896pt>
+<schema_singu2.png, id=329, 331.639pt x 165.418pt>
+File: schema_singu2.png Graphic file (type png)
+ <use schema_singu2.png>
+Package pdftex.def Info: schema_singu2.png used on input line 229.
+(pdftex.def)             Requested size: 107.55098pt x 53.64409pt.
+
+[7
+
+ <./horsbande_50RH_500Hz_71mm.png> <./schema_singu1.png> <./visu_pression_favo2
+.png> <./schema_singu2.png>] <pos_singu.png, id=371, 462.528pt x 346.896pt>
 File: pos_singu.png Graphic file (type png)
 
 <use pos_singu.png>
-Package pdftex.def Info: pos_singu.png used on input line 214.
+Package pdftex.def Info: pos_singu.png used on input line 240.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
  [8
 
  <./pos_singu.png>]
-<R_5HR165_nodefect.png, id=405, 466.543pt x 347.699pt>
+<R_5HR165_nodefect.png, id=411, 466.543pt x 347.699pt>
 File: R_5HR165_nodefect.png Graphic file (type png)
 
 <use R_5HR165_nodefect.png>
-Package pdftex.def Info: R_5HR165_nodefect.png used on input line 237.
+Package pdftex.def Info: R_5HR165_nodefect.png used on input line 263.
 (pdftex.def)             Requested size: 107.55333pt x 80.15477pt.
 
-<T_5HR165_nodefect.png, id=406, 462.528pt x 346.896pt>
+<T_5HR165_nodefect.png, id=412, 462.528pt x 346.896pt>
 File: T_5HR165_nodefect.png Graphic file (type png)
 
 <use T_5HR165_nodefect.png>
-Package pdftex.def Info: T_5HR165_nodefect.png used on input line 237.
+Package pdftex.def Info: T_5HR165_nodefect.png used on input line 263.
 (pdftex.def)             Requested size: 107.55333pt x 80.66307pt.
 
-<R_5HR165_8cm_pos3.png, id=407, 462.528pt x 346.896pt>
+<R_5HR165_8cm_pos3.png, id=413, 462.528pt x 346.896pt>
 File: R_5HR165_8cm_pos3.png Graphic file (type png)
 
 <use R_5HR165_8cm_pos3.png>
-Package pdftex.def Info: R_5HR165_8cm_pos3.png used on input line 237.
+Package pdftex.def Info: R_5HR165_8cm_pos3.png used on input line 263.
 (pdftex.def)             Requested size: 107.55333pt x 80.66307pt.
 
-<T_5HR165_8cm_pos3.png, id=408, 462.528pt x 346.896pt>
+<T_5HR165_8cm_pos3.png, id=414, 462.528pt x 346.896pt>
 File: T_5HR165_8cm_pos3.png Graphic file (type png)
 
 <use T_5HR165_8cm_pos3.png>
-Package pdftex.def Info: T_5HR165_8cm_pos3.png used on input line 237.
+Package pdftex.def Info: T_5HR165_8cm_pos3.png used on input line 263.
 (pdftex.def)             Requested size: 107.55333pt x 80.66307pt.
 
-Overfull \vbox (11.55467pt too high) detected at line 237
+Overfull \vbox (11.55467pt too high) detected at line 263
  []
 
 [9
 
  <./R_5HR165_nodefect.png> <./T_5HR165_nodefect.png> <./R_5HR165_8cm_pos3.png> 
-<./T_5HR165_8cm_pos3.png>] <non_norm_lin.png, id=450, 578.16pt x 433.62pt>
-File: non_norm_lin.png Graphic file (type png)
+<./T_5HR165_8cm_pos3.png>] <visu1_lin.png, id=457, 578.16pt x 433.62pt>
+File: visu1_lin.png Graphic file (type png)
 
-<use non_norm_lin.png>
-Package pdftex.def Info: non_norm_lin.png used on input line 252.
-(pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
- [10
+<use visu1_lin.png>
+Package pdftex.def Info: visu1_lin.png used on input line 278.
+(pdftex.def)             Requested size: 173.44933pt x 130.087pt.
+ <visu1_log.png, id=458, 578.16pt x 433.62pt>
+File: visu1_log.png Graphic file (type png)
 
- <./non_norm_lin.png>]
-<comparaison_decroissance_lin.png, id=488, 578.16pt x 433.62pt>
+<use visu1_log.png>
+Package pdftex.def Info: visu1_log.png used on input line 278.
+(pdftex.def)             Requested size: 173.44933pt x 130.087pt.
+
+Overfull \hbox (39.60878pt too wide) in paragraph at lines 278--278
+ [][] 
+ []
+
+[10
+
+ <./visu1_lin.png> <./visu1_log.png>]
+<chgmt_defaut2.png, id=496, 591.008pt x 150.161pt>
+File: chgmt_defaut2.png Graphic file (type png)
+ <use chgmt_defaut2.png>
+Package pdftex.def Info: chgmt_defaut2.png used on input line 317.
+(pdftex.def)             Requested size: 153.64493pt x 39.03635pt.
+
+<comparaison_decroissance_lin.png, id=497, 578.16pt x 433.62pt>
 File: comparaison_decroissance_lin.png Graphic file (type png)
 
 <use comparaison_decroissance_lin.png>
-Package pdftex.def Info: comparaison_decroissance_lin.png used on input line 27
-8.
+Package pdftex.def Info: comparaison_decroissance_lin.png used on input line 31
+7.
 (pdftex.def)             Requested size: 163.2511pt x 122.44351pt.
 
-Overfull \hbox (9.60617pt too wide) in paragraph at lines 278--278
+Overfull \hbox (9.60617pt too wide) in paragraph at lines 317--317
  [] 
  []
 
-<comparaison_decroissance_log_theo.png, id=489, 462.528pt x 346.896pt>
+<comparaison_decroissance_log_theo.png, id=498, 462.528pt x 346.896pt>
 File: comparaison_decroissance_log_theo.png Graphic file (type png)
 
 <use comparaison_decroissance_log_theo.png>
 Package pdftex.def Info: comparaison_decroissance_log_theo.png used on input li
-ne 278.
+ne 317.
 (pdftex.def)             Requested size: 163.2564pt x 122.44351pt.
 
-Overfull \hbox (9.61147pt too wide) in paragraph at lines 278--278
+Overfull \hbox (9.61147pt too wide) in paragraph at lines 317--317
  [] 
+ []
+
+
+Overfull \vbox (6.47868pt too high) detected at line 317
  []
 
 [11
 
- <./comparaison_decroissance_lin.png> <./comparaison_decroissance_log_theo.png>
-] (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
+ <./chgmt_defaut2.png> <./comparaison_decroissance_lin.png> <./comparaison_decr
+oissance_log_theo.png>]
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 296
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 335
 .
-LaTeX Font Info:    No file OMScmss.fd. on input line 296.
+LaTeX Font Info:    No file OMScmss.fd. on input line 335.
 
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 296.
+(Font)              for symbol `textbullet' on input line 335.
 
 [12
 
@@ -1205,13 +1251,13 @@ LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 \tf@snm=\write8
 \openout8 = `presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 307.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 307.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 346.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 346.
  (./presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 307.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 307.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 346.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 346.
 Package rerunfilecheck Info: File `presentation.out' has not changed.
-(rerunfilecheck)             Checksum: 221E626173D73BD51E4F3EDD5BE149D0;646.
+(rerunfilecheck)             Checksum: 8BD0C560B84D8AB26DDB2068D959A1EA;647.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1220,16 +1266,16 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 307.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 346.
  ) 
 Here is how much of TeX's memory you used:
- 20855 strings out of 494958
- 383701 string characters out of 6179214
- 490551 words of memory out of 5000000
- 23539 multiletter control sequences out of 15000+600000
- 15085 words of font info for 56 fonts, out of 8000000 for 9000
- 36 hyphenation exceptions out of 8191
- 50i,21n,56p,429b,933s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 20873 strings out of 493304
+ 384036 string characters out of 6139871
+ 494197 words of memory out of 5000000
+ 23785 multiletter control sequences out of 15000+600000
+ 13024 words of font info for 48 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 50i,19n,56p,429b,933s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/tex
@@ -1239,15 +1285,15 @@ st/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmssi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10
-.pfb>
-Output written on presentation.pdf (13 pages, 4564877 bytes).
+msfonts/cm/cmssi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.p
+fb>
+Output written on presentation.pdf (13 pages, 4663847 bytes).
 PDF statistics:
- 659 PDF objects out of 1000 (max. 8388607)
+ 670 PDF objects out of 1000 (max. 8388607)
  581 compressed objects within 6 object streams
  38 named destinations out of 1000 (max. 500000)
- 204 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 234 words of extra memory for PDF output out of 10000 (max. 10000000)
 
